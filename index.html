@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Paint Calculator</title>
+
+<style>
+
+body{
+background:#121212;
+color:white;
+font-family:Arial,sans-serif;
+padding:20px;
+}
+
+h1{
+text-align:center;
+}
+
+input{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+background:#2a2a2a;
+color:white;
+border:none;
+border-radius:8px;
+box-sizing:border-box;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#2196F3;
+color:white;
+border:none;
+border-radius:8px;
+font-weight:bold;
+}
+
+.big{
+font-size:40px;
+font-weight:bold;
+text-align:center;
+margin-top:15px;
+color:#4FC3F7;
+}
+
+</style>
+manifest.json
+<meta name="theme-color" content="#121212">
+</head>
+
+<body>
+
+<h1>PAINT CALCULATOR</h1>
+
+<p>Solids (%)</p>
+<input id="solids" type="number">
+
+<p>Loss Factor</p>
+<input id="loss" type="number" step="0.01">
+
+<p>DFT</p>
+<input id="dft" type="number">
+
+<p>Area (m²)</p>
+<input id="area" type="number">
+
+<p>Drum Litres</p>
+<input id="drum" type="number">
+
+<button onclick="calculate()">
+CALCULATE
+</button>
+
+<p>Coverage Factor</p>
+<div id="r1">0.0</div>
+
+<p>Practical Coverage</p>
+<div id="r2">0.0</div>
+
+<p>Required Litres</p>
+<div class="big" id="litres">0.0</div>
+
+<p>Required Drums</p>
+<div class="big" id="drums">0.0</div>
+
+<script>
+
+function calculate(){
+
+var solids=
+parseFloat(document.getElementById("solids").value)||0;
+
+var loss=
+parseFloat(document.getElementById("loss").value)||0;
+
+var dft=
+parseFloat(document.getElementById("dft").value)||1;
+
+var area=
+parseFloat(document.getElementById("area").value)||0;
+
+var drum=
+parseFloat(document.getElementById("drum").value)||1;
+
+var result1=
+10*solids*loss;
+
+var result2=
+result1/dft;
+
+var litres=
+area/result2;
+
+var drums=
+litres/drum;
+
+document.getElementById("r1").innerHTML=
+result1.toFixed(1);
+
+document.getElementById("r2").innerHTML=
+result2.toFixed(1);
+
+document.getElementById("litres").innerHTML=
+litres.toFixed(1);
+
+document.getElementById("drums").innerHTML=
+drums.toFixed(1);
+
+}
+
+</script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>
+</body>
+</html>
