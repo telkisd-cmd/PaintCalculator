@@ -1,16 +1,14 @@
 {
-  "background_color": "#121212",
-  "dir": "ltr",
-  "display": "standalone",
-  "name": "Paint Calculator",
-  "orientation": "portrait",
-  "scope": "/",
-  "short_name": "PaintCalc",
-  "start_url": "/",
-  "theme_color": "#121212",
-  "description": "Professional Coating Tool",
   "id": "com.paintcalculator.app",
-
+  "name": "Paint Calculator",
+  "short_name": "PaintCalc",
+  "description": "Professional Coating Tool",
+  "start_url": "/PaintCalculator/",
+  "scope": "/PaintCalculator/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#121212",
+  "theme_color": "#121212",
   "icons": [
     {
       "src": "icon-512.png",
