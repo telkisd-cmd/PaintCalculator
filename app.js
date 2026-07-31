@@ -831,20 +831,133 @@ function clearProject(){
 
 }
 
-async function shareReport(){
+async function sharePDF(){
 
   try{
 
-    if(navigator.share){
+    const { jsPDF } = window.jspdf;
+
+    const doc = new jsPDF();
+
+    let y = 20;
+
+    doc.setFontSize(18);
+
+    doc.text(
+      "COATING ESTIMATION REPORT",
+      20,
+      y
+    );
+
+    y += 15;
+
+    doc.setFontSize(12);
+
+    doc.text(
+      "Date: " +
+      document.getElementById("reportDate").value,
+      20,
+      y
+    );
+
+    y += 10;
+
+    doc.text(
+      "Vessel: " +
+      document.getElementById("vesselName").value,
+      20,
+      y
+    );
+
+    y += 10;
+
+    doc.text(
+      "IMO: " +
+      document.getElementById("imo").value,
+      20,
+      y
+    );
+
+    y += 10;
+
+    doc.text(
+      "Location: " +
+      document.getElementById("location").value,
+      20,
+      y
+    );
+
+    y += 15;
+
+    for(let position in summaryData.positions){
+
+      let item =
+        summaryData.positions[position];
+
+      doc.text(
+        position,
+        20,
+        y
+      );
+
+      y += 8;
+
+      doc.text(
+        "Area: " +
+        item.area.toFixed(0) +
+        " m2",
+        20,
+        y
+      );
+
+      y += 8;
+
+      for(let coat in item.coats){
+
+        let coatData =
+          item.coats[coat];
+
+        doc.text(
+          coat +
+          " | Litres: " +
+          coatData.litres.toFixed(1) +
+          " | Drums: " +
+          coatData.drums,
+          25,
+          y
+        );
+
+        y += 8;
+      }
+
+      y += 5;
+    }
+
+    const pdfBlob =
+      doc.output("blob");
+
+    const pdfFile =
+      new File(
+        [pdfBlob],
+        "Coating_Estimation_Report.pdf",
+        {
+          type:"application/pdf"
+        }
+      );
+
+    if(
+      navigator.canShare &&
+      navigator.canShare({
+        files:[pdfFile]
+      })
+    ){
 
       await navigator.share({
 
         title:
         "Coating Estimation Report",
 
-        text:
-        "Coating Estimation Report for " +
-        document.getElementById("vesselName").value
+        files:[pdfFile]
 
       });
 
@@ -852,7 +965,7 @@ async function shareReport(){
     else{
 
       alert(
-        "Sharing not supported on this device"
+        "PDF sharing is not supported on this device."
       );
 
     }
