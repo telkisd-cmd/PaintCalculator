@@ -1,84 +1,99 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Paint Calculator</title>
-  
+<title>Paint Calculator Pro</title>
+
 <link rel="manifest" href="manifest.json">
-  
+
 <meta name="theme-color" content="#121212">
-  
-<style>
 
-body{
-background:#121212;
-color:white;
-font-family:Arial,sans-serif;
-padding:20px;
-}
-
-h1{
-text-align:center;
-}
-
-input{
-width:100%;
-padding:12px;
-margin-bottom:15px;
-background:#2a2a2a;
-color:white;
-border:none;
-border-radius:8px;
-box-sizing:border-box;
-}
-
-button{
-width:100%;
-padding:12px;
-background:#2196F3;
-color:white;
-border:none;
-border-radius:8px;
-font-weight:bold;
-}
-
-.big{
-font-size:40px;
-font-weight:bold;
-text-align:center;
-margin-top:15px;
-color:#4FC3F7;
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<div style="display:flex;gap:10px;margin-bottom:20px;">
+<div class="tabs">
 
 <button onclick="showTab('paint')">
-PAINT CALCULATOR
+PAINT
 </button>
 
 <button onclick="showTab('hull')">
-HULL CALCULATION
+HULL
+</button>
+
+<button onclick="showTab('jts')">
+JTS
+</button>
+
+<button onclick="showTab('summary')">
+SUMMARY
 </button>
 
 </div>
+
+<!-- PAINT -->
 
 <div id="paintTab">
 
 <h1>PAINT CALCULATOR</h1>
 
+<p>Position</p>
+
+<select id="paintPosition">
+
+<option>Flat Bottom</option>
+
+<option>Vertical Sides</option>
+
+<option>Boottop</option>
+
+<option>Topside</option>
+
+<option>Other</option>
+
+</select>
+
+<p>Coating Mode</p>
+
+<select id="coatMode">
+
+<option>1 Coat</option>
+
+<option>Multi Coat</option>
+
+</select>
+
+<p>Coat Number</p>
+
+<select id="coatNumber">
+
+<option>1st Coat</option>
+
+<option>2nd Coat</option>
+
+<option>3rd Coat</option>
+
+<option>4th Coat</option>
+
+<option>5th Coat</option>
+
+<option>6th Coat</option>
+
+<option>7th Coat</option>
+
+</select>
+
 <p>Solids (%)</p>
 <input id="solids" type="number">
 
 <p>Loss Factor</p>
-<input id="loss" type="number" step="0.01">
+<input id="loss" type="number">
 
 <p>DFT</p>
 <input id="dft" type="number">
@@ -86,26 +101,65 @@ HULL CALCULATION
 <p>Area (m²)</p>
 <input id="area" type="number">
 
+<p>Area %</p>
+
+<input
+id="areaPercent"
+type="number"
+list="percentList"
+value="100">
+
+<datalist id="percentList">
+
+<option value="5">
+<option value="10">
+<option value="15">
+<option value="20">
+<option value="25">
+<option value="30">
+<option value="35">
+<option value="40">
+<option value="45">
+<option value="50">
+<option value="55">
+<option value="60">
+<option value="65">
+<option value="70">
+<option value="75">
+<option value="80">
+<option value="85">
+<option value="90">
+<option value="95">
+<option value="100">
+
+</datalist>
+
 <p>Drum Litres</p>
 <input id="drum" type="number">
 
-<button onclick="calculate()">
+<button onclick="calculatePaint()">
 CALCULATE
 </button>
 
-<p>Coverage Factor</p>
-<div id="r1">0.0</div>
+<button onclick="sendPaintToSummary()">
+SEND TO SUMMARY
+</button>
 
-<p>Practical Coverage</p>
-<div id="r2">0.0</div>
+<h3>Coverage Factor</h3>
+<div id="r1">0</div>
 
-<p>Required Litres</p>
-<div class="big" id="litres">0.0</div>
+<h3>Practical Coverage</h3>
+<div id="r2">0</div>
 
-<p>Required Drums</p>
-<div class="big" id="drums">0.0</div>
+<h3>Required Litres</h3>
+<div class="big" id="litres">0</div>
+
+<h3>Required Drums</h3>
+<div class="big" id="drums">0</div>
 
 </div>
+
+<!-- HULL -->
 
 <div id="hullTab" style="display:none;">
 
@@ -133,255 +187,82 @@ CALCULATE
 <input id="boottopHeight" type="number">
 
 <p>HULL FACTOR</p>
-<input id="hullFactor" type="number" step="0.01">
+<input id="hullFactor" type="number">
 
 <button onclick="calculateHull()">
 CALCULATE HULL
 </button>
 
-<p>HEIGHT OF TOPSIDE</p>
-<div id="topsideHeight">0</div>
+<div id="hullResults"></div>
 
-<p>FLAT BOTTOM</p>
-<div id="flatBottom">0</div>
+</div>
 
-<button onclick="sendToPaint(flatBottomValue)">
-SEND TO PAINT CALCULATOR
+<!-- JTS -->
+
+<div id="jtsTab" style="display:none;">
+
+<h1>JTS</h1>
+
+<p>Flat Bottom</p>
+<input id="jtsFlatBottom" type="number">
+
+<p>Vertical Sides</p>
+<input id="jtsVerticalSides" type="number">
+
+<p>Boottop</p>
+<input id="jtsBoottop" type="number">
+
+<p>Topside</p>
+<input id="jtsTopside" type="number">
+
+<p>Other</p>
+<input id="jtsOther" type="number">
+
+</div>
+
+<!-- SUMMARY -->
+
+<div id="summaryTab" style="display:none;">
+
+<h1>SUMMARY</h1>
+
+<p>Date</p>
+
+<input
+id="reportDate"
+readonly>
+
+<p>Vessel Name</p>
+
+<input id="vesselName">
+
+<p>IMO</p>
+
+<input id="imo">
+
+<p>Location</p>
+
+<input id="location">
+
+<div id="summaryContent"></div>
+
+<button onclick="saveSummary()">
+SAVE SUMMARY
 </button>
 
-<p>VERTICAL SIDES</p>
-<div id="verticalSides">0</div>
-
-<button onclick="sendToPaint(verticalSidesValue)">
-SEND TO PAINT CALCULATOR
-</button>
-
-<p>BOOTTOP</p>
-<div id="boottop">0</div>
-
-<button onclick="sendToPaint(boottopValue)">
-SEND TO PAINT CALCULATOR
-</button>
-
-<p>TOPSIDE</p>
-<div id="topside">0</div>
-
-<button onclick="sendToPaint(topsideValue)">
-SEND TO PAINT CALCULATOR
-</button>
-
-<p>TOTAL AREA</p>
-<div class="big" id="totalArea">0</div>
-
-<button onclick="sendToPaint(totalAreaValue)">
-SEND TO PAINT CALCULATOR
+<button onclick="exportPDF()">
+EXPORT PDF
 </button>
 
 </div>
 
-<script>
-
-let flatBottomValue = 0;
-let verticalSidesValue = 0;
-let boottopValue = 0;
-let topsideValue = 0;
-let totalAreaValue = 0;
-
-function calculate(){
-
-var solids=
-parseFloat(document.getElementById("solids").value)||0;
-
-var loss=
-parseFloat(document.getElementById("loss").value)||0;
-
-var dft=
-parseFloat(document.getElementById("dft").value)||1;
-
-var area=
-parseFloat(document.getElementById("area").value)||0;
-
-var drum=
-parseFloat(document.getElementById("drum").value)||1;
-
-var result1=
-10*solids*loss;
-
-var result2=
-result1/dft;
-
-var litres=
-area/result2;
-
-var drums=
-litres/drum;
-
-document.getElementById("r1").innerHTML=
-result1.toFixed(1);
-
-document.getElementById("r2").innerHTML=
-result2.toFixed(1);
-
-document.getElementById("litres").innerHTML=
-litres.toFixed(1);
-
-document.getElementById("drums").innerHTML=
-drums.toFixed(1);
-
-}
-
-function showTab(tab){
-
-if(tab=="paint"){
-
-document.getElementById("paintTab").style.display =
-"block";
-
-document.getElementById("hullTab").style.display =
-"none";
-
-}
-
-if(tab=="hull"){
-
-document.getElementById("paintTab").style.display =
-"none";
-
-document.getElementById("hullTab").style.display =
-"block";
-
-}
-
-}
-
-function sendToPaint(area){
-
-document.getElementById("area").value =
-area.toFixed(0);
-
-showTab("paint");
-
-}
-
-function calculateHull(){
-
-let loa =
-parseFloat(document.getElementById("loa").value)||0;
-
-let lbp =
-parseFloat(document.getElementById("lbp").value)||0;
-
-let breadth =
-parseFloat(document.getElementById("breadth").value)||0;
-
-let draught =
-parseFloat(document.getElementById("draught").value)||0;
-
-let height =
-parseFloat(document.getElementById("height").value)||0;
-
-let dwt =
-parseFloat(document.getElementById("dwt").value)||0;
-
-let boottopHeight =
-parseFloat(document.getElementById("boottopHeight").value)||0;
-
-let manualHullFactor =
-parseFloat(document.getElementById("hullFactor").value);
-
-let hullFactor;
-
-if(!manualHullFactor){
-
-if(dwt < 20000)
-hullFactor = 0.67;
-
-else if(dwt < 40000)
-hullFactor = 0.75;
-
-else if(dwt <= 100000)
-hullFactor = 0.85;
-
-else
-hullFactor = 0.90;
-
-document.getElementById("hullFactor").value =
-hullFactor;
-
-}
-else{
-
-hullFactor = manualHullFactor;
-
-}
-
-let heightOfTopside =
-height - draught;
-
-let flatBottom =
-lbp * breadth * hullFactor;
-
-let verticalSides =
-2 * draught * loa;
-
-let boottop =
-2 * boottopHeight *
-(lbp + (0.5 * breadth));
-
-let topside =
-2 * heightOfTopside *
-(loa + (0.5 * breadth));
-
-topside =
-topside * 1.10;
-
-let totalArea =
-flatBottom +
-verticalSides +
-boottop +
-topside;
-
-flatBottomValue =
-flatBottom;
-
-verticalSidesValue =
-verticalSides;
-
-boottopValue =
-boottop;
-
-topsideValue =
-topside;
-
-totalAreaValue =
-totalArea;
-
-document.getElementById("topsideHeight").innerHTML =
-heightOfTopside.toFixed(1) + " m";
-
-document.getElementById("flatBottom").innerHTML =
-flatBottom.toFixed(0) + " m²";
-
-document.getElementById("verticalSides").innerHTML =
-verticalSides.toFixed(0) + " m²";
-
-document.getElementById("boottop").innerHTML =
-boottop.toFixed(0) + " m²";
-
-document.getElementById("topside").innerHTML =
-topside.toFixed(0) + " m²";
-
-document.getElementById("totalArea").innerHTML =
-totalArea.toFixed(0) + " m²";
-
-}
-
-</script>
+app.js"></script>
 
 <script>
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("service-worker.js");
+if("serviceWorker" in navigator){
+navigator.serviceWorker.register("service-worker.js");
 }
 </script>
+
 </body>
 </html>
