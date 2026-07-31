@@ -16,6 +16,8 @@ let currentPaintResult = {
   area: 0
 };
 
+let vesselPhotoData = "";
+
 // ------------------------
 // STARTUP
 // ------------------------
@@ -35,6 +37,8 @@ window.onload = function(){
   }
 
   loadSummary();
+
+  initializePhotoUpload();
 
 };
 
@@ -600,8 +604,11 @@ function saveSummary(){
     location:
       document.getElementById("location").value,
 
-    summary:
-      summaryData
+  summary:
+  summaryData,
+
+photo:
+  vesselPhotoData
 
   };
 
@@ -641,6 +648,23 @@ function loadSummary(){
       positions:{}
     };
 
+vesselPhotoData =
+  projectData.photo || "";
+
+if(vesselPhotoData){
+
+  let preview =
+    document.getElementById(
+      "photoPreview"
+    );
+
+  preview.src =
+    vesselPhotoData;
+
+  preview.style.display =
+    "block";
+}  
+  
   renderSummary();
 
 }
@@ -1130,5 +1154,54 @@ function toggleCoatMode(){
       "1st Coat";
 
   }
+
+}
+
+function initializePhotoUpload(){
+
+  let photoInput =
+    document.getElementById("vesselPhoto");
+
+  if(!photoInput)
+    return;
+
+  photoInput.addEventListener(
+    "change",
+    function(event){
+
+      let file =
+        event.target.files[0];
+
+      if(!file)
+        return;
+
+      let reader =
+        new FileReader();
+
+      reader.onload =
+        function(e){
+
+          vesselPhotoData =
+            e.target.result;
+
+          let preview =
+            document.getElementById(
+              "photoPreview"
+            );
+
+          preview.src =
+            vesselPhotoData;
+
+          preview.style.display =
+            "block";
+
+        };
+
+      reader.readAsDataURL(
+        file
+      );
+
+    }
+  );
 
 }
