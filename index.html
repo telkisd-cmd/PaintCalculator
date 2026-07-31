@@ -58,6 +58,20 @@ color:#4FC3F7;
 
 <body>
 
+<div style="display:flex;gap:10px;margin-bottom:20px;">
+
+<button onclick="showTab('paint')">
+PAINT CALCULATOR
+</button>
+
+<button onclick="showTab('hull')">
+HULL CALCULATION
+</button>
+
+</div>
+
+<div id="paintTab">
+
 <h1>PAINT CALCULATOR</h1>
 
 <p>Solids (%)</p>
@@ -91,7 +105,87 @@ CALCULATE
 <p>Required Drums</p>
 <div class="big" id="drums">0.0</div>
 
+</div>
+
+<div id="hullTab" style="display:none;">
+
+<h1>HULL CALCULATION</h1>
+
+<p>LOA</p>
+<input id="loa" type="number">
+
+<p>LBP</p>
+<input id="lbp" type="number">
+
+<p>BREADTH</p>
+<input id="breadth" type="number">
+
+<p>DRAUGHT</p>
+<input id="draught" type="number">
+
+<p>HEIGHT</p>
+<input id="height" type="number">
+
+<p>DWT</p>
+<input id="dwt" type="number">
+
+<p>BOOTTOP HEIGHT</p>
+<input id="boottopHeight" type="number">
+
+<p>HULL FACTOR</p>
+<input id="hullFactor" type="number" step="0.01">
+
+<button onclick="calculateHull()">
+CALCULATE HULL
+</button>
+
+<p>HEIGHT OF TOPSIDE</p>
+<div id="topsideHeight">0</div>
+
+<p>FLAT BOTTOM</p>
+<div id="flatBottom">0</div>
+
+<button onclick="sendToPaint(flatBottomValue)">
+SEND TO PAINT CALCULATOR
+</button>
+
+<p>VERTICAL SIDES</p>
+<div id="verticalSides">0</div>
+
+<button onclick="sendToPaint(verticalSidesValue)">
+SEND TO PAINT CALCULATOR
+</button>
+
+<p>BOOTTOP</p>
+<div id="boottop">0</div>
+
+<button onclick="sendToPaint(boottopValue)">
+SEND TO PAINT CALCULATOR
+</button>
+
+<p>TOPSIDE</p>
+<div id="topside">0</div>
+
+<button onclick="sendToPaint(topsideValue)">
+SEND TO PAINT CALCULATOR
+</button>
+
+<p>TOTAL AREA</p>
+<div class="big" id="totalArea">0</div>
+
+<button onclick="sendToPaint(totalAreaValue)">
+SEND TO PAINT CALCULATOR
+</button>
+
+</div>
+
 <script>
+
+let flatBottomValue = 0;
+let verticalSidesValue = 0;
+let boottopValue = 0;
+let topsideValue = 0;
+let totalAreaValue = 0;
 
 function calculate(){
 
@@ -133,6 +227,152 @@ litres.toFixed(1);
 
 document.getElementById("drums").innerHTML=
 drums.toFixed(1);
+
+}
+
+function showTab(tab){
+
+if(tab=="paint"){
+
+document.getElementById("paintTab").style.display =
+"block";
+
+document.getElementById("hullTab").style.display =
+"none";
+
+}
+
+if(tab=="hull"){
+
+document.getElementById("paintTab").style.display =
+"none";
+
+document.getElementById("hullTab").style.display =
+"block";
+
+}
+
+}
+
+function sendToPaint(area){
+
+document.getElementById("area").value =
+area.toFixed(0);
+
+showTab("paint");
+
+}
+
+function calculateHull(){
+
+let loa =
+parseFloat(document.getElementById("loa").value)||0;
+
+let lbp =
+parseFloat(document.getElementById("lbp").value)||0;
+
+let breadth =
+parseFloat(document.getElementById("breadth").value)||0;
+
+let draught =
+parseFloat(document.getElementById("draught").value)||0;
+
+let height =
+parseFloat(document.getElementById("height").value)||0;
+
+let dwt =
+parseFloat(document.getElementById("dwt").value)||0;
+
+let boottopHeight =
+parseFloat(document.getElementById("boottopHeight").value)||0;
+
+let manualHullFactor =
+parseFloat(document.getElementById("hullFactor").value);
+
+let hullFactor;
+
+if(!manualHullFactor){
+
+if(dwt < 20000)
+hullFactor = 0.67;
+
+else if(dwt < 40000)
+hullFactor = 0.75;
+
+else if(dwt <= 100000)
+hullFactor = 0.85;
+
+else
+hullFactor = 0.90;
+
+document.getElementById("hullFactor").value =
+hullFactor;
+
+}
+else{
+
+hullFactor = manualHullFactor;
+
+}
+
+let heightOfTopside =
+height - draught;
+
+let flatBottom =
+lbp * breadth * hullFactor;
+
+let verticalSides =
+2 * draught * loa;
+
+let boottop =
+2 * boottopHeight *
+(lbp + (0.5 * breadth));
+
+let topside =
+2 * heightOfTopside *
+(loa + (0.5 * breadth));
+
+topside =
+topside * 1.10;
+
+let totalArea =
+flatBottom +
+verticalSides +
+boottop +
+topside;
+
+flatBottomValue =
+flatBottom;
+
+verticalSidesValue =
+verticalSides;
+
+boottopValue =
+boottop;
+
+topsideValue =
+topside;
+
+totalAreaValue =
+totalArea;
+
+document.getElementById("topsideHeight").innerHTML =
+heightOfTopside.toFixed(1) + " m";
+
+document.getElementById("flatBottom").innerHTML =
+flatBottom.toFixed(0) + " m²";
+
+document.getElementById("verticalSides").innerHTML =
+verticalSides.toFixed(0) + " m²";
+
+document.getElementById("boottop").innerHTML =
+boottop.toFixed(0) + " m²";
+
+document.getElementById("topside").innerHTML =
+topside.toFixed(0) + " m²";
+
+document.getElementById("totalArea").innerHTML =
+totalArea.toFixed(0) + " m²";
 
 }
 
