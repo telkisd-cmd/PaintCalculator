@@ -61,7 +61,7 @@ SUMMARY
 
 <p>Coating Mode</p>
 
-<select id="coatMode">
+<select id="coatMode" onchange="toggleCoatMode()">
 
 <option>1 Coat</option>
 
@@ -69,25 +69,23 @@ SUMMARY
 
 </select>
 
+<div id="coatSelector" style="display:none;">
+
 <p>Coat Number</p>
 
 <select id="coatNumber">
 
 <option>1st Coat</option>
-
 <option>2nd Coat</option>
-
 <option>3rd Coat</option>
-
 <option>4th Coat</option>
-
 <option>5th Coat</option>
-
 <option>6th Coat</option>
-
 <option>7th Coat</option>
 
 </select>
+
+</div>
 
 <p>Solids (%)</p>
 <input id="solids" type="number">
