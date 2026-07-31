@@ -320,6 +320,10 @@ ${flatBottom.toFixed(0)} m²
 SEND TO PAINT
 </button>
 
+<button onclick="sendHullToSummary('Flat Bottom',${flatBottom})">
+SEND TO SUMMARY
+</button>
+
 </div>
 
 <div class="card">
@@ -332,6 +336,10 @@ ${verticalSides.toFixed(0)} m²
 
 <button onclick="sendAreaToPaint(${verticalSides})">
 SEND TO PAINT
+</button>
+
+<button onclick="sendHullToSummary('Vertical Sides',${verticalSides})">
+SEND TO SUMMARY
 </button>
 
 </div>
@@ -348,6 +356,10 @@ ${boottop.toFixed(0)} m²
 SEND TO PAINT
 </button>
 
+<button onclick="sendHullToSummary('Boottop',${boottop})">
+SEND TO SUMMARY
+</button>
+
 </div>
 
 <div class="card">
@@ -362,6 +374,10 @@ ${topside.toFixed(0)} m²
 SEND TO PAINT
 </button>
 
+<button onclick="sendHullToSummary('Topside',${topside})">
+SEND TO SUMMARY
+</button>
+
 </div>
 
 <div class="card">
@@ -374,6 +390,10 @@ ${totalArea.toFixed(0)} m²
 
 <button onclick="sendAreaToPaint(${totalArea})">
 SEND TO PAINT
+</button>
+
+<button onclick="sendHullToSummary('Total Area',${totalArea})">
+SEND TO SUMMARY
 </button>
 
 </div>
@@ -485,4 +505,23 @@ function renderSummary(){
   document.getElementById(
     "summaryContent"
   ).innerHTML = html;
+}
+
+function sendHullToSummary(position, area){
+
+  if(!summaryData.positions[position]){
+
+    summaryData.positions[position] = {
+
+      area: area,
+      coats: {}
+
+    };
+
+  }
+
+  summaryData.positions[position].area = area;
+
+  renderSummary();
+
 }
