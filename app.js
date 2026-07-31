@@ -525,3 +525,62 @@ function sendHullToSummary(position, area){
   renderSummary();
 
 }
+
+function getJtsValue(position){
+
+  if(position==="Flat Bottom")
+    return parseFloat(document.getElementById("jtsFlatBottom").value) || 0;
+
+  if(position==="Vertical Sides")
+    return parseFloat(document.getElementById("jtsVerticalSides").value) || 0;
+
+  if(position==="Boottop")
+    return parseFloat(document.getElementById("jtsBoottop").value) || 0;
+
+  if(position==="Topside")
+    return parseFloat(document.getElementById("jtsTopside").value) || 0;
+
+  if(position==="Other")
+    return parseFloat(document.getElementById("jtsOther").value) || 0;
+
+  return 0;
+
+}
+
+function jtsToPaint(position){
+
+  let area =
+    getJtsValue(position);
+
+  document.getElementById("area").value =
+    area;
+
+  document.getElementById("paintPosition").value =
+    position;
+
+  showTab("paint");
+
+}
+
+function jtsToSummary(position){
+
+  let area =
+    getJtsValue(position);
+
+  if(!summaryData.positions[position]){
+
+    summaryData.positions[position] = {
+
+      area: area,
+      coats: {}
+
+    };
+
+  }
+
+  summaryData.positions[position].area =
+    area;
+
+  renderSummary();
+
+}
