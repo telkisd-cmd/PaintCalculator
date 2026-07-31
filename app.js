@@ -817,9 +817,53 @@ function clearProject(){
     totalDrums:0
   };
 
+  currentPaintResult = {
+    position:"",
+    coat:"",
+    litres:0,
+    drums:0,
+    area:0
+  };
+
+  // SUMMARY
+
   document.getElementById("vesselName").value = "";
   document.getElementById("imo").value = "";
   document.getElementById("location").value = "";
+
+  // PAINT
+
+  document.getElementById("solids").value = "";
+  document.getElementById("loss").value = "";
+  document.getElementById("dft").value = "";
+  document.getElementById("area").value = "";
+  document.getElementById("drum").value = "";
+
+  document.getElementById("r1").innerHTML = "0";
+  document.getElementById("r2").innerHTML = "0";
+  document.getElementById("litres").innerHTML = "0";
+  document.getElementById("drums").innerHTML = "0";
+
+  // HULL
+
+  document.getElementById("loa").value = "";
+  document.getElementById("lbp").value = "";
+  document.getElementById("breadth").value = "";
+  document.getElementById("draught").value = "";
+  document.getElementById("height").value = "";
+  document.getElementById("dwt").value = "";
+  document.getElementById("boottopHeight").value = "";
+  document.getElementById("hullFactor").value = "";
+
+  document.getElementById("hullResults").innerHTML = "";
+
+  // JTS
+
+  document.getElementById("jtsFlatBottom").value = "";
+  document.getElementById("jtsVerticalSides").value = "";
+  document.getElementById("jtsBoottop").value = "";
+  document.getElementById("jtsTopside").value = "";
+  document.getElementById("jtsOther").value = "";
 
   localStorage.removeItem(
     "paintCalculatorSummary"
@@ -974,6 +1018,30 @@ async function sharePDF(){
   catch(error){
 
     console.log(error);
+
+  }
+
+}
+
+function toggleCoatMode(){
+
+  let mode =
+    document.getElementById("coatMode").value;
+
+  let selector =
+    document.getElementById("coatSelector");
+
+  if(mode === "Multi Coat"){
+
+    selector.style.display = "block";
+
+  }
+  else{
+
+    selector.style.display = "none";
+
+    document.getElementById("coatNumber").value =
+      "1st Coat";
 
   }
 
