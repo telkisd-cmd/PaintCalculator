@@ -118,3 +118,14 @@ width:50%;
 padding:8px;
 font-size:12px;
 }
+
+.subTitle{
+font-size:14px;
+font-weight:normal;
+color:#B0B0B0;
+}
+
+.tabSmall{
+font-size:10px;
+font-weight:normal;
+}
