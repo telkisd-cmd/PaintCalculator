@@ -830,3 +830,38 @@ function clearProject(){
   alert("Project Cleared");
 
 }
+
+async function shareReport(){
+
+  try{
+
+    if(navigator.share){
+
+      await navigator.share({
+
+        title:
+        "Coating Estimation Report",
+
+        text:
+        "Coating Estimation Report for " +
+        document.getElementById("vesselName").value
+
+      });
+
+    }
+    else{
+
+      alert(
+        "Sharing not supported on this device"
+      );
+
+    }
+
+  }
+  catch(error){
+
+    console.log(error);
+
+  }
+
+}
