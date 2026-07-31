@@ -316,14 +316,14 @@ ${topsideHeight.toFixed(1)} m
 
 <div class="result">
 ${flatBottom.toFixed(0)} m²
-</div>
+<div class="actionButtons">
 
 <button onclick="sendAreaToPaint(${flatBottom})">
-SEND TO PAINT
+PAINT
 </button>
 
 <button onclick="sendHullToSummary('Flat Bottom',${flatBottom})">
-SEND TO SUMMARY
+SUMMARY
 </button>
 
 </div>
@@ -334,14 +334,14 @@ SEND TO SUMMARY
 
 <div class="result">
 ${verticalSides.toFixed(0)} m²
-</div>
+<div class="actionButtons">
 
 <button onclick="sendAreaToPaint(${verticalSides})">
-SEND TO PAINT
+PAINT
 </button>
 
 <button onclick="sendHullToSummary('Vertical Sides',${verticalSides})">
-SEND TO SUMMARY
+SUMMARY
 </button>
 
 </div>
@@ -352,14 +352,14 @@ SEND TO SUMMARY
 
 <div class="result">
 ${boottop.toFixed(0)} m²
-</div>
+<div class="actionButtons">
 
 <button onclick="sendAreaToPaint(${boottop})">
-SEND TO PAINT
+PAINT
 </button>
 
 <button onclick="sendHullToSummary('Boottop',${boottop})">
-SEND TO SUMMARY
+SUMMARY
 </button>
 
 </div>
@@ -370,14 +370,14 @@ SEND TO SUMMARY
 
 <div class="result">
 ${topside.toFixed(0)} m²
-</div>
+<div class="actionButtons">
 
 <button onclick="sendAreaToPaint(${topside})">
-SEND TO PAINT
+PAINT
 </button>
 
 <button onclick="sendHullToSummary('Topside',${topside})">
-SEND TO SUMMARY
+SUMMARY
 </button>
 
 </div>
@@ -388,14 +388,14 @@ SEND TO SUMMARY
 
 <div class="result">
 ${totalArea.toFixed(0)} m²
-</div>
+<div class="actionButtons">
 
 <button onclick="sendAreaToPaint(${totalArea})">
-SEND TO PAINT
+PAINT
 </button>
 
 <button onclick="sendHullToSummary('Total Area',${totalArea})">
-SEND TO SUMMARY
+SUMMARY
 </button>
 
 </div>
