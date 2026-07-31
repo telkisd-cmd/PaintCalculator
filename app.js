@@ -647,6 +647,18 @@ function loadSummary(){
 
 function exportPDF(){
 
+  let vesselName =
+    document.getElementById("vesselName").value.trim();
+
+  if(vesselName === ""){
+
+    alert(
+      "Please enter Vessel Name before exporting PDF."
+    );
+
+    return;
+  }
+  
   const { jsPDF } = window.jspdf;
 
   const doc = new jsPDF();
@@ -656,10 +668,11 @@ function exportPDF(){
   doc.setFontSize(18);
 
   doc.text(
-    "COATING ESTIMATION REPORT",
-    20,
-    y
-  );
+  vesselName.toUpperCase() +
+  " COATING ESTIMATION REPORT",
+  20,
+  y
+);
 
   y += 15;
 
@@ -800,9 +813,13 @@ function exportPDF(){
     y
   );
 
-  doc.save(
-    "Coating_Estimation_Report.pdf"
-  );
+  let fileName =
+  vesselName.replaceAll(" ","_");
+
+doc.save(
+  fileName +
+  "_Coating_Estimation_Report.pdf"
+);
 
 }
 
@@ -876,6 +893,18 @@ function clearProject(){
 }
 
 async function sharePDF(){
+
+  let vesselName =
+    document.getElementById("vesselName").value.trim();
+
+  if(vesselName === ""){
+
+    alert(
+      "Please enter Vessel Name before sharing PDF."
+    );
+
+    return;
+  }
 
   try{
 
