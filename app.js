@@ -1007,34 +1007,39 @@ async function sharePDF(){
     }
 
     const pdfBlob =
-      doc.output("blob");
+  doc.output("blob");
 
-    const pdfFile =
-      new File(
-        [pdfBlob],
-        "Coating_Estimation_Report.pdf",
-        {
-          type:"application/pdf"
-        }
-      );
+let fileName =
+  vesselName.replaceAll(" ","_");
 
-    if(
-      navigator.canShare &&
-      navigator.canShare({
-        files:[pdfFile]
-      })
-    ){
-
-      await navigator.share({
-
-        title:
-        "Coating Estimation Report",
-
-        files:[pdfFile]
-
-      });
-
+const pdfFile =
+  new File(
+    [pdfBlob],
+    fileName +
+    "_Coating_Estimation_Report.pdf",
+    {
+      type:"application/pdf"
     }
+  );
+
+if(
+  navigator.canShare &&
+  navigator.canShare({
+    files:[pdfFile]
+  })
+){
+
+  await navigator.share({
+
+    title:
+    vesselName +
+    " Coating Estimation Report",
+
+    files:[pdfFile]
+
+  });
+
+}
     else{
 
       alert(
