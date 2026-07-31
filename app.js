@@ -644,3 +644,164 @@ function loadSummary(){
   renderSummary();
 
 }
+
+function exportPDF(){
+
+  const { jsPDF } = window.jspdf;
+
+  const doc = new jsPDF();
+
+  let y = 20;
+
+  doc.setFontSize(18);
+
+  doc.text(
+    "COATING ESTIMATION REPORT",
+    20,
+    y
+  );
+
+  y += 15;
+
+  doc.setFontSize(12);
+
+  doc.text(
+    "Date: " +
+    document.getElementById("reportDate").value,
+    20,
+    y
+  );
+
+  y += 10;
+
+  doc.text(
+    "Vessel: " +
+    document.getElementById("vesselName").value,
+    20,
+    y
+  );
+
+  y += 10;
+
+  doc.text(
+    "IMO: " +
+    document.getElementById("imo").value,
+    20,
+    y
+  );
+
+  y += 10;
+
+  doc.text(
+    "Location: " +
+    document.getElementById("location").value,
+    20,
+    y
+  );
+
+  y += 15;
+
+  let totalLitres = 0;
+  let totalDrums = 0;
+
+  for(let position in summaryData.positions){
+
+    let item =
+      summaryData.positions[position];
+
+    doc.setFontSize(14);
+
+    doc.text(
+      position,
+      20,
+      y
+    );
+
+    y += 8;
+
+    doc.setFontSize(11);
+
+    doc.text(
+      "Area: " +
+      item.area.toFixed(0) +
+      " m2",
+      20,
+      y
+    );
+
+    y += 8;
+
+    for(let coat in item.coats){
+
+      let coatData =
+        item.coats[coat];
+
+      totalLitres +=
+        coatData.litres;
+
+      totalDrums +=
+        coatData.drums;
+
+      doc.text(
+        coat +
+        " | Litres: " +
+        coatData.litres.toFixed(1) +
+        " | Drums: " +
+        coatData.drums,
+        25,
+        y
+      );
+
+      y += 8;
+
+      if(y > 270){
+
+        doc.addPage();
+
+        y = 20;
+
+      }
+
+    }
+
+    y += 6;
+
+  }
+
+  doc.setFontSize(16);
+
+  doc.text(
+    "TOTAL PROJECT LITRES",
+    20,
+    y
+  );
+
+  y += 10;
+
+  doc.text(
+    totalLitres.toFixed(1),
+    20,
+    y
+  );
+
+  y += 15;
+
+  doc.text(
+    "TOTAL PROJECT DRUMS",
+    20,
+    y
+  );
+
+  y += 10;
+
+  doc.text(
+    Math.ceil(totalDrums).toString(),
+    20,
+    y
+  );
+
+  doc.save(
+    "Coating_Estimation_Report.pdf"
+  );
+
+}
