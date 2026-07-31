@@ -397,3 +397,92 @@ function sendAreaToPaint(area){
   showTab("paint");
 
 }
+
+// ------------------------
+// SUMMARY
+// ------------------------
+
+function renderSummary(){
+
+  let html = "";
+
+  let totalLitres = 0;
+  let totalDrums = 0;
+
+  for(let position in summaryData.positions){
+
+    let item =
+      summaryData.positions[position];
+
+    html += `
+    <div class="summarySection">
+
+      <div class="summaryTitle">
+      ${position}
+      </div>
+
+      <p>
+      Area:
+      ${item.area.toFixed(0)} m²
+      </p>
+    `;
+
+    for(let coat in item.coats){
+
+      let coatData =
+        item.coats[coat];
+
+      totalLitres +=
+        coatData.litres;
+
+      totalDrums +=
+        coatData.drums;
+
+      html += `
+      <p>
+
+      <strong>${coat}</strong>
+
+      <br>
+
+      Litres:
+      ${coatData.litres.toFixed(1)}
+
+      <br>
+
+      Drums:
+      ${coatData.drums}
+
+      </p>
+      `;
+    }
+
+    html += `
+    </div>
+    `;
+  }
+
+  html += `
+  <div class="totalBox">
+
+  TOTAL PROJECT LITRES
+
+  <br><br>
+
+  ${totalLitres.toFixed(1)}
+
+  <br><br>
+
+  TOTAL PROJECT DRUMS
+
+  <br><br>
+
+  ${Math.ceil(totalDrums)}
+
+  </div>
+  `;
+
+  document.getElementById(
+    "summaryContent"
+  ).innerHTML = html;
+}
