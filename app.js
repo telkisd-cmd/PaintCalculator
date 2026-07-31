@@ -702,6 +702,19 @@ function exportPDF(){
 
   doc.setFontSize(12);
 
+if(vesselPhotoData){
+
+  doc.addImage(
+    vesselPhotoData,
+    "JPEG",
+    130,
+    15,
+    60,
+    45
+  );
+
+}
+  
   doc.text(
     "Date: " +
     document.getElementById("reportDate").value,
@@ -736,7 +749,7 @@ function exportPDF(){
     y
   );
 
-  y += 15;
+  y += 30;
 
   let totalLitres = 0;
   let totalDrums = 0;
@@ -972,6 +985,19 @@ async function sharePDF(){
 
     doc.setFontSize(12);
 
+if(vesselPhotoData){
+
+  doc.addImage(
+    vesselPhotoData,
+    "JPEG",
+    130,
+    15,
+    60,
+    45
+  );
+
+}
+    
     doc.text(
       "Date: " +
       document.getElementById("reportDate").value,
