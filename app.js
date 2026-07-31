@@ -805,3 +805,28 @@ function exportPDF(){
   );
 
 }
+
+function clearProject(){
+
+  if(!confirm("Clear current project?"))
+    return;
+
+  summaryData = {
+    positions:{},
+    totalLitres:0,
+    totalDrums:0
+  };
+
+  document.getElementById("vesselName").value = "";
+  document.getElementById("imo").value = "";
+  document.getElementById("location").value = "";
+
+  localStorage.removeItem(
+    "paintCalculatorSummary"
+  );
+
+  renderSummary();
+
+  alert("Project Cleared");
+
+}
