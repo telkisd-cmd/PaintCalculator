@@ -34,6 +34,8 @@ window.onload = function(){
     dateField.value = formattedDate;
   }
 
+  loadSummary();
+
 };
 
 // ------------------------
@@ -580,6 +582,64 @@ function jtsToSummary(position){
 
   summaryData.positions[position].area =
     area;
+
+  renderSummary();
+
+}
+
+function saveSummary(){
+
+  let projectData = {
+
+    vessel:
+      document.getElementById("vesselName").value,
+
+    imo:
+      document.getElementById("imo").value,
+
+    location:
+      document.getElementById("location").value,
+
+    summary:
+      summaryData
+
+  };
+
+  localStorage.setItem(
+    "paintCalculatorSummary",
+    JSON.stringify(projectData)
+  );
+
+  alert("Summary Saved");
+
+}
+
+function loadSummary(){
+
+  let savedData =
+    localStorage.getItem(
+      "paintCalculatorSummary"
+    );
+
+  if(!savedData)
+    return;
+
+  let projectData =
+    JSON.parse(savedData);
+
+  document.getElementById("vesselName").value =
+    projectData.vessel || "";
+
+  document.getElementById("imo").value =
+    projectData.imo || "";
+
+  document.getElementById("location").value =
+    projectData.location || "";
+
+  summaryData =
+    projectData.summary || {
+      positions:{}
+    };
 
   renderSummary();
 
