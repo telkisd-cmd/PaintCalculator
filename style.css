@@ -16,6 +16,13 @@ flex-wrap:wrap;
 .tabs button{
 flex:1;
 min-width:120px;
+height:60px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+line-height:1.1;
+padding:5px;
 }
 
 h1{
@@ -141,4 +148,10 @@ flex:1;
 height:60px;
 font-size:28px;
 padding:0;
+}
+
+.tabSmall{
+font-size:10px;
+font-weight:normal;
+color:#cccccc;
 }
