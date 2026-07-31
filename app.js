@@ -717,18 +717,29 @@ function exportPDF(){
   let totalLitres = 0;
   let totalDrums = 0;
 
-  for(let position in summaryData.positions){
+for(let position in summaryData.positions){
 
-    let item =
-      summaryData.positions[position];
+  let item =
+    summaryData.positions[position];
 
-    doc.setFontSize(14);
+  doc.setLineWidth(1);
 
-    doc.text(
-      position,
-      20,
-      y
-    );
+  doc.line(
+    15,
+    y,
+    195,
+    y
+  );
+
+  y += 8;
+
+  doc.setFontSize(14);
+
+  doc.text(
+    position,
+    20,
+    y
+  );
 
     y += 8;
 
@@ -755,17 +766,28 @@ function exportPDF(){
       totalDrums +=
         coatData.drums;
 
-      doc.text(
-        coat +
-        " | Litres: " +
-        coatData.litres.toFixed(1) +
-        " | Drums: " +
-        coatData.drums,
-        25,
-        y
-      );
+     doc.text(
+  coat +
+  " | Litres: " +
+  coatData.litres.toFixed(1) +
+  " | Drums: " +
+  coatData.drums,
+  25,
+  y
+);
 
-      y += 8;
+y += 4;
+
+doc.setLineWidth(0.2);
+
+doc.line(
+  25,
+  y,
+  185,
+  y
+);
+
+y += 4;
 
       if(y > 270){
 
