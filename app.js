@@ -967,6 +967,21 @@ async function sharePDF(){
       let item =
         summaryData.positions[position];
 
+      // Thick separator between positions
+
+doc.setLineWidth(0.8);
+
+doc.line(
+  15,
+  y,
+  195,
+  y
+);
+
+y += 8;
+      
+      doc.setFontSize(14);
+      
       doc.text(
         position,
         20,
@@ -999,7 +1014,22 @@ async function sharePDF(){
           25,
           y
         );
+        
+y += 4;
 
+// Thin separator between coats
+
+doc.setLineWidth(0.2);
+
+doc.line(
+  25,
+  y,
+  185,
+  y
+);
+
+y += 4;
+        
         y += 8;
       }
 
