@@ -196,3 +196,12 @@ flex-direction:column;
 gap:20px;
 font-weight:bold;
 }
+
+.pdpSideTitles{
+display:flex;
+justify-content:space-around;
+margin-top:20px;
+margin-bottom:10px;
+font-weight:bold;
+color:#4db8ff;
+}
