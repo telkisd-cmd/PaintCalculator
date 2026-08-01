@@ -1309,6 +1309,26 @@ function clearCalc(){
 
 }
 
+function deleteLast(){
+
+  calcValue =
+    calcValue.slice(0,-1);
+
+  if(calcValue === ""){
+
+    document.getElementById(
+      "calcDisplay"
+    ).value = "0";
+
+    return;
+  }
+
+  document.getElementById(
+    "calcDisplay"
+  ).value = calcValue;
+
+}
+
 function copyResult(){
 
   navigator.clipboard.writeText(
