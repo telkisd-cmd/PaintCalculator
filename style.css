@@ -178,24 +178,26 @@ margin-bottom:10px;
 
 .pdpSideTitles{
 display:flex;
-justify-content:space-around;
-margin-top:20px;
-margin-bottom:10px;
+justify-content:space-between;
+max-width:900px;
+margin:20px auto;
 font-weight:bold;
-color:#4db8ff;
+font-size:20px;
+color:#4FC3F7;
 }
 
 .vesselOutline{
 display:flex;
 justify-content:center;
 align-items:center;
-gap:50px;
+gap:60px;
 margin-top:20px;
 }
 
 .outlineImage{
 width:250px;
 height:auto;
+display:block;
 }
 
 .stationColumn{
@@ -204,16 +206,6 @@ flex-direction:column;
 justify-content:space-around;
 height:350px;
 font-weight:bold;
-font-size:24px;
-color:#4FC3F7;
-}
-
-.pdpSideTitles{
-display:flex;
-justify-content:space-around;
-margin-top:20px;
-margin-bottom:20px;
-font-weight:bold;
-font-size:24px;
+font-size:20px;
 color:#4FC3F7;
 }
