@@ -60,6 +60,9 @@ function showTab(tab){
   document.getElementById("summaryTab").style.display =
     "none";
 
+document.getElementById("calculatorTab").style.display =
+  "none";
+  
   if(tab==="paint")
     document.getElementById("paintTab").style.display =
       "block";
@@ -72,6 +75,10 @@ function showTab(tab){
     document.getElementById("jtsTab").style.display =
       "block";
 
+if(tab==="calculator")
+  document.getElementById("calculatorTab").style.display =
+    "block";
+  
   if(tab==="summary")
     document.getElementById("summaryTab").style.display =
       "block";
@@ -1252,5 +1259,71 @@ function initializePhotoUpload(){
 
     }
   );
+
+}
+
+let calcValue = "";
+
+function calcPress(value){
+
+  if(
+    document.getElementById("calcDisplay").value === "0"
+  ){
+    calcValue = value;
+  }
+  else{
+    calcValue += value;
+  }
+
+  document.getElementById("calcDisplay").value =
+    calcValue;
+
+}
+
+function calculateResult(){
+
+  try{
+
+    calcValue =
+      eval(calcValue).toString();
+
+    document.getElementById("calcDisplay").value =
+      calcValue;
+
+  }
+  catch{
+
+    document.getElementById("calcDisplay").value =
+      "Error";
+
+  }
+
+}
+
+function clearCalc(){
+
+  calcValue = "";
+
+  document.getElementById("calcDisplay").value =
+    "0";
+
+}
+
+function copyResult(){
+
+  navigator.clipboard.writeText(
+    document.getElementById("calcDisplay").value
+  );
+
+  alert("Result Copied");
+
+}
+
+function sendToArea(){
+
+  document.getElementById("area").value =
+    document.getElementById("calcDisplay").value;
+
+  showTab("paint");
 
 }
