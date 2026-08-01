@@ -155,3 +155,23 @@ font-size:10px;
 font-weight:normal;
 color:#cccccc;
 }
+
+.calcGrid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:8px;
+margin-top:15px;
+margin-bottom:15px;
+}
+
+.calcGrid button{
+height:55px;
+font-size:20px;
+}
+
+#calcDisplay{
+width:100%;
+font-size:28px;
+text-align:right;
+margin-bottom:10px;
+}
