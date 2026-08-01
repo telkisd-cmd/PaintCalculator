@@ -38,6 +38,18 @@ JTS
 <button onclick="showTab('calculator')">
 CALCULATOR
 </button>
+
+<button onclick="showTab('calculator')">
+CALCULATOR
+</button>
+
+<button onclick="showTab('pdp')">
+PDP
+</button>
+
+<button onclick="showTab('summary')">
+SUMMARY
+</button>
   
 <button onclick="showTab('summary')">
 SUMMARY
@@ -344,6 +356,86 @@ COPY RESULT
 
 <button onclick="sendToArea()">
 SEND TO AREA
+</button>
+
+</div>
+
+<!-- PDP -->
+
+<div id="pdpTab" style="display:none;">
+
+<h1>PAINT DISTRIBUTION PLAN</h1>
+
+<p>Total Spray Stations</p>
+
+<input
+id="totalStations"
+type="number"
+min="1">
+
+<div id="extraStationBox" style="display:none;">
+
+<p>Extra Station Side</p>
+
+<label>
+<input
+type="radio"
+name="extraSide"
+value="port"
+checked>
+Port Side
+</label>
+
+<br>
+
+<label>
+<input
+type="radio"
+name="extraSide"
+value="starboard">
+Starboard Side
+</label>
+
+</div>
+
+<br>
+
+<div class="vesselOutline">
+
+<div class="stationColumn">
+
+<div>ST1</div>
+<div>ST2</div>
+<div>ST3</div>
+<div>ST4</div>
+
+</div>
+
+VESSEL OUTLINE.png
+
+<div class="stationColumn">
+
+<div>ST5</div>
+<div>ST6</div>
+<div>ST7</div>
+<div>ST8</div>
+
+</div>
+
+</div>
+
+<br>
+
+<button>
+GENERATE PDP
+</button>
+
+<button>
+EXPORT PDP PDF
+</button>
+
+<button>
+SHARE PDP PDF
 </button>
 
 </div>
