@@ -692,7 +692,6 @@ function exportPDF(){
   doc.setFontSize(18);
 
   doc.text(
-  vesselName.toUpperCase() +
   " COATING ESTIMATION REPORT",
   20,
   y
@@ -981,79 +980,87 @@ async function sharePDF(){
       y
     );
 
-    y += 15;
+    // INFO AREA
+
+    doc.rect(
+      15,
+      30,
+      95,
+      50
+    );
+
+    doc.rect(
+      110,
+      30,
+      85,
+      50
+    );
 
     doc.setFontSize(12);
 
-if(vesselPhotoData){
-
-  doc.addImage(
-    vesselPhotoData,
-    "JPEG",
-    130,
-    15,
-    60,
-    45
-  );
-
-}
-    
     doc.text(
-      "Date: " +
-      document.getElementById("reportDate").value,
-      20,
-      y
-    );
-
-    y += 10;
-
-    doc.text(
-      "Vessel: " +
+      "Vessel : " +
       document.getElementById("vesselName").value,
       20,
-      y
+      42
     );
 
-    y += 10;
-
     doc.text(
-      "IMO: " +
+      "IMO : " +
       document.getElementById("imo").value,
       20,
-      y
+      54
     );
-
-    y += 10;
 
     doc.text(
-      "Location: " +
+      "Port : " +
       document.getElementById("location").value,
       20,
-      y
+      66
     );
 
-    y += 15;
+    doc.text(
+      "Date : " +
+      document.getElementById("reportDate").value,
+      20,
+      78
+    );
+
+    if(vesselPhotoData){
+
+      doc.addImage(
+        vesselPhotoData,
+        "JPEG",
+        113,
+        33,
+        79,
+        44
+      );
+
+    }
+
+    y = 95;
 
     for(let position in summaryData.positions){
 
       let item =
         summaryData.positions[position];
 
-      // Thick separator between positions
+      // Thick line between positions
 
-doc.setLineWidth(0.8);
+      doc.setLineWidth(0.8);
 
-doc.line(
-  15,
-  y,
-  195,
-  y
-);
+      doc.line(
+        15,
+        y,
+        195,
+        y
+      );
 
-y += 8;
-      
+      y += 8;
+
       doc.setFontSize(14);
-      
+
       doc.text(
         position,
         20,
@@ -1061,6 +1068,8 @@ y += 8;
       );
 
       y += 8;
+
+      doc.setFontSize(11);
 
       doc.text(
         "Area: " +
@@ -1070,7 +1079,7 @@ y += 8;
         y
       );
 
-      y += 8;
+      y += 10;
 
       for(let coat in item.coats){
 
@@ -1086,62 +1095,76 @@ y += 8;
           25,
           y
         );
-        
-y += 4;
 
-// Thin separator between coats
+        y += 4;
 
-doc.setLineWidth(0.2);
+        doc.setLineWidth(0.2);
 
-doc.line(
-  25,
-  y,
-  185,
-  y
-);
+        doc.line(
+          25,
+          y,
+          185,
+          y
+        );
 
-y += 4;
-        
         y += 8;
+
+        if(y > 270){
+
+          doc.addPage();
+
+          y = 20;
+
+        }
+
       }
 
-      y += 5;
+      y += 8;
+
+      if(y > 270){
+
+        doc.addPage();
+
+        y = 20;
+
+      }
+
     }
 
     const pdfBlob =
-  doc.output("blob");
+      doc.output("blob");
 
-let fileName =
-  vesselName.replaceAll(" ","_");
+    let fileName =
+      vesselName.replaceAll(" ","_");
 
-const pdfFile =
-  new File(
-    [pdfBlob],
-    fileName +
-    "_Coating_Estimation_Report.pdf",
-    {
-      type:"application/pdf"
+    const pdfFile =
+      new File(
+        [pdfBlob],
+        fileName +
+        "_Coating_Estimation_Report.pdf",
+        {
+          type:"application/pdf"
+        }
+      );
+
+    if(
+      navigator.canShare &&
+      navigator.canShare({
+        files:[pdfFile]
+      })
+    ){
+
+      await navigator.share({
+
+        title:
+        vesselName +
+        " Coating Estimation Report",
+
+        files:[pdfFile]
+
+      });
+
     }
-  );
-
-if(
-  navigator.canShare &&
-  navigator.canShare({
-    files:[pdfFile]
-  })
-){
-
-  await navigator.share({
-
-    title:
-    vesselName +
-    " Coating Estimation Report",
-
-    files:[pdfFile]
-
-  });
-
-}
     else{
 
       alert(
