@@ -1311,21 +1311,31 @@ function clearCalc(){
 
 function deleteLast(){
 
-  calcValue =
-    calcValue.slice(0,-1);
+  let display =
+    document.getElementById("calcDisplay");
 
-  if(calcValue === ""){
+  let currentValue =
+    display.value;
 
-    document.getElementById(
-      "calcDisplay"
-    ).value = "0";
-
+  if(
+    currentValue === "0" ||
+    currentValue === "Error"
+  ){
     return;
   }
 
-  document.getElementById(
-    "calcDisplay"
-  ).value = calcValue;
+  currentValue =
+    currentValue.slice(0,-1);
+
+  if(currentValue === ""){
+
+    currentValue = "0";
+
+  }
+
+  calcValue = currentValue;
+
+  display.value = currentValue;
 
 }
 
