@@ -35,6 +35,10 @@ JTS
 </span>
 </button>
 
+<button onclick="showTab('calculator')">
+CALCULATOR
+</button>
+  
 <button onclick="showTab('summary')">
 SUMMARY
 </button>
@@ -289,6 +293,55 @@ SUMMARY
 
 </div>
 
+<!-- CALCULATOR -->
+
+<div id="calculatorTab" style="display:none;">
+
+<h1>CALCULATOR</h1>
+
+<input
+id="calcDisplay"
+value="0"
+readonly>
+
+<div class="calcGrid">
+
+<button onclick="calcPress('7')">7</button>
+<button onclick="calcPress('8')">8</button>
+<button onclick="calcPress('9')">9</button>
+<button onclick="calcPress('/')">÷</button>
+
+<button onclick="calcPress('4')">4</button>
+<button onclick="calcPress('5')">5</button>
+<button onclick="calcPress('6')">6</button>
+<button onclick="calcPress('*')">×</button>
+
+<button onclick="calcPress('1')">1</button>
+<button onclick="calcPress('2')">2</button>
+<button onclick="calcPress('3')">3</button>
+<button onclick="calcPress('-')">-</button>
+
+<button onclick="calcPress('0')">0</button>
+<button onclick="calcPress('.')">.</button>
+<button onclick="calculateResult()">=</button>
+<button onclick="calcPress('+')">+</button>
+
+</div>
+
+<button onclick="clearCalc()">
+CLEAR
+</button>
+
+<button onclick="copyResult()">
+COPY RESULT
+</button>
+
+<button onclick="sendToArea()">
+SEND TO AREA
+</button>
+
+</div>
+  
 <!-- SUMMARY -->
 
 <div id="summaryTab" style="display:none;">
