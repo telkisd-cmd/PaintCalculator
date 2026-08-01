@@ -185,9 +185,9 @@ margin-top:20px;
 }
 
 .outlineImage{
-width:220px;
+width:320px;
 height:auto;
-filter:brightness(0) invert(1);
+display:block;
 }
 
 .stationColumn{
