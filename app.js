@@ -60,6 +60,9 @@ function showTab(tab){
   document.getElementById("summaryTab").style.display =
     "none";
 
+document.getElementById("pdpTab").style.display =
+  "none";
+  
 document.getElementById("calculatorTab").style.display =
   "none";
   
@@ -77,6 +80,10 @@ document.getElementById("calculatorTab").style.display =
 
 if(tab==="calculator")
   document.getElementById("calculatorTab").style.display =
+    "block";
+
+if(tab==="pdp")
+  document.getElementById("pdpTab").style.display =
     "block";
   
   if(tab==="summary")
