@@ -1715,39 +1715,52 @@ let detailHtml = "";
 
   `;
 
-  let drumsPerStation =
-    zone.stations > 0
-      ? Math.round(
-          zone.drums /
-          zone.stations
-        )
-      : 0;
+ let baseDrumsPerStation =
+  Math.floor(
+    zone.drums /
+    zone.stations
+  );
 
-  for(
-    let i = 1;
-    i <= zone.stations;
-    i++
-  ){
+let remainingDrums =
+  zone.drums %
+  zone.stations;
 
-    detailHtml += `
+for(
+  let i = 1;
+  i <= zone.stations;
+  i++
+){
 
-    <p>
+  let stationDrums =
+    baseDrumsPerStation;
 
-    ${zone.prefix}${i}
+  if(remainingDrums > 0){
 
-    |
+    stationDrums++;
 
-    ${spraysPerStation} Sprays
-
-    |
-
-    ${drumsPerStation} Drums
-
-    </p>
-
-    `;
+    remainingDrums--;
 
   }
+
+  detailHtml += `
+
+  <p>
+
+  ${zone.prefix}${i}
+
+  |
+
+  ${spraysPerStation} Sprays
+
+  |
+
+  ${stationDrums} Drums
+
+  </p>
+
+  `;
+
+}
 
   detailHtml += `
 
