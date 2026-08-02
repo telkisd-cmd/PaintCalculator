@@ -242,3 +242,16 @@ color:#4FC3F7;
   background:#111;
 
 }
+
+
+.detailCard hr{
+
+  border:0;
+
+  height:3px;
+
+  background:#1e88e5;
+
+  margin-bottom:15px;
+
+}
