@@ -1864,6 +1864,244 @@ ${starboardStations}
 
 }
 
+function getLatestPDPItem(){
+
+  if(pdpData.length === 0)
+    return null;
+
+  return pdpData[
+    pdpData.length - 1
+  ];
+
+}
+
+function exportPDPPDF(){
+
+  let latest =
+    getLatestPDPItem();
+
+  if(!latest){
+
+    alert(
+      "Add Paint To PDP First"
+    );
+
+    return;
+
+  }
+
+  const { jsPDF } =
+    window.jspdf;
+
+  const doc =
+    new jsPDF();
+
+  let y = 20;
+
+  let vesselName =
+    document.getElementById(
+      "vesselName"
+    ).value || "-";
+
+  let paintDescription =
+    document.getElementById(
+      "paintDescription"
+    ).value || "-";
+
+  let comments =
+    document.getElementById(
+      "pdpComments"
+    ).value || "-";
+
+  let date =
+    document.getElementById(
+      "reportDate"
+    ).value || "-";
+
+  doc.setFontSize(18);
+
+  doc.text(
+    "PAINT DISTRIBUTION PLAN",
+    20,
+    y
+  );
+
+  y += 15;
+
+  doc.setFontSize(12);
+
+  doc.text(
+    "Vessel : " +
+    vesselName,
+    20,
+    y
+  );
+
+  y += 8;
+
+  doc.text(
+    "Date : " +
+    date,
+    20,
+    y
+  );
+
+  y += 8;
+
+  doc.text(
+    "Position : " +
+    latest.position,
+    20,
+    y
+  );
+
+  y += 8;
+
+  doc.text(
+    "Coat : " +
+    latest.coat,
+    20,
+    y
+  );
+
+  y += 8;
+
+  doc.text(
+    "Paint : " +
+    paintDescription,
+    20,
+    y
+  );
+
+  y += 8;
+
+  let commentLines =
+    doc.splitTextToSize(
+      "Comments : " +
+      comments,
+      170
+    );
+
+  doc.text(
+    commentLines,
+    20,
+    y
+  );
+
+  y +=
+    commentLines.length * 6 +
+    10;
+
+  doc.setFontSize(14);
+
+  doc.text(
+    "VESSEL DISTRIBUTION",
+    20,
+    y
+  );
+
+  y += 10;
+
+  doc.setFontSize(10);
+
+  doc.text(
+    document.getElementById(
+      "portFwd"
+    ).innerText,
+    20,
+    y
+  );
+
+  doc.text(
+    document.getElementById(
+      "portMid"
+    ).innerText,
+    20,
+    y + 25
+  );
+
+  doc.text(
+    document.getElementById(
+      "portAft"
+    ).innerText,
+    20,
+    y + 50
+  );
+
+  doc.text(
+    document.getElementById(
+      "stbFwd"
+    ).innerText,
+    130,
+    y
+  );
+
+  doc.text(
+    document.getElementById(
+      "stbMid"
+    ).innerText,
+    130,
+    y + 25
+  );
+
+  doc.text(
+    document.getElementById(
+      "stbAft"
+    ).innerText,
+    130,
+    y + 50
+  );
+
+  y += 80;
+
+  doc.setFontSize(14);
+
+  doc.text(
+    "DETAILED ALLOCATION",
+    20,
+    y
+  );
+
+  y += 10;
+
+  let details =
+    document.getElementById(
+      "pdpDetails"
+    ).innerText;
+
+  let detailLines =
+    doc.splitTextToSize(
+      details,
+      170
+    );
+
+  doc.setFontSize(10);
+
+  doc.text(
+    detailLines,
+    20,
+    y
+  );
+
+  let fileName =
+    vesselName.replaceAll(
+      " ",
+      "_"
+    );
+
+  doc.save(
+    fileName +
+    "_PDP.pdf"
+  );
+
+}
+
+async function sharePDPPDF(){
+
+  exportPDPPDF();
+
+}
+
 function resetStations(){
 
   document.getElementById(
