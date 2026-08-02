@@ -190,12 +190,12 @@ color:#4FC3F7;
 display:flex;
 justify-content:center;
 align-items:center;
-gap:60px;
+gap:180px;
 margin-top:20px;
 }
 
 .outlineImage{
-width:400px;
+width:450px;
 height:auto;
 display:block;
 }
