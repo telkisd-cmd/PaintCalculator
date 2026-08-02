@@ -1417,6 +1417,13 @@ function generatePDP(){
     ).value
   );
 
+let spraysPerStation =
+  parseInt(
+    document.getElementById(
+      "spraysPerStation"
+    ).value
+  ) || 3;
+  
 if(!totalSprays){
 
   alert("Enter Total Spray Guns");
@@ -1425,8 +1432,9 @@ if(!totalSprays){
 }
 
 let stations =
-  calculateStations(
-    totalSprays
+  Math.ceil(
+    totalSprays /
+    spraysPerStation
   );
 
 let portStations =
@@ -1464,6 +1472,11 @@ document.getElementById(
 <p>
 Total Sprays :
 ${totalSprays}
+</p>
+
+<p>
+Sprays Per Station :
+${spraysPerStation}
 </p>
 
 <p>
