@@ -1417,6 +1417,17 @@ function generatePDP(){
     ).value
   );
 
+let totalDrums = 0;
+
+pdpData.forEach(item => {
+
+  totalDrums += item.drums;
+
+});
+
+let drumsPerSpray =
+  totalDrums / totalSprays;  
+  
 let spraysPerStation =
   parseInt(
     document.getElementById(
@@ -1485,6 +1496,13 @@ if(stations % 2 !== 0){
 
 }
 
+let portFwdDrums =
+  Math.round(
+    portFwd *
+    spraysPerStation *
+    drumsPerSpray
+  );
+
 document.getElementById(
   "portFwd"
 ).innerHTML =
@@ -1493,7 +1511,18 @@ document.getElementById(
 <br>
 ${portFwd} Stations
 <br>
-${portFwd * spraysPerStation} Sprays`;
+${portFwd * spraysPerStation} Sprays
+<br>
+${portFwdDrums} Drums`;
+
+
+
+let portMidDrums =
+  Math.round(
+    portMid *
+    spraysPerStation *
+    drumsPerSpray
+  );
 
 document.getElementById(
   "portMid"
@@ -1503,7 +1532,18 @@ document.getElementById(
 <br>
 ${portMid} Stations
 <br>
-${portMid * spraysPerStation} Sprays`;
+${portMid * spraysPerStation} Sprays
+<br>
+${portMidDrums} Drums`;
+
+
+
+let portAftDrums =
+  Math.round(
+    portAft *
+    spraysPerStation *
+    drumsPerSpray
+  );
 
 document.getElementById(
   "portAft"
@@ -1513,7 +1553,70 @@ document.getElementById(
 <br>
 ${portAft} Stations
 <br>
-${portAft * spraysPerStation} Sprays`;
+${portAft * spraysPerStation} Sprays
+<br>
+${portAftDrums} Drums`;
+
+let stbFwdDrums =
+  Math.round(
+    stbFwd *
+    spraysPerStation *
+    drumsPerSpray
+  );
+
+document.getElementById(
+  "stbFwd"
+).innerHTML =
+
+`STB FWD
+<br>
+${stbFwd} Stations
+<br>
+${stbFwd * spraysPerStation} Sprays
+<br>
+${stbFwdDrums} Drums`;
+
+
+
+let stbMidDrums =
+  Math.round(
+    stbMid *
+    spraysPerStation *
+    drumsPerSpray
+  );
+
+document.getElementById(
+  "stbMid"
+).innerHTML =
+
+`STB MID
+<br>
+${stbMid} Stations
+<br>
+${stbMid * spraysPerStation} Sprays
+<br>
+${stbMidDrums} Drums`;
+
+
+
+let stbAftDrums =
+  Math.round(
+    stbAft *
+    spraysPerStation *
+    drumsPerSpray
+  );
+
+document.getElementById(
+  "stbAft"
+).innerHTML =
+
+`STB AFT
+<br>
+${stbAft} Stations
+<br>
+${stbAft * spraysPerStation} Sprays
+<br>
+${stbAftDrums} Drums`;
 
 document.getElementById(
   "stbFwd"
