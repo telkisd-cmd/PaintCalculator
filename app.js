@@ -1415,7 +1415,7 @@ function generatePDP(){
 
   }
 
-  let html = "";
+  let stationData = {};
 
   pdpData.forEach(item => {
 
@@ -1430,24 +1430,7 @@ function generatePDP(){
     let remainder =
       totalDrums % stations;
 
-    html += `
-      <div class="summarySection">
-
-      <h3>
-      ${item.position}
-      </h3>
-
-      <p>
-      ${item.coat}
-      </p>
-
-      <p>
-      Total Drums:
-      ${totalDrums}
-      </p>
-    `;
-
-    for(let i = 1; i <= stations; i++){
+    for(let i=1;i<=stations;i++){
 
       let drums = base;
 
@@ -1458,21 +1441,38 @@ function generatePDP(){
 
       }
 
-      html += `
-        <p>
-        ST${i}: ${drums} drums
-        </p>
-      `;
-    }
+      stationData[i] =
+        (stationData[i] || 0) +
+        drums;
 
-    html += `
-      </div>
-    `;
+    }
 
   });
 
-  document.getElementById(
-    "pdpResults"
-  ).innerHTML = html;
+  for(let i=1;i<=8;i++){
+
+    let station =
+      document.getElementById(
+        "st"+i
+      );
+
+    if(!station)
+      continue;
+
+    if(i <= stations){
+
+      station.innerHTML =
+        `ST${i}<br>${stationData[i] || 0}`;
+
+    }
+    else{
+
+      station.innerHTML =
+        `ST${i}`;
+
+    }
+
+  }
 
 }
+
