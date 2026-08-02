@@ -1695,11 +1695,14 @@ let detailHtml = "";
 
 ].forEach(zone => {
 
-  detailHtml += `
+detailHtml += `
 
-  <div class="detailCard">
+<div class="detailCard">
 
-  <h3>${zone.name}</h3>
+<hr>
+
+<h3>${zone.name}</h3>
+`;
 
   <p>
   Stations : ${zone.stations}
