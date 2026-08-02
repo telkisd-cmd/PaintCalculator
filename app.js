@@ -26,7 +26,7 @@ let vesselPhotoData = "";
 // ------------------------
 
 window.onload = function(){
-
+  
   let today = new Date();
 
   let formattedDate =
@@ -42,6 +42,8 @@ window.onload = function(){
   loadSummary();
 
   initializePhotoUpload();
+
+  resetStations();
 
 };
 
@@ -1476,3 +1478,21 @@ function generatePDP(){
 
 }
 
+function resetStations(){
+
+  for(let i=1;i<=8;i++){
+
+    let station =
+      document.getElementById(
+        "st"+i
+      );
+
+    if(station){
+
+      station.innerHTML = "";
+
+    }
+
+  }
+
+}
