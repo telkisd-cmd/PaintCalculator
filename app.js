@@ -1554,19 +1554,29 @@ ${starboardStations}
 
 function resetStations(){
 
-  for(let i=1;i<=8;i++){
+  document.getElementById(
+    "portFwd"
+  ).innerHTML = "";
 
-    let station =
-      document.getElementById(
-        "st"+i
-      );
+  document.getElementById(
+    "portMid"
+  ).innerHTML = "";
 
-    if(station){
+  document.getElementById(
+    "portAft"
+  ).innerHTML = "";
 
-      station.innerHTML = "";
+  document.getElementById(
+    "stbFwd"
+  ).innerHTML = "";
 
-    }
+  document.getElementById(
+    "stbMid"
+  ).innerHTML = "";
 
-  }
+  document.getElementById(
+    "stbAft"
+  ).innerHTML = "";
 
 }
+
