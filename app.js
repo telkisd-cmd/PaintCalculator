@@ -1496,12 +1496,79 @@ if(stations % 2 !== 0){
 
 }
 
-let portFwdDrums =
+let portFwdSprays =
+  portFwd * spraysPerStation;
+
+let portMidSprays =
+  portMid * spraysPerStation;
+
+let portAftSprays =
+  portAft * spraysPerStation;
+
+let stbFwdSprays =
+  stbFwd * spraysPerStation;
+
+let stbMidSprays =
+  stbMid * spraysPerStation;
+
+let stbAftSprays =
+  stbAft * spraysPerStation;
+
+  let totalZoneSprays =
+
+  portFwdSprays +
+  portMidSprays +
+  portAftSprays +
+
+  stbFwdSprays +
+  stbMidSprays +
+  stbAftSprays;
+
+  let portFwdDrums =
   Math.round(
-    portFwd *
-    spraysPerStation *
-    drumsPerSpray
+    totalDrums *
+    portFwdSprays /
+    totalZoneSprays
   );
+
+let portMidDrums =
+  Math.round(
+    totalDrums *
+    portMidSprays /
+    totalZoneSprays
+  );
+
+let portAftDrums =
+  Math.round(
+    totalDrums *
+    portAftSprays /
+    totalZoneSprays
+  );
+
+let stbFwdDrums =
+  Math.round(
+    totalDrums *
+    stbFwdSprays /
+    totalZoneSprays
+  );
+
+let stbMidDrums =
+  Math.round(
+    totalDrums *
+    stbMidSprays /
+    totalZoneSprays
+  );
+
+  let stbAftDrums =
+
+  totalDrums
+
+  - portFwdDrums
+  - portMidDrums
+  - portAftDrums
+
+  - stbFwdDrums
+  - stbMidDrums;
 
 document.getElementById(
   "portFwd"
@@ -1515,13 +1582,6 @@ ${portFwd * spraysPerStation} Sprays
 <br>
 ${portFwdDrums} Drums`;
 
-let portMidDrums =
-  Math.round(
-    portMid *
-    spraysPerStation *
-    drumsPerSpray
-  );
-
 document.getElementById(
   "portMid"
 ).innerHTML =
@@ -1533,15 +1593,6 @@ ${portMid} Stations
 ${portMid * spraysPerStation} Sprays
 <br>
 ${portMidDrums} Drums`;
-
-
-
-let portAftDrums =
-  Math.round(
-    portAft *
-    spraysPerStation *
-    drumsPerSpray
-  );
 
 document.getElementById(
   "portAft"
@@ -1555,13 +1606,6 @@ ${portAft * spraysPerStation} Sprays
 <br>
 ${portAftDrums} Drums`;
 
-let stbFwdDrums =
-  Math.round(
-    stbFwd *
-    spraysPerStation *
-    drumsPerSpray
-  );
-
 document.getElementById(
   "stbFwd"
 ).innerHTML =
@@ -1573,15 +1617,6 @@ ${stbFwd} Stations
 ${stbFwd * spraysPerStation} Sprays
 <br>
 ${stbFwdDrums} Drums`;
-
-
-
-let stbMidDrums =
-  Math.round(
-    stbMid *
-    spraysPerStation *
-    drumsPerSpray
-  );
 
 document.getElementById(
   "stbMid"
@@ -1595,15 +1630,6 @@ ${stbMid * spraysPerStation} Sprays
 <br>
 ${stbMidDrums} Drums`;
 
-
-
-let stbAftDrums =
-  Math.round(
-    stbAft *
-    spraysPerStation *
-    drumsPerSpray
-  );
-
 document.getElementById(
   "stbAft"
 ).innerHTML =
@@ -1615,7 +1641,7 @@ ${stbAft} Stations
 ${stbAft * spraysPerStation} Sprays
 <br>
 ${stbAftDrums} Drums`;
-
+  
 let detailHtml = "";
 
 [
