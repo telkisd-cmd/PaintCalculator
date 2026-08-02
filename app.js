@@ -1702,21 +1702,20 @@ detailHtml += `
 <hr>
 
 <h3>${zone.name}</h3>
+
+<p>
+Stations : ${zone.stations}
+</p>
+
+<p>
+Sprays : ${zone.sprays}
+</p>
+
+<p>
+Drums : ${zone.drums}
+</p>
+
 `;
-
-  <p>
-  Stations : ${zone.stations}
-  </p>
-
-  <p>
-  Sprays : ${zone.sprays}
-  </p>
-
-  <p>
-  Drums : ${zone.drums}
-  </p>
-
-  `;
 
  let baseDrumsPerStation =
   Math.floor(
