@@ -1515,8 +1515,6 @@ ${portFwd * spraysPerStation} Sprays
 <br>
 ${portFwdDrums} Drums`;
 
-
-
 let portMidDrums =
   Math.round(
     portMid *
@@ -1647,11 +1645,131 @@ document.getElementById(
 ${stbAft} Stations
 <br>
 ${stbAft * spraysPerStation} Sprays`;
-  
+
+let detailHtml = "";
+
+[
+  {
+    name:"PORT FWD",
+    stations:portFwd,
+    sprays:portFwd * spraysPerStation,
+    drums:portFwdDrums,
+    prefix:"P"
+  },
+
+  {
+    name:"PORT MID",
+    stations:portMid,
+    sprays:portMid * spraysPerStation,
+    drums:portMidDrums,
+    prefix:"P"
+  },
+
+  {
+    name:"PORT AFT",
+    stations:portAft,
+    sprays:portAft * spraysPerStation,
+    drums:portAftDrums,
+    prefix:"P"
+  },
+
+  {
+    name:"STB FWD",
+    stations:stbFwd,
+    sprays:stbFwd * spraysPerStation,
+    drums:stbFwdDrums,
+    prefix:"S"
+  },
+
+  {
+    name:"STB MID",
+    stations:stbMid,
+    sprays:stbMid * spraysPerStation,
+    drums:stbMidDrums,
+    prefix:"S"
+  },
+
+  {
+    name:"STB AFT",
+    stations:stbAft,
+    sprays:stbAft * spraysPerStation,
+    drums:stbAftDrums,
+    prefix:"S"
+  }
+
+].forEach(zone => {
+
+  detailHtml += `
+
+  <div class="detailCard">
+
+  <h3>${zone.name}</h3>
+
+  <p>
+  Stations : ${zone.stations}
+  </p>
+
+  <p>
+  Sprays : ${zone.sprays}
+  </p>
+
+  <p>
+  Drums : ${zone.drums}
+  </p>
+
+  `;
+
+  let drumsPerStation =
+    zone.stations > 0
+      ? Math.round(
+          zone.drums /
+          zone.stations
+        )
+      : 0;
+
+  for(
+    let i = 1;
+    i <= zone.stations;
+    i++
+  ){
+
+    detailHtml += `
+
+    <p>
+
+    ${zone.prefix}${i}
+
+    |
+
+    ${spraysPerStation} Sprays
+
+    |
+
+    ${drumsPerStation} Drums
+
+    </p>
+
+    `;
+
+  }
+
+  detailHtml += `
+
+  </div>
+
+  `;
+
+});
+
+document.getElementById(
+  "pdpDetails"
+).innerHTML =
+  detailHtml;
+
 document.getElementById(
   "pdpSummary"
 ).innerHTML = `
-
+  
 <h3>PDP Summary</h3>
 
 <p>
