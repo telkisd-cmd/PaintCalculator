@@ -1401,19 +1401,9 @@ function sendPaintToPDP(){
 
 function generatePDP(){
 
-  let stations =
-    parseInt(
-      document.getElementById(
-        "totalStations"
-      ).value
-    );
+  alert("PDP WORKS");
 
-  if(!stations){
-
-    alert("Enter Spray Stations");
-    return;
-
-  }
+}
 
   let html = "";
 
