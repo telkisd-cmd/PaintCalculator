@@ -2050,7 +2050,7 @@ doc.addImage(
     document.getElementById(
       "portFwd"
     ).innerText,
-    20,
+    15,
     y
   );
 
@@ -2058,7 +2058,7 @@ doc.addImage(
     document.getElementById(
       "portMid"
     ).innerText,
-    20,
+    15,
     y + 25
   );
 
@@ -2066,7 +2066,7 @@ doc.addImage(
     document.getElementById(
       "portAft"
     ).innerText,
-    20,
+    15,
     y + 50
   );
 
@@ -2074,7 +2074,7 @@ doc.addImage(
     document.getElementById(
       "stbFwd"
     ).innerText,
-    130,
+    145,
     y
   );
 
@@ -2082,7 +2082,7 @@ doc.addImage(
     document.getElementById(
       "stbMid"
     ).innerText,
-    130,
+    145,
     y + 25
   );
 
@@ -2090,7 +2090,7 @@ doc.addImage(
     document.getElementById(
       "stbAft"
     ).innerText,
-    130,
+    145,
     y + 50
   );
 
