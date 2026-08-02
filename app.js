@@ -1451,30 +1451,18 @@ function generatePDP(){
 
   });
 
-  for(let i=1;i<=8;i++){
+ for(let i=1;i<=8;i++){
 
-    let station =
-      document.getElementById(
-        "st"+i
-      );
+  let station =
+    document.getElementById(
+      "st"+i
+    );
 
-    if(!station)
-      continue;
+  if(!station)
+    continue;
 
-    if(i <= stations){
-
-      station.innerHTML =
-        `ST${i}<br>${stationData[i] || 0}`;
-
-    }
-    else{
-
-      station.innerHTML =
-        `ST${i}`;
-
-    }
-
-  }
+  station.innerHTML = "";
+}
 
 }
 
