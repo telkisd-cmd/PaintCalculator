@@ -1400,15 +1400,34 @@ function sendPaintToPDP(){
 
 }
 
+function calculateStations(totalSprays){
+
+  return Math.ceil(
+    totalSprays / 3
+  );
+
+}
 
 function generatePDP(){
 
-  let stations =
-    parseInt(
-      document.getElementById(
-        "totalStations"
-      ).value
-    );
+ let totalSprays =
+  parseInt(
+    document.getElementById(
+      "totalSprays"
+    ).value
+  );
+
+if(!totalSprays){
+
+  alert("Enter Total Spray Guns");
+  return;
+
+}
+
+let stations =
+  calculateStations(
+    totalSprays
+  );
 
   if(!stations){
 
