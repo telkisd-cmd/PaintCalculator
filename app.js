@@ -1401,6 +1401,78 @@ function sendPaintToPDP(){
 
 function generatePDP(){
 
-  alert("PDP WORKS");
+  let stations =
+    parseInt(
+      document.getElementById(
+        "totalStations"
+      ).value
+    );
+
+  if(!stations){
+
+    alert("Enter Spray Stations");
+    return;
+
+  }
+
+  let html = "";
+
+  pdpData.forEach(item => {
+
+    let totalDrums =
+      item.drums;
+
+    let base =
+      Math.floor(
+        totalDrums / stations
+      );
+
+    let remainder =
+      totalDrums % stations;
+
+    html += `
+      <div class="summarySection">
+
+      <h3>
+      ${item.position}
+      </h3>
+
+      <p>
+      ${item.coat}
+      </p>
+
+      <p>
+      Total Drums:
+      ${totalDrums}
+      </p>
+    `;
+
+    for(let i = 1; i <= stations; i++){
+
+      let drums = base;
+
+      if(remainder > 0){
+
+        drums++;
+        remainder--;
+
+      }
+
+      html += `
+        <p>
+        ST${i}: ${drums} drums
+        </p>
+      `;
+    }
+
+    html += `
+      </div>
+    `;
+
+  });
+
+  document.getElementById(
+    "pdpResults"
+  ).innerHTML = html;
 
 }
