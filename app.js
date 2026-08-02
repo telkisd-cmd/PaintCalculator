@@ -1429,6 +1429,60 @@ let stations =
     totalSprays
   );
 
+let portStations =
+  Math.floor(stations / 2);
+
+let starboardStations =
+  Math.floor(stations / 2);
+
+if(stations % 2 !== 0){
+
+  let extraSide =
+    document.querySelector(
+      'input[name="extraSide"]:checked'
+    ).value;
+
+  if(extraSide === "port"){
+
+    portStations++;
+
+  }
+  else{
+
+    starboardStations++;
+
+  }
+
+}
+
+document.getElementById(
+  "pdpSummary"
+).innerHTML = `
+
+<h3>PDP Summary</h3>
+
+<p>
+Total Sprays :
+${totalSprays}
+</p>
+
+<p>
+Total Stations :
+${stations}
+</p>
+
+<p>
+Port Stations :
+${portStations}
+</p>
+
+<p>
+Starboard Stations :
+${starboardStations}
+</p>
+
+`;
+  
   if(!stations){
 
     alert("Enter Spray Stations");
