@@ -1443,6 +1443,28 @@ let portStations =
 let starboardStations =
   Math.floor(stations / 2);
 
+let portFwd =
+  Math.round(portStations * 0.30);
+
+let portMid =
+  Math.round(portStations * 0.40);
+
+let portAft =
+  portStations -
+  portFwd -
+  portMid;
+
+let stbFwd =
+  Math.round(starboardStations * 0.30);
+
+let stbMid =
+  Math.round(starboardStations * 0.40);
+
+let stbAft =
+  starboardStations -
+  stbFwd -
+  stbMid;
+  
 if(stations % 2 !== 0){
 
   let extraSide =
@@ -1463,6 +1485,66 @@ if(stations % 2 !== 0){
 
 }
 
+document.getElementById(
+  "portFwd"
+).innerHTML =
+
+`PORT FWD
+<br>
+${portFwd} Stations
+<br>
+${portFwd * spraysPerStation} Sprays`;
+
+document.getElementById(
+  "portMid"
+).innerHTML =
+
+`PORT MID
+<br>
+${portMid} Stations
+<br>
+${portMid * spraysPerStation} Sprays`;
+
+document.getElementById(
+  "portAft"
+).innerHTML =
+
+`PORT AFT
+<br>
+${portAft} Stations
+<br>
+${portAft * spraysPerStation} Sprays`;
+
+document.getElementById(
+  "stbFwd"
+).innerHTML =
+
+`STB FWD
+<br>
+${stbFwd} Stations
+<br>
+${stbFwd * spraysPerStation} Sprays`;
+
+document.getElementById(
+  "stbMid"
+).innerHTML =
+
+`STB MID
+<br>
+${stbMid} Stations
+<br>
+${stbMid * spraysPerStation} Sprays`;
+
+document.getElementById(
+  "stbAft"
+).innerHTML =
+
+`STB AFT
+<br>
+${stbAft} Stations
+<br>
+${stbAft * spraysPerStation} Sprays`;
+  
 document.getElementById(
   "pdpSummary"
 ).innerHTML = `
