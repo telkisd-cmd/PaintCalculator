@@ -9,12 +9,15 @@ let summaryData = {
 };
 
 let currentPaintResult = {
+  let pdpData = [];
   position: "",
   coat: "",
   litres: 0,
   drums: 0,
   area: 0
 };
+
+let pdpData = [];
 
 let vesselPhotoData = "";
 
@@ -1362,5 +1365,35 @@ function sendToArea(){
     document.getElementById("calcDisplay").value;
 
   showTab("paint");
+
+}
+
+
+function sendPaintToPDP(){
+
+  if(!currentPaintResult.position){
+
+    alert("Calculate first");
+    return;
+
+  }
+
+  pdpData.push({
+
+    position:
+      currentPaintResult.position,
+
+    coat:
+      currentPaintResult.coat,
+
+    litres:
+      currentPaintResult.litres,
+
+    drums:
+      Math.ceil(currentPaintResult.drums)
+
+  });
+
+  alert("Added to PDP");
 
 }
