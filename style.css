@@ -214,3 +214,11 @@ color:#4FC3F7;
   text-align:center;
   line-height:1.5;
 }
+
+.zoneBox{
+  min-height:120px;
+  text-align:center;
+  color:#4FC3F7;
+  font-weight:bold;
+  line-height:1.5;
+}
