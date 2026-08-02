@@ -2002,6 +2002,45 @@ function exportPDPPDF(){
 
   y += 10;
 
+let vesselImage =
+  document.getElementById(
+    "vesselOutline"
+  );
+
+let canvas =
+  document.createElement(
+    "canvas"
+  );
+
+canvas.width =
+  vesselImage.naturalWidth;
+
+canvas.height =
+  vesselImage.naturalHeight;
+
+let ctx =
+  canvas.getContext("2d");
+
+ctx.drawImage(
+  vesselImage,
+  0,
+  0
+);
+
+let imageData =
+  canvas.toDataURL(
+    "image/png"
+  );
+
+doc.addImage(
+  imageData,
+  "PNG",
+  80,
+  y,
+  50,
+  80
+);
+  
   doc.setFontSize(10);
 
   doc.text(
@@ -2064,24 +2103,38 @@ function exportPDPPDF(){
 
   y += 10;
 
-  let details =
-    document.getElementById(
-      "pdpDetails"
-    ).innerText;
+let details =
+  document.getElementById(
+    "pdpDetails"
+  ).innerText;
 
-  let detailLines =
-    doc.splitTextToSize(
-      details,
-      170
-    );
+let detailLines =
+  doc.splitTextToSize(
+    details,
+    170
+  );
 
-  doc.setFontSize(10);
+doc.setFontSize(10);
+
+detailLines.forEach(line => {
+
+  if(y > 270){
+
+    doc.addPage();
+
+    y = 20;
+
+  }
 
   doc.text(
-    detailLines,
+    line,
     20,
     y
   );
+
+  y += 5;
+
+});
 
   let fileName =
     vesselName.replaceAll(
