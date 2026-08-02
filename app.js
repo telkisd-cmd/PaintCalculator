@@ -1616,36 +1616,6 @@ ${stbAft * spraysPerStation} Sprays
 <br>
 ${stbAftDrums} Drums`;
 
-document.getElementById(
-  "stbFwd"
-).innerHTML =
-
-`STB FWD
-<br>
-${stbFwd} Stations
-<br>
-${stbFwd * spraysPerStation} Sprays`;
-
-document.getElementById(
-  "stbMid"
-).innerHTML =
-
-`STB MID
-<br>
-${stbMid} Stations
-<br>
-${stbMid * spraysPerStation} Sprays`;
-
-document.getElementById(
-  "stbAft"
-).innerHTML =
-
-`STB AFT
-<br>
-${stbAft} Stations
-<br>
-${stbAft * spraysPerStation} Sprays`;
-
 let detailHtml = "";
 
 [
