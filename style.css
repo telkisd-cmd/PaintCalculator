@@ -287,3 +287,70 @@ color:#4FC3F7;
   }
 
 }
+
+@media (max-width:768px){
+
+  .vesselOutline{
+
+    display:grid;
+
+    grid-template-columns:
+      70px
+      1fr
+      70px;
+
+    align-items:center;
+
+    width:100%;
+
+  }
+
+  .portColumn{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+  }
+
+  .stbColumn{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+  }
+
+  .outlineImage{
+
+    width:140px;
+
+    max-width:140px;
+
+  }
+
+  .zoneBox{
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    min-height:70px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+  }
+
+}
