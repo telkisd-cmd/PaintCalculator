@@ -255,3 +255,23 @@ color:#4FC3F7;
   margin-bottom:15px;
 
 }
+
+.mobileStation{
+  display:none;
+}
+
+@media (max-width:768px){
+
+  .desktopZone{
+    display:none;
+  }
+
+  .mobileStation{
+    display:block;
+    font-size:18px;
+    font-weight:bold;
+    color:#4FC3F7;
+  }
+
+}
+
