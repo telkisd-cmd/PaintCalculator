@@ -275,3 +275,15 @@ color:#4FC3F7;
 
 }
 
+@media (max-width:768px){
+
+  .zoneBox{
+
+    font-size:22px;
+    font-weight:bold;
+    line-height:2;
+    white-space:nowrap;
+
+  }
+
+}
