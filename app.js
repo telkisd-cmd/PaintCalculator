@@ -1570,77 +1570,147 @@ let stbMidDrums =
   - stbFwdDrums
   - stbMidDrums;
 
-document.getElementById(
-  "portFwd"
-).innerHTML =
+if(window.innerWidth <= 768){
 
-`PORT FWD
-<br>
-${portFwd} Stations
-<br>
-${portFwd * spraysPerStation} Sprays
-<br>
-${portFwdDrums} Drums`;
+  document.getElementById(
+    "portFwd"
+  ).innerHTML = `1:${portFwdDrums}`;
 
-document.getElementById(
-  "portMid"
-).innerHTML =
+}
+else{
 
-`PORT MID
-<br>
-${portMid} Stations
-<br>
-${portMid * spraysPerStation} Sprays
-<br>
-${portMidDrums} Drums`;
+  document.getElementById(
+    "portFwd"
+  ).innerHTML =
+
+  `PORT FWD
+  <br>
+  ${portFwd} Stations
+  <br>
+  ${portFwd * spraysPerStation} Sprays
+  <br>
+  ${portFwdDrums} Drums`;
+
+}
+
+if(window.innerWidth <= 768){
+
+  document.getElementById(
+    "portMid"
+  ).innerHTML = `2:${portMidDrums}`;
+
+}
+else{
+
+  document.getElementById(
+    "portMid"
+  ).innerHTML =
+
+  `PORT MID
+  <br>
+  ${portMid} Stations
+  <br>
+  ${portMid * spraysPerStation} Sprays
+  <br>
+  ${portMidDrums} Drums`;
+
+}
 
 document.getElementById(
   "portAft"
 ).innerHTML =
 
-`PORT AFT
-<br>
-${portAft} Stations
-<br>
-${portAft * spraysPerStation} Sprays
-<br>
-${portAftDrums} Drums`;
+if(window.innerWidth <= 768){
 
-document.getElementById(
-  "stbFwd"
-).innerHTML =
+  document.getElementById(
+    "portAft"
+  ).innerHTML = `3:${portAftDrums}`;
 
-`STB FWD
-<br>
-${stbFwd} Stations
-<br>
-${stbFwd * spraysPerStation} Sprays
-<br>
-${stbFwdDrums} Drums`;
+}
+else{
 
-document.getElementById(
-  "stbMid"
-).innerHTML =
+  document.getElementById(
+    "portAft"
+  ).innerHTML =
 
-`STB MID
-<br>
-${stbMid} Stations
-<br>
-${stbMid * spraysPerStation} Sprays
-<br>
-${stbMidDrums} Drums`;
+  `PORT AFT
+  <br>
+  ${portAft} Stations
+  <br>
+  ${portAft * spraysPerStation} Sprays
+  <br>
+  ${portAftDrums} Drums`;
 
-document.getElementById(
-  "stbAft"
-).innerHTML =
+}
 
-`STB AFT
-<br>
-${stbAft} Stations
-<br>
-${stbAft * spraysPerStation} Sprays
-<br>
-${stbAftDrums} Drums`;
+if(window.innerWidth <= 768){
+
+  document.getElementById(
+    "stbFwd"
+  ).innerHTML = `4:${stbFwdDrums}`;
+
+}
+else{
+
+  document.getElementById(
+    "stbFwd"
+  ).innerHTML =
+
+  `STB FWD
+  <br>
+  ${stbFwd} Stations
+  <br>
+  ${stbFwd * spraysPerStation} Sprays
+  <br>
+  ${stbFwdDrums} Drums`;
+
+}
+
+if(window.innerWidth <= 768){
+
+  document.getElementById(
+    "stbMid"
+  ).innerHTML = `5:${stbMidDrums}`;
+
+}
+else{
+
+  document.getElementById(
+    "stbMid"
+  ).innerHTML =
+
+  `STB MID
+  <br>
+  ${stbMid} Stations
+  <br>
+  ${stbMid * spraysPerStation} Sprays
+  <br>
+  ${stbMidDrums} Drums`;
+
+}
+
+if(window.innerWidth <= 768){
+
+  document.getElementById(
+    "stbAft"
+  ).innerHTML = `6:${stbAftDrums}`;
+
+}
+else{
+
+  document.getElementById(
+    "stbAft"
+  ).innerHTML =
+
+  `STB AFT
+  <br>
+  ${stbAft} Stations
+  <br>
+  ${stbAft * spraysPerStation} Sprays
+  <br>
+  ${stbAftDrums} Drums`;
+
+}
   
 let detailHtml = "";
 
