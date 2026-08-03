@@ -1616,10 +1616,6 @@ else{
 
 }
 
-document.getElementById(
-  "portAft"
-).innerHTML =
-
 if(window.innerWidth <= 768){
 
   document.getElementById(
