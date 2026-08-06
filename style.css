@@ -374,24 +374,42 @@ color:#4FC3F7;
     font-size:20px;
   }
 
-  .mobilePDPGrid{
+.mobilePDPGrid{
 
-    display:grid;
+  width:260px;
 
-    grid-template-columns:
-      1fr 60px 1fr;
+  margin:0 auto;
 
-    align-items:center;
+  display:grid;
 
-    gap:10px;
+  grid-template-columns:
+    80px 40px 80px;
 
-  }
+  gap:12px;
 
-  .mobileCenter{
+  align-items:center;
 
-    color:white;
+  text-align:center;
 
-    font-size:16px;
+}
+
+.mobileCenter{
+
+  color:white;
+
+  font-weight:bold;
+
+}
+
+.mobilePDPGrid div{
+
+  font-size:20px;
+
+  font-weight:bold;
+
+  color:#4FC3F7;
+
+}
 
   }
 
