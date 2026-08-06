@@ -9,7 +9,7 @@ let summaryData = {
 };
 
 let currentPaintResult = {
-  
+
   position: "",
   coat: "",
   litres: 0,
