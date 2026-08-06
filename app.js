@@ -2311,4 +2311,3 @@ function resetStations(){
   ).innerHTML = "";
 
 }
-
