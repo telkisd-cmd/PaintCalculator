@@ -354,3 +354,45 @@ color:#4FC3F7;
   }
 
 }
+
+#mobilePDPLayout{
+  display:none;
+}
+
+@media (max-width:768px){
+
+  .vesselOutline{
+    display:none;
+  }
+
+  #mobilePDPLayout{
+    display:block;
+    text-align:center;
+    margin:20px 0;
+    color:#4FC3F7;
+    font-weight:bold;
+    font-size:20px;
+  }
+
+  .mobilePDPGrid{
+
+    display:grid;
+
+    grid-template-columns:
+      1fr 60px 1fr;
+
+    align-items:center;
+
+    gap:10px;
+
+  }
+
+  .mobileCenter{
+
+    color:white;
+
+    font-size:16px;
+
+  }
+
+}
