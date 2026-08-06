@@ -1768,6 +1768,10 @@ else{
   ).innerHTML = "";
 
 }
+
+let sprayAllocation = [];
+
+let sprayCounter = 1;
   
 let detailHtml = "";
 
@@ -1871,6 +1875,17 @@ for(
 
   }
 
+let baseDrumsPerSpray =
+  Math.floor(
+    stationDrums /
+    spraysPerStation
+  );
+
+let sprayRemaining =
+  stationDrums %
+  spraysPerStation;
+
+  
   detailHtml += `
 
   <p>
@@ -1891,6 +1906,62 @@ for(
 
 }
 
+for(
+  let s = 1;
+  s <= spraysPerStation;
+  s++
+){
+
+  let sprayDrums =
+    baseDrumsPerSpray;
+
+  if(sprayRemaining > 0){
+
+    sprayDrums++;
+
+    sprayRemaining--;
+
+  }
+
+  sprayAllocation.push({
+
+    id:
+      "SP" +
+      sprayCounter,
+
+    zone:
+      zone.name,
+
+    station:
+      zone.prefix + i,
+
+    drums:
+      sprayDrums
+
+  });
+
+  detailHtml += `
+
+  <div
+  style="
+  margin-left:25px;
+  color:#cccccc;
+  ">
+
+  SP${sprayCounter}
+
+  |
+
+  ${sprayDrums} Drums
+
+  </div>
+
+  `;
+
+  sprayCounter++;
+
+}
+  
   detailHtml += `
 
   </div>
