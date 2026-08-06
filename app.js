@@ -1707,6 +1707,67 @@ else{
   ${stbAftDrums} Drums`;
 
 }
+
+if(window.innerWidth <= 768){
+
+  document.getElementById(
+    "mobilePDPLayout"
+  ).innerHTML = `
+
+  <div class="mobilePDPGrid">
+
+    <div>PORT</div>
+
+    <div class="mobileCenter">
+      FWD
+    </div>
+
+    <div>STB</div>
+
+    <div>1:${portFwdDrums}</div>
+
+    <div class="mobileCenter">
+      │
+    </div>
+
+    <div>4:${stbFwdDrums}</div>
+
+    <div>2:${portMidDrums}</div>
+
+    <div class="mobileCenter">
+      ─┼─
+    </div>
+
+    <div>5:${stbMidDrums}</div>
+
+    <div>3:${portAftDrums}</div>
+
+    <div class="mobileCenter">
+      │
+    </div>
+
+    <div>6:${stbAftDrums}</div>
+
+    <div></div>
+
+    <div class="mobileCenter">
+      AFT
+    </div>
+
+    <div></div>
+
+  </div>
+
+  `;
+
+}
+else{
+
+  document.getElementById(
+    "mobilePDPLayout"
+  ).innerHTML = "";
+
+}
   
 let detailHtml = "";
 
