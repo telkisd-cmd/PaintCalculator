@@ -365,6 +365,7 @@ SEND TO AREA
 <p>Total Spray Guns</p>
 
 <input
+class="form-control"
 id="totalSprays"
 type="number"
 min="1"
@@ -462,8 +463,10 @@ alt="Vessel Outline">
   
 <br>
   
-<button onclick="generatePDP()">
-GENERATE PDP
+<button
+class="btn btn-primary"
+onclick="generatePDP()">
+Generate PDP
 </button>
 
 <button onclick="exportPDPPDF()">
