@@ -479,21 +479,21 @@ color:#4FC3F7;
 
   margin:20px 0;
 
+  border:3px solid yellow;
+  
 }
 
 .quickCard{
 
-  background:#071a36;
+background:red;
 
-  border:1px solid #16304f;
+color:white;
 
-  border-radius:12px;
+border:3px solid lime;
 
-  padding:20px;
+padding:20px;
 
-  width:220px;
-
-  color:white;
+width:220px;
 
 }
 
