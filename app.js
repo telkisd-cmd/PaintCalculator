@@ -45,6 +45,10 @@ window.onload = function(){
 
   resetStations();
 
+document.getElementById(
+  "mainMenuTab"
+).style.display = "block";
+  
 };
 
 // ------------------------
@@ -52,6 +56,9 @@ window.onload = function(){
 // ------------------------
 
 function showTab(tab){
+
+  document.getElementById("mainMenuTab").style.display =
+  "none";
 
   document.getElementById("paintTab").style.display =
     "none";
@@ -94,6 +101,11 @@ if(tab==="pdp")
   if(tab==="summary")
     document.getElementById("summaryTab").style.display =
       "block";
+
+if(tab=="mainMenu")
+  document.getElementById("mainMenuTab").style.display =
+    "block";
+  
 }
 
 // ------------------------
