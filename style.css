@@ -470,3 +470,30 @@ color:#4FC3F7;
   border:3px solid red;
 
 }
+
+.quickCards{
+
+  display:flex;
+
+  gap:20px;
+
+  margin:20px 0;
+
+}
+
+.quickCard{
+
+  background:#071a36;
+
+  border:1px solid #16304f;
+
+  border-radius:12px;
+
+  padding:20px;
+
+  width:220px;
+
+  color:white;
+
+}
+
