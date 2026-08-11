@@ -414,3 +414,57 @@ color:#4FC3F7;
   }
 
 }
+
+.dashboardLayout{
+
+  display:flex;
+
+  min-height:100vh;
+
+}
+
+.sidebar{
+
+  width:220px;
+
+  background:#071326;
+
+  border-right:1px solid #16304f;
+
+  padding:20px;
+
+}
+
+.sidebar h2{
+
+  color:#4FC3F7;
+
+  margin-bottom:5px;
+
+}
+
+.sidebar p{
+
+  color:#7fa9c9;
+
+  font-size:12px;
+
+  margin-bottom:25px;
+
+}
+
+.sidebar button{
+
+  width:100%;
+
+  margin-bottom:10px;
+
+}
+
+.dashboardContent{
+
+  flex:1;
+
+  padding:25px;
+
+}
