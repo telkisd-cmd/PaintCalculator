@@ -51,9 +51,77 @@ SUMMARY
 
 </div>
 
+<div id="mainMenuTab">
+
+<h1>COAT CALC PRO</h1>
+
+<p>Marine Coating Calculator</p>
+
+<h3>Navigation</h3>
+
+<button onclick="showTab('paintTab')">
+PAINT CALCULATOR
+</button>
+
+<button onclick="showTab('hullTab')">
+HULL CALCULATOR
+</button>
+
+<button onclick="showTab('jtsTab')">
+INITIAL SPEC
+</button>
+
+<button onclick="showTab('paintTab')">
+CALCULATOR
+</button>
+
+<button onclick="showTab('pdpTab')">
+PDP
+</button>
+
+<button onclick="showTab('summaryTab')">
+SUMMARY
+</button>
+
+<h3>Vessel Information</h3>
+
+<p>Vessel Name</p>
+
+<input
+id="vesselName"
+type="text">
+
+<p>IMO Number</p>
+
+<input
+id="imo"
+type="text">
+
+<p>Current Location</p>
+
+<input
+id="location"
+type="text">
+
+<p>Inspecting Technician</p>
+
+<input
+id="inspector"
+type="text">
+
+<p>Owner Representative</p>
+
+<input
+id="ownerRep"
+type="text">
+
+</div>
+  
 <!-- PAINT -->
 
-<div id="paintTab">
+<div
+id="paintTab"
+style="display:none;">
 
 <h1>PAINT CALCULATOR</h1>
 
@@ -177,8 +245,10 @@ SEND TO PDP
 
 <!-- HULL -->
 
-<div id="hullTab" style="display:none;">
-
+<div
+id="hullTab"
+style="display:none;">
+  
 <h1>HULL CALCULATION</h1>
 
 <p>LOA</p>
@@ -215,8 +285,10 @@ CALCULATE HULL
 
 <!-- JTS -->
 
-<div id="jtsTab" style="display:none;">
-
+<div
+id="jtsTab"
+style="display:none;">
+  
 <h1>
 JTS
 <br>
@@ -305,8 +377,10 @@ SUMMARY
 
 <!-- CALCULATOR -->
 
-<div id="calculatorTab" style="display:none;">
-
+<div
+id="calculatorTab"
+style="display:none;">
+  
 <h1>CALCULATOR</h1>
 
 <input
@@ -358,8 +432,10 @@ SEND TO AREA
 
 <!-- PDP -->
 
-<div id="pdpTab" style="display:none;">
-
+<div
+id="pdpTab"
+style="display:none;">
+  
 <h1>PAINT DISTRIBUTION PLAN</h1>
 
 <p>Total Spray Guns</p>
@@ -481,8 +557,10 @@ SHARE PDP PDF
   
 <!-- SUMMARY -->
 
-<div id="summaryTab" style="display:none;">
-
+<div
+id="summaryTab"
+style="display:none;">
+  
 <h1>SUMMARY</h1>
 
 <p>Date</p>
