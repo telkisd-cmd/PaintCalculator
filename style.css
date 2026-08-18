@@ -618,3 +618,39 @@ color:#4FC3F7;
   cursor:pointer;
 
 }
+
+.settingsHeader{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  padding-bottom:20px;
+
+  border-bottom:1px solid #22395C;
+
+  margin-bottom:30px;
+
+}
+
+.settingsHeader h1{
+
+  margin:0;
+
+  color:white;
+
+}
+
+.settingsHeader p{
+
+  margin-top:4px;
+
+  color:#00C8FF;
+
+  font-size:12px;
+
+  text-transform:uppercase;
+
+}
