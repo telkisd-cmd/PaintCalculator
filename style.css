@@ -567,3 +567,20 @@ color:#4FC3F7;
   text-transform:uppercase;
 
 }
+
+.vesselGrid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap:20px;
+
+}
+
+.vesselGrid input{
+
+  width:100%;
+
+}
