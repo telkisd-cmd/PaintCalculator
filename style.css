@@ -514,6 +514,16 @@ color:#4FC3F7;
 
   align-items:center;
 
+  transition:0.2s;
+
+}
+
+.quickCard:hover{
+
+  transform:translateY(-4px);
+
+  border-color:#00C8FF;
+
 }
 
 .vesselCard{
