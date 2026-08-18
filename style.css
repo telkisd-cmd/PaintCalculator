@@ -498,7 +498,7 @@ color:#4FC3F7;
 
   padding:30px;
 
-  min-height:100px;
+  min-height:80px;
 
   color:white;
 
@@ -507,6 +507,10 @@ color:#4FC3F7;
   font-weight:bold;
 
   cursor:pointer;
+
+  display:flex;
+
+align-items:center;
 
 }
 
