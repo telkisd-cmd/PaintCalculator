@@ -105,15 +105,9 @@ if(tab==="pdp")
     document.getElementById("summaryTab").style.display =
       "block";
 
-if(tab==="settings"){
-  alert("SETTINGS CLICKED");
-
+if(tab==="settings")
   document.getElementById("settingsTab").style.display =
     "block";
-
-  document.getElementById("settingsTab").style.background =
-    "red";
-}
   
 if(tab=="mainMenu")
   document.getElementById("mainMenuTab").style.display =
