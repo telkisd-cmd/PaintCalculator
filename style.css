@@ -419,13 +419,17 @@ color:#4FC3F7;
 
   display:flex;
 
+  align-items:flex-start;
+
+  width:100%;
+
   min-height:100vh;
 
 }
 
 .sidebar{
 
-  width:220px;
+  width:260px;
 
   background:#071326;
 
@@ -466,6 +470,8 @@ color:#4FC3F7;
   flex:1;
 
   padding:25px;
+
+  margin-left:20px;
 
 }
 
