@@ -584,3 +584,27 @@ color:#4FC3F7;
   width:100%;
 
 }
+
+.continueBtn{
+
+  margin-top:30px;
+
+  width:100%;
+
+  background:#00C8FF;
+
+  color:#001225;
+
+  border:none;
+
+  border-radius:12px;
+
+  padding:16px;
+
+  font-size:18px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+}
