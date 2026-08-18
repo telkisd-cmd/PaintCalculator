@@ -81,6 +81,8 @@ document.getElementById("calculatorTab").style.display =
   if(tab==="paint")
     document.getElementById("paintTab").style.display =
       "block";
+  
+  alert("Paint opened");
 
   if(tab==="hull")
     document.getElementById("hullTab").style.display =
