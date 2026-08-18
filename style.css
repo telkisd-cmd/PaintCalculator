@@ -517,3 +517,41 @@ color:#4FC3F7;
   margin-top:24px;
 
 }
+
+.dashboardHeader{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  padding-bottom:20px;
+
+  border-bottom:1px solid #22395C;
+
+  margin-bottom:20px;
+
+}
+
+.dashboardHeader h1{
+
+  color:white;
+
+  font-size:28px;
+
+  margin:0;
+
+}
+
+.dashboardHeader p{
+
+  color:#00C8FF;
+
+  font-size:12px;
+
+  margin-top:4px;
+
+  text-transform:uppercase;
+
+}
