@@ -72,6 +72,9 @@ function showTab(tab){
   document.getElementById("summaryTab").style.display =
     "none";
 
+document.getElementById("settingsTab").style.display =
+  "none";
+  
 document.getElementById("pdpTab").style.display =
   "none";
   
@@ -102,6 +105,10 @@ if(tab==="pdp")
     document.getElementById("summaryTab").style.display =
       "block";
 
+if(tab==="settings")
+  document.getElementById("settingsTab").style.display =
+    "block";
+  
 if(tab=="mainMenu")
   document.getElementById("mainMenuTab").style.display =
     "block";
