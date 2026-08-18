@@ -106,6 +106,7 @@ if(tab==="pdp")
       "block";
 
 if(tab==="settings")
+  alert("SETTINGS CLICKED");
   document.getElementById("settingsTab").style.display =
     "block";
   
