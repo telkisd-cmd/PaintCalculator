@@ -654,3 +654,19 @@ color:#4FC3F7;
   text-transform:uppercase;
 
 }
+
+.settingsCard{
+
+  background:#111B30;
+
+  border:1px solid #22395C;
+
+  border-radius:16px;
+
+  padding:24px;
+
+  margin-bottom:24px;
+
+  max-width:700px;
+
+}
