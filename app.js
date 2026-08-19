@@ -510,7 +510,21 @@ function sendAreaToPaint(area){
 
 function renderSummary(){
 
-  let html = "";
+  let html = `
+
+  <div class="summaryGridHeader">
+
+    <div>AREA</div>
+
+    <div>SQM</div>
+
+    <div>LITRES</div>
+
+    <div>DRUMS</div>
+
+  </div>
+
+  `;
 
   let totalLitres = 0;
   let totalDrums = 0;
@@ -520,72 +534,64 @@ function renderSummary(){
     let item =
       summaryData.positions[position];
 
-    html += `
-    <div class="summarySection">
-
-      <div class="summaryTitle">
-      ${position}
-      </div>
-
-      <p>
-      Area:
-      ${item.area.toFixed(0)} m²
-      </p>
-    `;
+    let positionLitres = 0;
+    let positionDrums = 0;
 
     for(let coat in item.coats){
 
       let coatData =
         item.coats[coat];
 
+      positionLitres +=
+        coatData.litres;
+
+      positionDrums +=
+        coatData.drums;
+
       totalLitres +=
         coatData.litres;
 
       totalDrums +=
         coatData.drums;
-
-      html += `
-      <p>
-
-      <strong>${coat}</strong>
-
-      <br>
-
-      Litres:
-      ${coatData.litres.toFixed(1)}
-
-      <br>
-
-      Drums:
-      ${coatData.drums}
-
-      </p>
-      `;
     }
 
     html += `
+
+    <div class="summaryGridRow">
+
+      <div>${position}</div>
+
+      <div>${item.area.toFixed(0)}</div>
+
+      <div>${positionLitres.toFixed(1)}</div>
+
+      <div>${Math.ceil(positionDrums)}</div>
+
     </div>
+
     `;
   }
 
   html += `
+
   <div class="totalBox">
 
-  TOTAL PROJECT LITRES
+    TOTAL PROJECT LITRES
 
-  <br><br>
+    <br><br>
 
-  ${totalLitres.toFixed(1)}
+    ${totalLitres.toFixed(1)}
 
-  <br><br>
+    <br><br>
 
-  TOTAL PROJECT DRUMS
+    TOTAL PROJECT DRUMS
 
-  <br><br>
+    <br><br>
 
-  ${Math.ceil(totalDrums)}
+    ${Math.ceil(totalDrums)}
 
   </div>
+
   `;
 
   document.getElementById(
