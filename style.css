@@ -851,7 +851,7 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
 
   align-items:center;
 
-  min-height:180px;
+  min-height:140px;
 
   border:2px dashed #00C8FF;
 
@@ -919,5 +919,13 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
   border:1px solid #00C8FF;
 
   background:#09254A;
+
+}
+
+.summaryActionBar button{
+
+  padding:10px 18px;
+
+  font-size:13px;
 
 }
