@@ -72,6 +72,10 @@ function showTab(tab){
   document.getElementById("summaryTab").style.display =
     "none";
 
+  document
+  .querySelectorAll(".activeNav")
+  .forEach(el => el.classList.remove("activeNav"));
+
 document.getElementById("settingsTab").style.display =
   "none";
   
@@ -81,30 +85,29 @@ document.getElementById("pdpTab").style.display =
 document.getElementById("calculatorTab").style.display =
   "none";
   
-  if(tab==="paint")
-    document.getElementById("paintTab").style.display =
-      "block";
+if(tab==="paint")
+  document.querySelectorAll("#navPaint")
+    .forEach(el=>el.classList.add("activeNav"));
 
-  if(tab==="hull")
-    document.getElementById("hullTab").style.display =
-      "block";
+if(tab==="hull")
+  document.querySelectorAll("#navHull")
+    .forEach(el=>el.classList.add("activeNav"));
 
-  if(tab==="jts")
-    document.getElementById("jtsTab").style.display =
-      "block";
+ if(tab==="jts")
+  document.querySelectorAll("#navJts")
+    .forEach(el=>el.classList.add("activeNav"));
 
 if(tab==="calculator")
-  document.getElementById("calculatorTab").style.display =
-    "block";
+  document.querySelectorAll("#navCalculator")
+    .forEach(el=>el.classList.add("activeNav"));
 
 if(tab==="pdp")
-  document.getElementById("pdpTab").style.display =
-    "block";
+  document.querySelectorAll("#navPdp")
+    .forEach(el=>el.classList.add("activeNav"));
 
-if(tab==="summary"){
-
-  document.getElementById("summaryTab").style.display =
-    "block";
+if(tab==="summary")
+  document.querySelectorAll("#navSummary")
+    .forEach(el=>el.classList.add("activeNav"));
 
   document.getElementById("summaryVesselTitle").innerText =
     document.getElementById("vesselName").value || "NO VESSEL";
