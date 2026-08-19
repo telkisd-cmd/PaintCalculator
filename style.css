@@ -717,3 +717,18 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
 
 }
 
+.dashboardLayout{
+  display:flex !important;
+}
+
+.sidebar{
+  flex:0 0 260px;
+}
+
+.dashboardContent{
+  flex:1;
+}
+
+.dashboardContent{
+  border:2px solid red;
+}
