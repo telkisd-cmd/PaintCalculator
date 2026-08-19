@@ -516,6 +516,8 @@ function renderSummary(){
 
     <div>AREA</div>
 
+    <div>COAT</div>
+
     <div>SQM</div>
 
     <div>LITRES</div>
@@ -534,42 +536,35 @@ function renderSummary(){
     let item =
       summaryData.positions[position];
 
-    let positionLitres = 0;
-    let positionDrums = 0;
-
     for(let coat in item.coats){
 
       let coatData =
         item.coats[coat];
-
-      positionLitres +=
-        coatData.litres;
-
-      positionDrums +=
-        coatData.drums;
 
       totalLitres +=
         coatData.litres;
 
       totalDrums +=
         coatData.drums;
+
+      html += `
+
+      <div class="summaryGridRow">
+
+        <div>${position}</div>
+
+        <div>${coat}</div>
+
+        <div>${item.area.toFixed(0)}</div>
+
+        <div>${coatData.litres.toFixed(1)}</div>
+
+        <div>${Math.ceil(coatData.drums)}</div>
+
+      </div>
+
+      `;
     }
-
-    html += `
-
-    <div class="summaryGridRow">
-
-      <div>${position}</div>
-
-      <div>${item.area.toFixed(0)}</div>
-
-      <div>${positionLitres.toFixed(1)}</div>
-
-      <div>${Math.ceil(positionDrums)}</div>
-
-    </div>
-
-    `;
   }
 
   html += `
