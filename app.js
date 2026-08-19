@@ -2455,6 +2455,12 @@ loadField("jtsVerticalSides");
 loadField("jtsBoottop");
 loadField("jtsTopside");
 loadField("jtsOther");
+
+loadField("solids");
+loadField("loss");
+loadField("dft");
+loadField("area");
+loadField("drum");
   
 });
 
