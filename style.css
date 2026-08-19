@@ -528,6 +528,14 @@ color:#4FC3F7;
 
 }
 
+.cardIcon{
+
+  font-size:28px;
+
+  margin-bottom:10px;
+
+}
+
 .quickCard:hover{
 
   transform:translateY(-4px);
