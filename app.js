@@ -2418,3 +2418,35 @@ function resetStations(){
   ).innerHTML = "";
 
 }
+
+function saveField(id){
+
+  localStorage.setItem(
+    id,
+    document.getElementById(id).value
+  );
+
+}
+
+function loadField(id){
+
+  const value =
+    localStorage.getItem(id);
+
+  if(value !== null){
+
+    document.getElementById(id).value =
+      value;
+
+  }
+
+}
+
+window.addEventListener("load",()=>{
+
+  loadField("vesselName");
+  loadField("imo");
+  loadField("location");
+
+});
+
