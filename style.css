@@ -826,3 +826,61 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
   margin-bottom:20px;
 
 }
+
+.photoUploadCard{
+
+  background:#111B30;
+
+  border:1px solid #22395C;
+
+  border-radius:16px;
+
+  padding:24px;
+
+  margin-bottom:20px;
+
+}
+
+.uploadBox{
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  align-items:center;
+
+  min-height:180px;
+
+  border:2px dashed #00C8FF;
+
+  border-radius:16px;
+
+  cursor:pointer;
+
+}
+
+.uploadIcon{
+
+  font-size:42px;
+
+  color:#00C8FF;
+
+}
+
+.uploadTitle{
+
+  margin-top:10px;
+
+  font-weight:bold;
+
+}
+
+.uploadSub{
+
+  font-size:12px;
+
+  color:#8AA0C5;
+
+}
