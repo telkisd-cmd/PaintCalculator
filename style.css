@@ -673,11 +673,11 @@ color:#4FC3F7;
 
 .settingsIcon{
 
-  width:48px;
+  width:56px;
 
-  height:48px;
+  height:56px;
 
-  border-radius:12px;
+  border-radius:16px;
 
   border:1px solid #22395C;
 
@@ -685,7 +685,7 @@ color:#4FC3F7;
 
   color:#00C8FF;
 
-  font-size:22px;
+  font-size:28px;
 
   cursor:pointer;
 
