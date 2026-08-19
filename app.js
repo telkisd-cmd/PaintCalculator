@@ -2450,5 +2450,11 @@ loadField("location");
 loadField("inspector");
 loadField("ownerRep");
 
+loadField("jtsFlatBottom");
+loadField("jtsVerticalSides");
+loadField("jtsBoottop");
+loadField("jtsTopside");
+loadField("jtsOther");
+  
 });
 
