@@ -511,10 +511,20 @@ color:#4FC3F7;
   cursor:pointer;
 
   display:flex;
-
+  
+  flex-direction:column;
+  
+  justify-content:center;
+  
   align-items:center;
 
   transition:0.2s;
+
+  text-align:center;
+
+  line-height:1.4;
+
+  font-size:16px;
 
 }
 
