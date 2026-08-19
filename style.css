@@ -913,3 +913,11 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
   gap:10px;
 
 }
+
+.activeNav{
+
+  border:1px solid #00C8FF;
+
+  background:#09254A;
+
+}
