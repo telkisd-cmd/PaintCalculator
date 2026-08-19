@@ -113,16 +113,6 @@ function showTab(tab){
   }
 }
 
-if(tab==="settings")
-  document.getElementById("settingsTab").style.display =
-    "block";
-
-if(tab==="mainMenu")
-  document.getElementById("mainMenuTab").style.display =
-    "block";
-
-}
-
 // ------------------------
 // PAINT CALCULATOR
 // ------------------------
