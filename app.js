@@ -100,43 +100,6 @@ if(tab==="calculator")
 if(tab==="pdp")
   document.getElementById("pdpTab").style.display =
     "block";
-  
- if(tab==="summary"){
-
-  document.getElementById("summaryTab").style.display =
-    "block";
-
-  document.getElementById("summaryVesselTitle").innerText =
-    document.getElementById("vesselName").value || "NO VESSEL";
-
-  document.getElementById("summaryVesselIMO").innerText =
-    "IMO " +
-    (document.getElementById("imo").value || "-");
-
-  document.getElementById("summaryLocation").innerText =
-    document.getElementById("location").value || "NO LOCATION";
-
-   let totalJTS =
-
-  Number(document.getElementById("jtsFlatBottom").value || 0) +
-
-  Number(document.getElementById("jtsVerticalSides").value || 0) +
-
-  Number(document.getElementById("jtsBoottop").value || 0) +
-
-  Number(document.getElementById("jtsTopside").value || 0) +
-
-  Number(document.getElementById("jtsOther").value || 0);
-
-document.getElementById("totalJTSKPI").innerText =
-  totalJTS.toLocaleString();
-
-   let litresValue =
-
-  document.getElementById("litres").innerText || "0";
-
-document.getElementById("totalLitresKPI").innerText =
-  litresValue;
 
 }
 
