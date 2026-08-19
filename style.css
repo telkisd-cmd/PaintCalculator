@@ -670,3 +670,24 @@ color:#4FC3F7;
   max-width:700px;
 
 }
+
+.settingsIcon{
+
+  width:48px;
+
+  height:48px;
+
+  border-radius:12px;
+
+  border:1px solid #22395C;
+
+  background:#111B30;
+
+  color:#00C8FF;
+
+  font-size:22px;
+
+  cursor:pointer;
+
+}
+
