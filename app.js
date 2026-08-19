@@ -2444,9 +2444,11 @@ function loadField(id){
 
 window.addEventListener("load",()=>{
 
-  loadField("vesselName");
-  loadField("imo");
-  loadField("location");
+loadField("vesselName");
+loadField("imo");
+loadField("location");
+loadField("inspector");
+loadField("ownerRep");
 
 });
 
