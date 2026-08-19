@@ -111,7 +111,6 @@ function showTab(tab){
     document.getElementById("totalJTSKPI").innerText =
       totalJTS.toLocaleString();
   }
-}
 
 // ------------------------
 // PAINT CALCULATOR
