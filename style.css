@@ -530,9 +530,13 @@ color:#4FC3F7;
 
 .cardIcon{
 
-  font-size:36px;
-
   margin-bottom:10px;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
 
 }
 
