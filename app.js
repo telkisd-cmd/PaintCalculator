@@ -76,6 +76,41 @@ function showTab(tab){
   .querySelectorAll(".activeNav")
   .forEach(el => el.classList.remove("activeNav"));
 
+if(tab==="mainMenu")
+  document
+    .querySelectorAll("#navDashboard")
+    .forEach(el=>el.classList.add("activeNav"));
+
+if(tab==="paint")
+  document
+    .querySelectorAll("#navPaint")
+    .forEach(el=>el.classList.add("activeNav"));
+
+if(tab==="hull")
+  document
+    .querySelectorAll("#navHull")
+    .forEach(el=>el.classList.add("activeNav"));
+
+if(tab==="jts")
+  document
+    .querySelectorAll("#navJts")
+    .forEach(el=>el.classList.add("activeNav"));
+
+if(tab==="calculator")
+  document
+    .querySelectorAll("#navCalc")
+    .forEach(el=>el.classList.add("activeNav"));
+
+if(tab==="pdp")
+  document
+    .querySelectorAll("#navPdp")
+    .forEach(el=>el.classList.add("activeNav"));
+
+if(tab==="summary")
+  document
+    .querySelectorAll("#navSummary")
+    .forEach(el=>el.classList.add("activeNav"));
+  
 document.getElementById("settingsTab").style.display =
   "none";
   
