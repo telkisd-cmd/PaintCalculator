@@ -138,6 +138,13 @@ document.getElementById("totalJTSKPI").innerText =
 document.getElementById("totalAreaKPI").innerText =
   totalArea.toLocaleString();
 
+   let litresValue =
+
+  document.getElementById("litres").innerText || "0";
+
+document.getElementById("totalLitresKPI").innerText =
+  litresValue;
+
 }
 
 if(tab==="settings")
