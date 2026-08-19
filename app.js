@@ -101,8 +101,6 @@ if(tab==="pdp")
   document.getElementById("pdpTab").style.display =
     "block";
 
-}
-
 if(tab==="settings")
   document.getElementById("settingsTab").style.display =
     "block";
