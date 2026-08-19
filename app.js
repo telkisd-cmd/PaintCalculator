@@ -71,10 +71,6 @@ function showTab(tab){
 
   document.getElementById("summaryTab").style.display =
     "none";
-
-  document
-  .querySelectorAll(".activeNav")
-  .forEach(el => el.classList.remove("activeNav"));
   
 document.getElementById("settingsTab").style.display =
   "none";
