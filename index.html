@@ -306,6 +306,52 @@ CONTINUE TO COATING CALCULATOR →
 <div
 id="paintTab"
 style="display:none;">
+
+<div class="dashboardLayout">
+
+<div class="sidebar">
+
+<h2>COAT CALC PRO</h2>
+
+<p>Marine Division</p>
+
+<button
+class="dashboardHomeBtn"
+onclick="showTab('mainMenu')">
+🏠 Dashboard
+</button>
+
+<button onclick="showTab('paint')">
+Paint Calculator
+</button>
+
+<button onclick="showTab('hull')">
+Hull Calculator
+</button>
+
+<button onclick="showTab('jts')">
+Initial Spec
+</button>
+
+<button onclick="showTab('calculator')">
+Calculator
+</button>
+
+<button onclick="showTab('pdp')">
+PDP
+</button>
+
+<button onclick="showTab('summary')">
+Summary
+</button>
+
+<button onclick="showTab('settings')">
+Settings
+</button>
+
+</div>
+
+<div class="dashboardContent">
   
 <h1>PAINT CALCULATOR</h1>
 
@@ -350,7 +396,7 @@ style="display:none;">
 <option>7th Coat</option>
 
 </select>
-
+  
 </div>
 
 <p>Solids (%)</p>
@@ -425,6 +471,10 @@ SEND TO PDP
 <h3>Required Drums</h3>
 <div class="big" id="drums">0</div>
 
+</div> <!-- dashboardContent -->
+
+</div> <!-- dashboardLayout -->
+  
 </div>
 
 <!-- HULL -->
