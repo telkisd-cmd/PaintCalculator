@@ -101,9 +101,22 @@ if(tab==="pdp")
   document.getElementById("pdpTab").style.display =
     "block";
   
-  if(tab==="summary")
-    document.getElementById("summaryTab").style.display =
-      "block";
+ if(tab==="summary"){
+
+  document.getElementById("summaryTab").style.display =
+    "block";
+
+  document.getElementById("summaryVesselTitle").innerText =
+    document.getElementById("vesselName").value || "NO VESSEL";
+
+  document.getElementById("summaryVesselIMO").innerText =
+    "IMO " +
+    (document.getElementById("imo").value || "-");
+
+  document.getElementById("summaryLocation").innerText =
+    document.getElementById("location").value || "NO LOCATION";
+
+}
 
 if(tab==="settings")
   document.getElementById("settingsTab").style.display =
