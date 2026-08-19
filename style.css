@@ -724,3 +724,67 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
 .sidebar{
   flex:0 0 260px;
 }
+
+.summaryHeader{
+
+  padding-bottom:20px;
+
+  border-bottom:1px solid #22395C;
+
+  margin-bottom:20px;
+
+}
+
+.summaryHeader h1{
+
+  margin:0;
+
+}
+
+.summaryHeader p{
+
+  color:#00C8FF;
+
+  font-size:12px;
+
+  text-transform:uppercase;
+
+}
+
+.summaryVesselCard{
+
+  background:#111B30;
+
+  border:1px solid #22395C;
+
+  border-radius:16px;
+
+  padding:20px;
+
+  margin-bottom:20px;
+
+}
+
+.summaryStats{
+
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:20px;
+
+  margin-bottom:20px;
+
+}
+
+.summaryStat{
+
+  background:#111B30;
+
+  border:1px solid #22395C;
+
+  border-radius:16px;
+
+  padding:20px;
+
+}
