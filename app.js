@@ -57,79 +57,60 @@ document.getElementById(
 
 function showTab(tab){
 
-  document.getElementById("mainMenuTab").style.display =
-  "none";
+  document.getElementById("mainMenuTab").style.display = "none";
+  document.getElementById("paintTab").style.display = "none";
+  document.getElementById("hullTab").style.display = "none";
+  document.getElementById("jtsTab").style.display = "none";
+  document.getElementById("summaryTab").style.display = "none";
+  document.getElementById("settingsTab").style.display = "none";
+  document.getElementById("pdpTab").style.display = "none";
+  document.getElementById("calculatorTab").style.display = "none";
 
-  document.getElementById("paintTab").style.display =
-    "none";
+  if(tab==="mainMenu")
+    document.getElementById("mainMenuTab").style.display = "block";
 
-  document.getElementById("hullTab").style.display =
-    "none";
+  if(tab==="paint")
+    document.getElementById("paintTab").style.display = "block";
 
-  document.getElementById("jtsTab").style.display =
-    "none";
+  if(tab==="hull")
+    document.getElementById("hullTab").style.display = "block";
 
-  document.getElementById("summaryTab").style.display =
-    "none";
-  
-document.getElementById("settingsTab").style.display =
-  "none";
-  
-document.getElementById("pdpTab").style.display =
-  "none";
-  
-document.getElementById("calculatorTab").style.display =
-  "none";
-  
-if(tab==="paint")
-  document.querySelectorAll("#navPaint")
-    .forEach(el=>el.classList.add("activeNav"));
+  if(tab==="jts")
+    document.getElementById("jtsTab").style.display = "block";
 
-if(tab==="hull")
-  document.querySelectorAll("#navHull")
-    .forEach(el=>el.classList.add("activeNav"));
+  if(tab==="calculator")
+    document.getElementById("calculatorTab").style.display = "block";
 
- if(tab==="jts")
-  document.querySelectorAll("#navJts")
-    .forEach(el=>el.classList.add("activeNav"));
+  if(tab==="pdp")
+    document.getElementById("pdpTab").style.display = "block";
 
-if(tab==="calculator")
-  document.querySelectorAll("#navCalculator")
-    .forEach(el=>el.classList.add("activeNav"));
+  if(tab==="settings")
+    document.getElementById("settingsTab").style.display = "block";
 
-if(tab==="pdp")
-  document.querySelectorAll("#navPdp")
-    .forEach(el=>el.classList.add("activeNav"));
+  if(tab==="summary"){
 
-if(tab==="summary")
-  document.querySelectorAll("#navSummary")
-    .forEach(el=>el.classList.add("activeNav"));
+    document.getElementById("summaryTab").style.display = "block";
 
-  document.getElementById("summaryVesselTitle").innerText =
-    document.getElementById("vesselName").value || "NO VESSEL";
+    document.getElementById("summaryVesselTitle").innerText =
+      document.getElementById("vesselName").value || "NO VESSEL";
 
-  document.getElementById("summaryVesselIMO").innerText =
-    "IMO " +
-    (document.getElementById("imo").value || "-");
+    document.getElementById("summaryVesselIMO").innerText =
+      "IMO " +
+      (document.getElementById("imo").value || "-");
 
-  document.getElementById("summaryLocation").innerText =
-    document.getElementById("location").value || "NO LOCATION";
+    document.getElementById("summaryLocation").innerText =
+      document.getElementById("location").value || "NO LOCATION";
 
-  let totalJTS =
+    let totalJTS =
+      Number(document.getElementById("jtsFlatBottom").value || 0) +
+      Number(document.getElementById("jtsVerticalSides").value || 0) +
+      Number(document.getElementById("jtsBoottop").value || 0) +
+      Number(document.getElementById("jtsTopside").value || 0) +
+      Number(document.getElementById("jtsOther").value || 0);
 
-    Number(document.getElementById("jtsFlatBottom").value || 0) +
-
-    Number(document.getElementById("jtsVerticalSides").value || 0) +
-
-    Number(document.getElementById("jtsBoottop").value || 0) +
-
-    Number(document.getElementById("jtsTopside").value || 0) +
-
-    Number(document.getElementById("jtsOther").value || 0);
-
-  document.getElementById("totalJTSKPI").innerText =
-    totalJTS.toLocaleString();
-
+    document.getElementById("totalJTSKPI").innerText =
+      totalJTS.toLocaleString();
+  }
 }
 
 if(tab==="settings")
