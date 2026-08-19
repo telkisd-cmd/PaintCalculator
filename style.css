@@ -968,22 +968,10 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
 
 .activeNav{
 
-  background:#00C8FF;
-
-  color:#001225;
-
-  font-weight:bold;
-
-}
-
-.activeNav{
-
-  background:#00C8FF !important;
+  background:#18C5F4 !important;
 
   color:#001225 !important;
 
-  font-weight:bold;
-
-  border:1px solid #00C8FF;
+  font-weight:700;
 
 }
