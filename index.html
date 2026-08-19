@@ -916,23 +916,35 @@ PAINT CALCULATIONS PER AREA
 
 </div>
   
-<p>Vessel Photo</p>
+<div class="photoUploadCard">
 
-<input
-type="file"
-id="vesselPhoto"
-accept="image/*">
+  <h3>PHOTO UPLOAD</h3>
 
-<img
-id="photoPreview"
-style="
-width:100%;
-max-height:200px;
-margin-top:10px;
-display:none;
-object-fit:cover;
-border-radius:8px;
-">
+  <label
+  for="vesselPhoto"
+  class="uploadBox">
+
+    <div class="uploadIcon">
+      ⬆
+    </div>
+
+    <div class="uploadTitle">
+      Upload Photo
+    </div>
+
+    <div class="uploadSub">
+      Click to browse
+    </div>
+
+  </label>
+
+  <input
+  type="file"
+  id="vesselPhoto"
+  accept="image/*"
+  hidden>
+
+</div>
 
 <div class="summaryButtons">
 
