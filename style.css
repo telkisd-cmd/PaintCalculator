@@ -935,7 +935,7 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
   display:grid;
 
   grid-template-columns:
-    2fr 1fr 1fr 1fr;
+    2fr 1fr 1fr 1fr 1fr;
 
   padding:12px;
 
@@ -952,7 +952,7 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
   display:grid;
 
   grid-template-columns:
-    2fr 1fr 1fr 1fr;
+    2fr 1fr 1fr 1fr 1fr;
 
   padding:14px 12px;
 
