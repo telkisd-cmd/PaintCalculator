@@ -131,13 +131,6 @@ if(tab==="pdp")
 document.getElementById("totalJTSKPI").innerText =
   totalJTS.toLocaleString();
 
-   let totalArea =
-
-  Number(document.getElementById("area").value || 0);
-
-document.getElementById("totalAreaKPI").innerText =
-  totalArea.toLocaleString();
-
    let litresValue =
 
   document.getElementById("litres").innerText || "0";
@@ -567,28 +560,16 @@ function renderSummary(){
     }
   }
 
-  html += `
+document.getElementById(
+  "totalLitresKPI"
+).innerText =
+  totalLitres.toFixed(1);
 
-  <div class="totalBox">
-
-    TOTAL PROJECT LITRES
-
-    <br><br>
-
-    ${totalLitres.toFixed(1)}
-
-    <br><br>
-
-    TOTAL PROJECT DRUMS
-
-    <br><br>
-
-    ${Math.ceil(totalDrums)}
-
-  </div>
-
-  `;
-
+document.getElementById(
+  "totalAreaKPI"
+).innerText =
+  Math.ceil(totalDrums);
+  
   document.getElementById(
     "summaryContent"
   ).innerHTML = html;
