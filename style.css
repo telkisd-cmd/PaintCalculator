@@ -884,3 +884,32 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
   color:#8AA0C5;
 
 }
+
+.summaryActionBar{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  background:#111B30;
+
+  border:1px solid #22395C;
+
+  border-radius:16px;
+
+  padding:20px;
+
+  margin-top:20px;
+
+}
+
+.leftActions,
+.rightActions{
+
+  display:flex;
+
+  gap:10px;
+
+}
