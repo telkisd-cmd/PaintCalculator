@@ -1657,6 +1657,33 @@ let stbMidDrums =
   - stbFwdDrums
   - stbMidDrums;
 
+  let totalPortDrums =
+
+  portFwdDrums +
+  portMidDrums +
+  portAftDrums;
+
+let totalStbdDrums =
+
+  stbFwdDrums +
+  stbMidDrums +
+  stbAftDrums;
+
+document.getElementById(
+  "portDrumsKPI"
+).innerText =
+  totalPortDrums;
+
+document.getElementById(
+  "stbdDrumsKPI"
+).innerText =
+  totalStbdDrums;
+
+document.getElementById(
+  "totalDrumsKPI"
+).innerText =
+  totalDrums;
+
 if(window.innerWidth <= 768){
 
   document.getElementById(
