@@ -1062,3 +1062,36 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
   color:#00C8FF;
 
 }
+
+.pdpKPI{
+
+  background:#071A36;
+
+  border:1px solid #22395C;
+
+  border-radius:12px;
+
+  padding:12px;
+
+  margin-bottom:10px;
+
+  text-align:center;
+
+}
+
+.pdpKPI small{
+
+  color:#7FA9C9;
+
+  display:block;
+
+}
+
+.pdpKPI h2{
+
+  margin:8px 0 0 0;
+
+  color:#00C8FF;
+
+}
+
