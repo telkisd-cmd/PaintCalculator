@@ -2064,6 +2064,83 @@ document.getElementById(
 ).innerHTML =
   detailHtml;
 
+let midpoint =
+  Math.ceil(
+    sprayAllocation.length / 2
+  );
+
+let portList =
+  sprayAllocation.slice(
+    0,
+    midpoint
+  );
+
+let stbList =
+  sprayAllocation.slice(
+    midpoint
+  );
+
+let portHtml = "";
+
+portList.forEach(s => {
+
+  portHtml += `
+
+  <div class="blueprintSpray">
+
+    ${s.id} : ${s.drums}
+
+  </div>
+
+  `;
+
+});
+
+let stbHtml = "";
+
+stbList.forEach(s => {
+
+  stbHtml += `
+
+  <div class="blueprintSpray">
+
+    ${s.id} : ${s.drums}
+
+  </div>
+
+  `;
+
+});
+
+document.getElementById(
+  "blueprintAllocation"
+).innerHTML = `
+
+<div class="blueprintColumn">
+
+${portHtml}
+
+</div>
+
+<div class="blueprintShip">
+
+<img
+src="vessel-outline.png"
+style="
+max-height:500px;
+width:auto;
+">
+
+</div>
+
+<div class="blueprintColumn">
+
+${stbHtml}
+
+</div>
+
+`;
+  
 document.getElementById(
   "pdpSummary"
 ).innerHTML = `
