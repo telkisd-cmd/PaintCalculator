@@ -1661,210 +1661,30 @@ document.getElementById(
 
 let sprayAllocation = [];
 
-let sprayCounter = 1;
-  
-let detailHtml = "";
-
-[
-  {
-    name:"PORT FWD",
-    stations:portFwd,
-    sprays:portFwd * spraysPerStation,
-    drums:portFwdDrums,
-    prefix:"P"
-  },
-
-  {
-    name:"PORT MID",
-    stations:portMid,
-    sprays:portMid * spraysPerStation,
-    drums:portMidDrums,
-    prefix:"P"
-  },
-
-  {
-    name:"PORT AFT",
-    stations:portAft,
-    sprays:portAft * spraysPerStation,
-    drums:portAftDrums,
-    prefix:"P"
-  },
-
-  {
-    name:"STB FWD",
-    stations:stbFwd,
-    sprays:stbFwd * spraysPerStation,
-    drums:stbFwdDrums,
-    prefix:"S"
-  },
-
-  {
-    name:"STB MID",
-    stations:stbMid,
-    sprays:stbMid * spraysPerStation,
-    drums:stbMidDrums,
-    prefix:"S"
-  },
-
-  {
-    name:"STB AFT",
-    stations:stbAft,
-    sprays:stbAft * spraysPerStation,
-    drums:stbAftDrums,
-    prefix:"S"
-  }
-
-].forEach(zone => {
-
-detailHtml += `
-
-<div class="detailCard">
-
-<hr>
-
-<h3>${zone.name}</h3>
-
-<p>
-Stations : ${zone.stations}
-</p>
-
-<p>
-Sprays : ${zone.sprays}
-</p>
-
-<p>
-Drums : ${zone.drums}
-</p>
-
-`;
-
- let baseDrumsPerStation =
-  Math.floor(
-    zone.drums /
-    zone.stations
-  );
-
-let remainingDrums =
-  zone.drums %
-  zone.stations;
-
 for(
-  let i = 1;
-  i <= zone.stations;
-  i++
+  let sp = 1;
+  sp <= totalSprays;
+  sp++
 ){
-
-  let stationDrums =
-    baseDrumsPerStation;
-
-  if(remainingDrums > 0){
-
-    stationDrums++;
-
-    remainingDrums--;
-
-  }
-
-let baseDrumsPerSpray =
-  Math.floor(
-    stationDrums /
-    spraysPerStation
-  );
-
-let sprayRemaining =
-  stationDrums %
-  spraysPerStation;
-
-  
-  detailHtml += `
-
-  <p>
-
-  ${zone.prefix}${i}
-
-  |
-
-  ${spraysPerStation} Sprays
-
-  |
-
-  ${stationDrums} Drums
-
-  </p>
-
-  `;
-
-}
-
-for(
-  let s = 1;
-  s <= spraysPerStation;
-  s++
-){
-
-  let sprayDrums =
-    baseDrumsPerSpray;
-
-  if(sprayRemaining > 0){
-
-    sprayDrums++;
-
-    sprayRemaining--;
-
-  }
 
   sprayAllocation.push({
 
-    id:
-      "SP" +
-      sprayCounter,
-
-    zone:
-      zone.name,
-
-    station:
-      zone.prefix + i,
+    id: "SP" + sp,
 
     drums:
-      sprayDrums
+      Math.max(
+        1,
+        Math.round(totalDrums / totalSprays)
+      )
 
   });
 
-  detailHtml += `
-
-  <div
-  style="
-  margin-left:25px;
-  color:#cccccc;
-  ">
-
-  SP${sprayCounter}
-
-  |
-
-  ${sprayDrums} Drums
-
-  </div>
-
-  `;
-
-  sprayCounter++;
-
 }
-  
-  detailHtml += `
-
-  </div>
-
-  `;
-
-});
 
 document.getElementById(
   "pdpDetails"
-).innerHTML =
-  detailHtml;
-
+).innerHTML = "";
+  
 let midpoint =
   Math.ceil(
     sprayAllocation.length / 2
