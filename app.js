@@ -1659,205 +1659,6 @@ document.getElementById(
 ).innerText =
   totalDrums;
 
-if(window.innerWidth <= 768){
-
-  document.getElementById(
-    "portFwd"
-  ).innerHTML = `1:${portFwdDrums}`;
-
-}
-else{
-
-  document.getElementById(
-    "portFwd"
-  ).innerHTML =
-
-  `PORT FWD
-  <br>
-  ${portFwd} Stations
-  <br>
-  ${portFwd * spraysPerStation} Sprays
-  <br>
-  ${portFwdDrums} Drums`;
-
-}
-
-if(window.innerWidth <= 768){
-
-  document.getElementById(
-    "portMid"
-  ).innerHTML = `2:${portMidDrums}`;
-
-}
-else{
-
-  document.getElementById(
-    "portMid"
-  ).innerHTML =
-
-  `PORT MID
-  <br>
-  ${portMid} Stations
-  <br>
-  ${portMid * spraysPerStation} Sprays
-  <br>
-  ${portMidDrums} Drums`;
-
-}
-
-if(window.innerWidth <= 768){
-
-  document.getElementById(
-    "portAft"
-  ).innerHTML = `3:${portAftDrums}`;
-
-}
-else{
-
-  document.getElementById(
-    "portAft"
-  ).innerHTML =
-
-  `PORT AFT
-  <br>
-  ${portAft} Stations
-  <br>
-  ${portAft * spraysPerStation} Sprays
-  <br>
-  ${portAftDrums} Drums`;
-
-}
-
-if(window.innerWidth <= 768){
-
-  document.getElementById(
-    "stbFwd"
-  ).innerHTML = `4:${stbFwdDrums}`;
-
-}
-else{
-
-  document.getElementById(
-    "stbFwd"
-  ).innerHTML =
-
-  `STB FWD
-  <br>
-  ${stbFwd} Stations
-  <br>
-  ${stbFwd * spraysPerStation} Sprays
-  <br>
-  ${stbFwdDrums} Drums`;
-
-}
-
-if(window.innerWidth <= 768){
-
-  document.getElementById(
-    "stbMid"
-  ).innerHTML = `5:${stbMidDrums}`;
-
-}
-else{
-
-  document.getElementById(
-    "stbMid"
-  ).innerHTML =
-
-  `STB MID
-  <br>
-  ${stbMid} Stations
-  <br>
-  ${stbMid * spraysPerStation} Sprays
-  <br>
-  ${stbMidDrums} Drums`;
-
-}
-
-if(window.innerWidth <= 768){
-
-  document.getElementById(
-    "stbAft"
-  ).innerHTML = `6:${stbAftDrums}`;
-
-}
-else{
-
-  document.getElementById(
-    "stbAft"
-  ).innerHTML =
-
-  `STB AFT
-  <br>
-  ${stbAft} Stations
-  <br>
-  ${stbAft * spraysPerStation} Sprays
-  <br>
-  ${stbAftDrums} Drums`;
-
-}
-
-if(window.innerWidth <= 768){
-
-  document.getElementById(
-    "mobilePDPLayout"
-  ).innerHTML = `
-
-  <div class="mobilePDPGrid">
-
-    <div>PORT</div>
-
-    <div class="mobileCenter">
-      FWD
-    </div>
-
-    <div>STB</div>
-
-    <div>1:${portFwdDrums}</div>
-
-    <div class="mobileCenter">
-      │
-    </div>
-
-    <div>4:${stbFwdDrums}</div>
-
-    <div>2:${portMidDrums}</div>
-
-    <div class="mobileCenter">
-      ─┼─
-    </div>
-
-    <div>5:${stbMidDrums}</div>
-
-    <div>3:${portAftDrums}</div>
-
-    <div class="mobileCenter">
-      │
-    </div>
-
-    <div>6:${stbAftDrums}</div>
-
-    <div></div>
-
-    <div class="mobileCenter">
-      AFT
-    </div>
-
-    <div></div>
-
-  </div>
-
-  `;
-
-}
-else{
-
-  document.getElementById(
-    "mobilePDPLayout"
-  ).innerHTML = "";
-
-}
-
 let sprayAllocation = [];
 
 let sprayCounter = 1;
@@ -2140,39 +1941,6 @@ width:auto;
 ${stbHtml}
 
 </div>
-
-`;
-  
-document.getElementById(
-  "pdpSummary"
-).innerHTML = `
-  
-<h3>PDP Summary</h3>
-
-<p>
-Total Sprays :
-${totalSprays}
-</p>
-
-<p>
-Sprays Per Station :
-${spraysPerStation}
-</p>
-
-<p>
-Total Stations :
-${stations}
-</p>
-
-<p>
-Port Stations :
-${portStations}
-</p>
-
-<p>
-Starboard Stations :
-${starboardStations}
-</p>
 
 `;
   
@@ -2525,29 +2293,25 @@ async function sharePDPPDF(){
 
 function resetStations(){
 
-  document.getElementById(
-    "portFwd"
-  ).innerHTML = "";
-
-  document.getElementById(
-    "portMid"
-  ).innerHTML = "";
-
-  document.getElementById(
-    "portAft"
-  ).innerHTML = "";
-
-  document.getElementById(
-    "stbFwd"
-  ).innerHTML = "";
-
-  document.getElementById(
-    "stbMid"
-  ).innerHTML = "";
-
-  document.getElementById(
+  [
+    "portFwd",
+    "portMid",
+    "portAft",
+    "stbFwd",
+    "stbMid",
     "stbAft"
-  ).innerHTML = "";
+  ].forEach(id => {
+
+    let el =
+      document.getElementById(id);
+
+    if(el){
+
+      el.innerHTML = "";
+
+    }
+
+  });
 
 }
 
