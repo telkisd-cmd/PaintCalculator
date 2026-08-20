@@ -1661,21 +1661,38 @@ document.getElementById(
 
 let sprayAllocation = [];
 
+let sprayAllocation = [];
+
+let baseDrumsPerSpray =
+  Math.floor(
+    totalDrums / totalSprays
+  );
+
+let remainingDrums =
+  totalDrums % totalSprays;
+
 for(
   let sp = 1;
   sp <= totalSprays;
   sp++
 ){
 
+  let sprayDrums =
+    baseDrumsPerSpray;
+
+  if(remainingDrums > 0){
+
+    sprayDrums++;
+
+    remainingDrums--;
+
+  }
+
   sprayAllocation.push({
 
     id: "SP" + sp,
 
-    drums:
-      Math.max(
-        1,
-        Math.round(totalDrums / totalSprays)
-      )
+    drums: sprayDrums
 
   });
 
