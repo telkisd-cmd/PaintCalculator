@@ -920,14 +920,6 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
 
 }
 
-.activeNav{
-
-  border:1px solid #00C8FF;
-
-  background:#09254A;
-
-}
-
 .summaryActionBar button{
 
   padding:10px 18px;
@@ -978,18 +970,6 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
 
   color:#001225 !important;
 
-  font-weight:bold;
-
-}
-
-.activeNav{
-
-  background:#18C5F4 !important;
-
-  color:#001225 !important;
-
   font-weight:700;
-
-  border:1px solid #18C5F4;
 
 }
