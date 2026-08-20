@@ -1726,7 +1726,9 @@ portList.forEach(s => {
 
   <div class="blueprintSpray">
 
-    ${s.id} : ${s.drums}
+  ${s.id}
+&nbsp;|&nbsp;
+${s.drums} DR
 
   </div>
 
