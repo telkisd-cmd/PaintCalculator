@@ -2112,6 +2112,8 @@ stbList.forEach(s => {
 
 });
 
+console.log(sprayAllocation);
+  
 document.getElementById(
   "blueprintAllocation"
 ).innerHTML = `
