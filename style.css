@@ -1120,6 +1120,10 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
 
   gap:6px;
 
+  max-height:600px;
+
+  overflow-y:auto;
+
 }
 
 .blueprintSpray{
@@ -1141,5 +1145,11 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
 .blueprintShip{
 
   text-align:center;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
 
 }
