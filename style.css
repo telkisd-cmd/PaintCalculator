@@ -1095,3 +1095,51 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
 
 }
 
+#blueprintAllocation{
+
+  display:grid;
+
+  grid-template-columns:
+    1fr
+    300px
+    1fr;
+
+  gap:30px;
+
+  align-items:center;
+
+  margin-top:20px;
+
+}
+
+.blueprintColumn{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:6px;
+
+}
+
+.blueprintSpray{
+
+  background:#071A36;
+
+  border:1px solid #00C8FF;
+
+  border-radius:8px;
+
+  padding:4px 8px;
+
+  font-size:13px;
+
+  color:#00C8FF;
+
+}
+
+.blueprintShip{
+
+  text-align:center;
+
+}
