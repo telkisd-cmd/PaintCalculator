@@ -1661,8 +1661,6 @@ document.getElementById(
 
 let sprayAllocation = [];
 
-let sprayAllocation = [];
-
 let baseDrumsPerSpray =
   Math.floor(
     totalDrums / totalSprays
@@ -1687,6 +1685,16 @@ for(
     remainingDrums--;
 
   }
+
+  sprayAllocation.push({
+
+    id: "SP" + sp,
+
+    drums: sprayDrums
+
+  });
+
+}
 
   sprayAllocation.push({
 
