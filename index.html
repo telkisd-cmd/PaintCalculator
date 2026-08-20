@@ -978,6 +978,14 @@ Summary
   </button>
 
 </div>
+
+<div class="pdpLayout">
+
+<div class="pdpLeft">
+
+<div class="pdpCard">
+
+<h3>PROJECT CONFIGURATION</h3>
   
 <p>Total Spray Guns</p>
 
@@ -1010,6 +1018,24 @@ id="pdpComments"
 rows="4"
 placeholder="Additional comments">
 </textarea>
+
+  </div>
+
+</div>
+
+<div class="pdpRight">
+
+</div>
+
+</div>
+
+<div class="pdpCard">
+
+<h3>DISTRIBUTION SUMMARY</h3>
+
+<div id="pdpSummary"></div>
+
+</div>
   
 <div id="extraStationBox" style="display:none;">
 
@@ -1036,6 +1062,16 @@ Starboard Side
 
 </div>
 
+<div class="pdpCard">
+
+<h3>
+PAINT DISTRIBUTION BLUEPRINT
+</h3>
+
+  <!-- vessel outline -->
+
+</div>
+  
 <div class="pdpSideTitles">
 
 <div>PORT SIDE</div>
@@ -1079,20 +1115,28 @@ alt="Vessel Outline">
 <div id="pdpDetails"></div>  
   
 <br>
+
+<div id="pdpSummary"></div>
   
-<button
-class="btn btn-primary"
-onclick="generatePDP()">
-Generate PDP
-</button>
+<div class="pdpCard">
 
-<button onclick="exportPDPPDF()">
-EXPORT PDP PDF
-</button>
+  <div class="summaryButtons">
 
-<button onclick="sharePDPPDF()">
-SHARE PDP PDF
-</button>
+    <button onclick="generatePDP()">
+      GENERATE PDP
+    </button>
+
+    <button onclick="exportPDPPDF()">
+      EXPORT PDF
+    </button>
+
+    <button onclick="sharePDPPDF()">
+      SHARE PLAN
+    </button>
+
+  </div>
+
+</div>
 
 </div> <!-- dashboardContent -->
 
