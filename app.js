@@ -1585,31 +1585,6 @@ let stbAftSprays =
   stbFwdSprays +
   stbMidSprays +
   stbAftSprays;
-
-let totalPortDrums =
-  portFwdDrums +
-  portMidDrums +
-  portAftDrums;
-
-let totalStbdDrums =
-  stbFwdDrums +
-  stbMidDrums +
-  stbAftDrums;
-
-document.getElementById(
-  "portDrumsKPI"
-).innerText =
-  totalPortDrums;
-
-document.getElementById(
-  "stbdDrumsKPI"
-).innerText =
-  totalStbdDrums;
-
-document.getElementById(
-  "totalDrumsKPI"
-).innerText =
-  totalDrums;
   
   let portFwdDrums =
   Math.round(
@@ -1657,33 +1632,6 @@ let stbMidDrums =
   - stbFwdDrums
   - stbMidDrums;
 
-let totalPortDrums =
-
-  portFwdDrums +
-  portMidDrums +
-  portAftDrums;
-
-let totalStbdDrums =
-
-  stbFwdDrums +
-  stbMidDrums +
-  stbAftDrums;
-
-document.getElementById(
-  "portDrumsKPI"
-).innerText =
-  totalPortDrums;
-
-document.getElementById(
-  "stbdDrumsKPI"
-).innerText =
-  totalStbdDrums;
-
-document.getElementById(
-  "totalDrumsKPI"
-).innerText =
-  totalDrums;
-  
   let totalPortDrums =
 
   portFwdDrums +
