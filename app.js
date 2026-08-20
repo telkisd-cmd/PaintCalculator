@@ -112,6 +112,8 @@ function showTab(tab){
       totalJTS.toLocaleString();
   }
 
+}
+
 // ------------------------
 // PAINT CALCULATOR
 // ------------------------
