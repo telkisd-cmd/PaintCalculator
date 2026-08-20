@@ -973,3 +973,48 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
   font-weight:700;
 
 }
+
+.pdpLayout{
+
+  display:grid;
+
+  grid-template-columns:
+    320px
+    1fr;
+
+  gap:24px;
+
+  align-items:start;
+
+}
+
+.pdpLeft{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:20px;
+
+}
+
+.pdpRight{
+
+  display:flex;
+
+  flex-direction:column;
+
+}
+
+.pdpCard{
+
+  background:#111B30;
+
+  border:1px solid #22395C;
+
+  border-radius:16px;
+
+  padding:20px;
+
+}
+
