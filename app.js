@@ -2168,50 +2168,40 @@ html2canvas(blueprint).then(canvas => {
     "_PDP.pdf"
   );
 
+return doc.output("blob");
+  
 });
 
 }
 
-async function sharePDPPDF(){
+async function sharePDPPDF() {
 
-  exportPDPPDF();
+  const pdfBlob =
+    await exportPDPPDF();
 
-}
+  if (!pdfBlob) return;
 
-async function sharePDPPDF(pdfBlob) {
-
-    if (navigator.share) {
-
-        const file = new File(
-            [pdfBlob],
-            "PDP_Report.pdf",
-            { type: "application/pdf" }
-        );
-
-        try {
-
-            await navigator.share({
-                title: "Paint Distribution Plan",
-                text: "PDP Export",
-                files: [file]
-            });
-
-        } catch (err) {
-
-            console.log("Share cancelled");
-        }
-
-    } else {
-
-        const url = URL.createObjectURL(pdfBlob);
-
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = "PDP_Report.pdf";
-        a.click();
-
-        URL.revokeObjectURL(url);
+  const file = new File(
+    [pdfBlob],
+    "PDP_Report.pdf",
+    {
+      type: "application/pdf"
     }
+  );
+
+  try {
+
+    await navigator.share({
+      title: "Paint Distribution Plan",
+      files: [file]
+    });
+
+  } catch (err) {
+
+    console.log(err);
+
+  }
+
 }
 
 function resetStations(){
