@@ -1991,13 +1991,6 @@ doc.text(
 
 y += 8;
 
-  doc.text(
-    "Date : " +
-    date,
-    20,
-    y
-  );
-
   y += 8;
 
   y += 8;
