@@ -1927,15 +1927,10 @@ let location =
     "location"
   ).value || "-";
 
- let dateField =
-  document.getElementById(
-    "reportDate"
-  );
-
 let date =
-  dateField ?
-  dateField.value :
-  "-";
+  new Date().toLocaleDateString(
+    "en-GB"
+  );
   
 let paintField =
   document.getElementById(
