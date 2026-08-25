@@ -1773,12 +1773,21 @@ ${portHtml}
 
 <div class="blueprintShip">
 
-<img
-src="vessel-outline.png"
-style="
-max-height:500px;
-width:auto;
-">
+  <div class="figmaShip">
+
+    <div class="figmaFwd">
+      FWD
+    </div>
+
+    <div class="figmaMid">
+      MIDSHIP
+    </div>
+
+    <div class="figmaAft">
+      AFT
+    </div>
+
+  </div>
 
 </div>
 
