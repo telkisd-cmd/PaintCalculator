@@ -1912,25 +1912,35 @@ function exportPDPPDF(){
 
   let y = 20;
 
-  let vesselName =
-    document.getElementById(
-      "vesselName"
-    ).value || "-";
+let vesselName =
+  document.getElementById(
+    "vesselName"
+  ).value || "-";
 
-  let paintDescription =
-    document.getElementById(
-      "paintDescription"
-    ).value || "-";
+let imo =
+  document.getElementById(
+    "imo"
+  ).value || "-";
 
-  let comments =
-    document.getElementById(
-      "pdpComments"
-    ).value || "-";
+let location =
+  document.getElementById(
+    "location"
+  ).value || "-";
 
   let date =
     document.getElementById(
       "reportDate"
     ).value || "-";
+  
+let paintDescription =
+  document.getElementById(
+    "paintDescription"
+  ).value || "-";
+
+let comments =
+  document.getElementById(
+    "pdpComments"
+  ).value || "-";
 
   doc.setFontSize(18);
 
@@ -1944,14 +1954,37 @@ function exportPDPPDF(){
 
   doc.setFontSize(12);
 
-  doc.text(
-    "Vessel : " +
-    vesselName,
-    20,
-    y
-  );
+doc.text(
+  "Vessel : " + vesselName,
+  20,
+  y
+);
 
-  y += 8;
+y += 8;
+
+doc.text(
+  "IMO : " + imo,
+  20,
+  y
+);
+
+y += 8;
+
+doc.text(
+  "Location : " + location,
+  20,
+  y
+);
+
+y += 8;
+
+doc.text(
+  "Paint : " + paintDescription,
+  20,
+  y
+);
+
+y += 8;
 
   doc.text(
     "Date : " +
@@ -1961,31 +1994,6 @@ function exportPDPPDF(){
   );
 
   y += 8;
-
-  doc.text(
-    "Position : " +
-    latest.position,
-    20,
-    y
-  );
-
-  y += 8;
-
-  doc.text(
-    "Coat : " +
-    latest.coat,
-    20,
-    y
-  );
-
-  y += 8;
-
-  doc.text(
-    "Paint : " +
-    paintDescription,
-    20,
-    y
-  );
 
   y += 8;
 
@@ -2016,139 +2024,69 @@ function exportPDPPDF(){
 
   y += 10;
 
-let vesselImage =
+let blueprint =
   document.getElementById(
-    "vesselOutline"
+    "blueprintAllocation"
   );
 
-let canvas =
-  document.createElement(
-    "canvas"
+html2canvas(blueprint).then(canvas => {
+
+  let blueprintImage =
+    canvas.toDataURL("image/png");
+
+  doc.addImage(
+    blueprintImage,
+    "PNG",
+    10,
+    y,
+    190,
+    120
   );
 
-canvas.width =
-  vesselImage.naturalWidth;
-
-canvas.height =
-  vesselImage.naturalHeight;
-
-let ctx =
-  canvas.getContext("2d");
-
-ctx.drawImage(
-  vesselImage,
-  0,
-  0
-);
-
-let imageData =
-  canvas.toDataURL(
-    "image/png"
-  );
-
-doc.addImage(
-  imageData,
-  "PNG",
-  80,
-  y,
-  50,
-  80
-);
-  
-  doc.setFontSize(10);
-
-  doc.text(
-    document.getElementById(
-      "portFwd"
-    ).innerText,
-    15,
-    y
-  );
-
-  doc.text(
-    document.getElementById(
-      "portMid"
-    ).innerText,
-    15,
-    y + 25
-  );
-
-  doc.text(
-    document.getElementById(
-      "portAft"
-    ).innerText,
-    15,
-    y + 50
-  );
-
-  doc.text(
-    document.getElementById(
-      "stbFwd"
-    ).innerText,
-    145,
-    y
-  );
-
-  doc.text(
-    document.getElementById(
-      "stbMid"
-    ).innerText,
-    145,
-    y + 25
-  );
-
-  doc.text(
-    document.getElementById(
-      "stbAft"
-    ).innerText,
-    145,
-    y + 50
-  );
-
-  y += 80;
+  y += 130;
 
   doc.setFontSize(14);
 
   doc.text(
-    "DETAILED ALLOCATION",
+    "DISTRIBUTION SUMMARY",
     20,
     y
   );
 
   y += 10;
 
-let details =
-  document.getElementById(
-    "pdpDetails"
-  ).innerText;
-
-let detailLines =
-  doc.splitTextToSize(
-    details,
-    170
-  );
-
-doc.setFontSize(10);
-
-detailLines.forEach(line => {
-
-  if(y > 270){
-
-    doc.addPage();
-
-    y = 20;
-
-  }
+  doc.setFontSize(12);
 
   doc.text(
-    line,
+    "PORT : " +
+    document.getElementById(
+      "portDrumsKPI"
+    ).innerText,
     20,
     y
   );
 
-  y += 5;
+  y += 8;
 
-});
+  doc.text(
+    "TOTAL : " +
+    document.getElementById(
+      "totalDrumsKPI"
+    ).innerText,
+    20,
+    y
+  );
+
+  y += 8;
+
+  doc.text(
+    "STBD : " +
+    document.getElementById(
+      "stbdDrumsKPI"
+    ).innerText,
+    20,
+    y
+  );
 
   let fileName =
     vesselName.replaceAll(
@@ -2160,6 +2098,8 @@ detailLines.forEach(line => {
     fileName +
     "_PDP.pdf"
   );
+
+});
 
 }
 
