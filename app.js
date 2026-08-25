@@ -1666,38 +1666,84 @@ document.getElementById(
 ).innerText =
   totalDrums;
 
-let sprayAllocation = [];
+let portSprays =
+  Math.ceil(totalSprays / 2);
 
-let baseDrumsPerSpray =
+let stbdSprays =
+  totalSprays - portSprays;
+
+let portList = [];
+let stbdList = [];
+
+  let portBase =
   Math.floor(
-    totalDrums / totalSprays
+    totalPortDrums /
+    portSprays
   );
 
-let remainingDrums =
-  totalDrums % totalSprays;
+let portRemain =
+  totalPortDrums %
+  portSprays;
 
 for(
-  let sp = 1;
-  sp <= totalSprays;
-  sp++
+  let i = 1;
+  i <= portSprays;
+  i++
 ){
 
-  let sprayDrums =
-    baseDrumsPerSpray;
+  let drums =
+    portBase;
 
-  if(remainingDrums > 0){
+  if(portRemain > 0){
 
-    sprayDrums++;
+    drums++;
 
-    remainingDrums--;
+    portRemain--;
 
   }
 
-  sprayAllocation.push({
+  portList.push({
 
-    id: "SP" + sp,
+    id:"SP"+i,
 
-    drums: sprayDrums
+    drums:drums
+
+  });
+
+}
+
+  let stbdBase =
+  Math.floor(
+    totalStbdDrums /
+    stbdSprays
+  );
+
+let stbdRemain =
+  totalStbdDrums %
+  stbdSprays;
+
+for(
+  let i = 1;
+  i <= stbdSprays;
+  i++
+){
+
+  let drums =
+    stbdBase;
+
+  if(stbdRemain > 0){
+
+    drums++;
+
+    stbdRemain--;
+
+  }
+
+  stbdList.push({
+
+    id:"SP"+(portSprays+i),
+
+    drums:drums
 
   });
 
@@ -1706,22 +1752,6 @@ for(
 document.getElementById(
   "pdpDetails"
 ).innerHTML = "";
-  
-let midpoint =
-  Math.ceil(
-    sprayAllocation.length / 2
-  );
-
-let portList =
-  sprayAllocation.slice(
-    0,
-    midpoint
-  );
-
-let stbList =
-  sprayAllocation.slice(
-    midpoint
-  );
 
 let portHtml = "";
 
@@ -1739,11 +1769,11 @@ portList.forEach(s => {
 
 });
 
-let stbHtml = "";
+let stbdHtml = "";
   
 stbList.forEach(s => {
 
-  stbHtml += `
+  stbdHtml += `
 
   <div class="blueprintSpray">
 
@@ -1755,7 +1785,8 @@ stbList.forEach(s => {
 
 });
 
-console.log(sprayAllocation);
+console.log(portList);
+console.log(stbdList);
 
 console.log("SPRAYS:", sprayAllocation);
 console.log("PORT HTML:", portHtml);
@@ -1793,7 +1824,7 @@ ${portHtml}
 
 <div class="blueprintColumn">
 
-${stbHtml}
+${stbdHtml}
 
 </div>
 
