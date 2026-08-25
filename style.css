@@ -1257,11 +1257,9 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
 
   justify-content:center;
 
-}
-
 .sprayInput{
 
-  width:55px;
+  width:70px;
 
   background:#04172f;
 
@@ -1275,6 +1273,29 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
 
   font-weight:bold;
 
-  font-size:16px;
+  font-size:18px;
+
+  padding:5px;
+
+}
+
+  /* Chrome / Edge */
+
+.sprayInput::-webkit-outer-spin-button,
+.sprayInput::-webkit-inner-spin-button{
+
+  -webkit-appearance:none;
+
+  margin:0;
+
+}
+
+/* Firefox */
+
+.sprayInput{
+
+  -moz-appearance:textfield;
+
+  appearance:textfield;
 
 }
