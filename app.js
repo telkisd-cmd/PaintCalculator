@@ -1926,11 +1926,6 @@ let location =
   document.getElementById(
     "location"
   ).value || "-";
-
-let date =
-  new Date().toLocaleDateString(
-    "en-GB"
-  );
   
 let paintField =
   document.getElementById(
