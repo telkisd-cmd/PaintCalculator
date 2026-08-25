@@ -2178,6 +2178,42 @@ async function sharePDPPDF(){
 
 }
 
+async function sharePDPPDF(pdfBlob) {
+
+    if (navigator.share) {
+
+        const file = new File(
+            [pdfBlob],
+            "PDP_Report.pdf",
+            { type: "application/pdf" }
+        );
+
+        try {
+
+            await navigator.share({
+                title: "Paint Distribution Plan",
+                text: "PDP Export",
+                files: [file]
+            });
+
+        } catch (err) {
+
+            console.log("Share cancelled");
+        }
+
+    } else {
+
+        const url = URL.createObjectURL(pdfBlob);
+
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "PDP_Report.pdf";
+        a.click();
+
+        URL.revokeObjectURL(url);
+    }
+}
+
 function resetStations(){
 
   [
