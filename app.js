@@ -1739,6 +1739,8 @@ portList.forEach(s => {
 
 });
 
+let stbHtml = "";
+  
 stbList.forEach(s => {
 
   stbHtml += `
