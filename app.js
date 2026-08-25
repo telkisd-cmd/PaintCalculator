@@ -1984,6 +1984,11 @@ let location =
   document.getElementById(
     "location"
   ).value || "-";
+
+let date =
+  new Date().toLocaleDateString(
+    "en-GB"
+  );
   
 let paintField =
   document.getElementById(
@@ -2041,6 +2046,14 @@ doc.text(
 
 y += 8;
 
+doc.text(
+  "Date : " + date,
+  20,
+  y
+);
+
+y += 8;
+  
 doc.text(
   "Paint : " + paintDescription,
   20,
