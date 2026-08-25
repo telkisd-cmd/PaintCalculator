@@ -1927,20 +1927,35 @@ let location =
     "location"
   ).value || "-";
 
-  let date =
-    document.getElementById(
-      "reportDate"
-    ).value || "-";
+ let dateField =
+  document.getElementById(
+    "reportDate"
+  );
+
+let date =
+  dateField ?
+  dateField.value :
+  "-";
   
-let paintDescription =
+let paintField =
   document.getElementById(
     "paintDescription"
-  ).value || "-";
+  );
 
-let comments =
+let paintDescription =
+  paintField ?
+  paintField.value :
+  "-";
+
+  let commentsField =
   document.getElementById(
     "pdpComments"
-  ).value || "-";
+  );
+
+let comments =
+  commentsField ?
+  commentsField.value :
+  "-";
 
   doc.setFontSize(18);
 
