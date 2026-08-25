@@ -1696,16 +1696,6 @@ for(
 
 }
 
-  sprayAllocation.push({
-
-    id: "SP" + sp,
-
-    drums: sprayDrums
-
-  });
-
-}
-
 document.getElementById(
   "pdpDetails"
 ).innerHTML = "";
