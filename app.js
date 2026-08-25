@@ -1892,6 +1892,50 @@ ${stbdHtml}
 
 }
 
+function recalculateSprays(){
+
+  let port = 0;
+  let stbd = 0;
+
+  document
+    .querySelectorAll(
+      '.sprayInput[data-side="port"]'
+    )
+    .forEach(el => {
+
+      port +=
+        Number(el.value || 0);
+
+    });
+
+  document
+    .querySelectorAll(
+      '.sprayInput[data-side="stbd"]'
+    )
+    .forEach(el => {
+
+      stbd +=
+        Number(el.value || 0);
+
+    });
+
+  document.getElementById(
+    "portDrumsKPI"
+  ).innerText =
+    port;
+
+  document.getElementById(
+    "stbdDrumsKPI"
+  ).innerText =
+    stbd;
+
+  document.getElementById(
+    "totalDrumsKPI"
+  ).innerText =
+    port + stbd;
+
+}
+
 function getLatestPDPItem(){
 
   if(pdpData.length === 0)
