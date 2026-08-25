@@ -1258,3 +1258,23 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
   justify-content:center;
 
 }
+
+.sprayInput{
+
+  width:55px;
+
+  background:#04172f;
+
+  color:#00C8FF;
+
+  border:1px solid #00C8FF;
+
+  border-radius:4px;
+
+  text-align:center;
+
+  font-weight:bold;
+
+  font-size:16px;
+
+}
