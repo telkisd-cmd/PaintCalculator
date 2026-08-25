@@ -1788,9 +1788,8 @@ stbdList.forEach(s => {
 console.log(portList);
 console.log(stbdList);
 
-console.log("SPRAYS:", sprayAllocation);
 console.log("PORT HTML:", portHtml);
-console.log("STBD HTML:", stbHtml);
+console.log("STBD HTML:", stbdHtml);
   
 document.getElementById(
   "blueprintAllocation"
