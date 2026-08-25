@@ -1761,7 +1761,14 @@ portList.forEach(s => {
 
   <div class="blueprintSpray">
 
-  ${s.id} | ${s.drums} DR
+    <span>${s.id}</span>
+
+    <input
+      type="number"
+      value="${s.drums}"
+      class="sprayInput"
+      data-side="port"
+    >
 
   </div>
 
@@ -1777,7 +1784,14 @@ stbdList.forEach(s => {
 
   <div class="blueprintSpray">
 
-  ${s.id} | ${s.drums} DR
+    <span>${s.id}</span>
+
+    <input
+      type="number"
+      value="${s.drums}"
+      class="sprayInput"
+      data-side="stbd"
+    >
 
   </div>
 
