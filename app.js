@@ -1510,6 +1510,13 @@ let stations =
     spraysPerStation
   );
 
+  if(!stations){
+
+    alert("Enter Spray Stations");
+    return;
+
+  }
+  
 let portStations =
   Math.floor(stations / 2);
 
@@ -1724,9 +1731,7 @@ portList.forEach(s => {
 
   <div class="blueprintSpray">
 
-  ${s.id}
-&nbsp;|&nbsp;
-${s.drums} DR
+  ${s.id} | ${s.drums} DR
 
   </div>
 
@@ -1734,15 +1739,13 @@ ${s.drums} DR
 
 });
 
-let stbHtml = "";
-
 stbList.forEach(s => {
 
   stbHtml += `
 
   <div class="blueprintSpray">
 
-    ${s.id} : ${s.drums}
+  ${s.id} | ${s.drums} DR
 
   </div>
 
@@ -1780,13 +1783,6 @@ ${stbHtml}
 </div>
 
 `;
-  
-  if(!stations){
-
-    alert("Enter Spray Stations");
-    return;
-
-  }
 
   let stationData = {};
 
