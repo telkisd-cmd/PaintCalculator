@@ -1124,19 +1124,23 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
 
 .blueprintSpray{
 
-  background:#071A36;
+  background:#04172f;
 
   border:1px solid #00C8FF;
 
-  border-radius:6px;
+  border-radius:5px;
 
-  padding:3px 8px;
+  width:115px;
 
-  width:80px;
+  padding:5px 10px;
 
-  font-size:12px;
+  text-align:center;
 
   color:#00C8FF;
+
+  font-weight:bold;
+
+  font-size:18px;
 
 }
 
@@ -1170,3 +1174,82 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
   font-weight:bold;
 
 }
+
+.figmaShip{
+
+  width:220px;
+
+  height:820px;
+
+  border:3px solid #24486e;
+
+  border-radius:110px;
+
+  overflow:hidden;
+
+  background:#1c89b0;
+
+}
+
+.figmaFwd{
+
+  height:105px;
+
+  background:#ef4674;
+
+  color:white;
+
+  font-size:20px;
+
+  font-weight:700;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+}
+
+.figmaMid{
+
+  height:610px;
+
+  background:#1c89b0;
+
+  color:white;
+
+  font-size:20px;
+
+  font-weight:700;
+
+  letter-spacing:2px;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+}
+
+.figmaAft{
+
+  height:105px;
+
+  background:#ef4674;
+
+  color:white;
+
+  font-size:20px;
+
+  font-weight:700;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+}
+
