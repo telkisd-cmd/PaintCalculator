@@ -1754,6 +1754,10 @@ stbList.forEach(s => {
 });
 
 console.log(sprayAllocation);
+
+console.log("SPRAYS:", sprayAllocation);
+console.log("PORT HTML:", portHtml);
+console.log("STBD HTML:", stbHtml);
   
 document.getElementById(
   "blueprintAllocation"
