@@ -772,10 +772,21 @@ function exportPDF(){
 
   doc.setFontSize(18);
 
-  doc.text(
-  " COATING ESTIMATION REPORT",
+doc.setFontSize(22);
+
+doc.text(
+  "COATING ESTIMATION REPORT",
   20,
   y
+);
+
+doc.setLineWidth(0.8);
+
+doc.line(
+  20,
+  y + 3,
+  190,
+  y + 3
 );
 
   y += 15;
@@ -831,6 +842,43 @@ if(vesselPhotoData){
 
   y += 30;
 
+doc.setDrawColor(0);
+
+doc.rect(20, y, 50, 25);
+doc.rect(80, y, 50, 25);
+doc.rect(140, y, 50, 25);
+
+doc.setFontSize(10);
+
+doc.text("TOTAL AREA", 30, y + 8);
+doc.text(
+  document.getElementById(
+    "totalAreaKPI"
+  ).innerText,
+  35,
+  y + 18
+);
+
+doc.text("TOTAL LITRES", 87, y + 8);
+
+doc.text(
+  document.getElementById(
+    "totalLitresKPI"
+  ).innerText,
+  95,
+  y + 18
+);
+
+doc.text("TOTAL DRUMS", 147, y + 8);
+
+doc.text(
+  Math.ceil(totalDrums).toString(),
+  155,
+  y + 18
+);
+
+y += 40;
+  
   let totalLitres = 0;
   let totalDrums = 0;
 
@@ -952,6 +1000,45 @@ y += 4;
     y
   );
 
+doc.addPage();
+
+doc.setFontSize(22);
+
+doc.text(
+  "PROJECT SUMMARY",
+  20,
+  30
+);
+
+doc.setFontSize(14);
+
+doc.text(
+  "TOTAL PROJECT LITRES : " +
+  totalLitres.toFixed(1),
+  20,
+  60
+);
+
+doc.text(
+  "TOTAL PROJECT DRUMS : " +
+  Math.ceil(totalDrums),
+  20,
+  80
+);
+
+doc.text(
+  "VESSEL : " + vesselName,
+  20,
+  100
+);
+
+doc.text(
+  "IMO : " +
+  document.getElementById("imo").value,
+  20,
+  120
+);
+  
   let fileName =
   vesselName.replaceAll(" ","_");
 
@@ -1122,6 +1209,49 @@ async function sharePDF(){
 
     y = 95;
 
+    doc.setFontSize(12);
+
+doc.text(
+  "POSITION",
+  20,
+  y
+);
+
+doc.text(
+  "AREA",
+  80,
+  y
+);
+
+doc.text(
+  "COAT",
+  110,
+  y
+);
+
+doc.text(
+  "LITRES",
+  145,
+  y
+);
+
+doc.text(
+  "DRUMS",
+  175,
+  y
+);
+
+y += 5;
+
+doc.line(
+  15,
+  y,
+  195,
+  y
+);
+
+y += 10;
+    
     for(let position in summaryData.positions){
 
       let item =
@@ -1167,15 +1297,35 @@ async function sharePDF(){
         let coatData =
           item.coats[coat];
 
-        doc.text(
-          coat +
-          " | Litres: " +
-          coatData.litres.toFixed(1) +
-          " | Drums: " +
-          coatData.drums,
-          25,
-          y
-        );
+       doc.text(
+  position,
+  20,
+  y
+);
+
+doc.text(
+  item.area.toFixed(0),
+  80,
+  y
+);
+
+doc.text(
+  coat,
+  110,
+  y
+);
+
+doc.text(
+  coatData.litres.toFixed(1),
+  145,
+  y
+);
+
+doc.text(
+  Math.ceil(coatData.drums).toString(),
+  175,
+  y
+);
 
         y += 4;
 
@@ -1190,6 +1340,13 @@ async function sharePDF(){
 
         y += 8;
 
+doc.line(
+  15,
+  y,
+  195,
+  y
+);
+        
         if(y > 270){
 
           doc.addPage();
