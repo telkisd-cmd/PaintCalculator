@@ -1255,11 +1255,16 @@ async function sharePDF(){
     }
 
   }
-  catch(error){
+catch(error){
 
-    console.log(error);
+  console.log(error);
 
-  }
+  alert(
+    error.name + "\n" +
+    error.message
+  );
+
+}
 
 }
 
