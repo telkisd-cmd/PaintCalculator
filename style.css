@@ -1177,7 +1177,7 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
 
 .figmaShip{
 
-  width:180px;
+  width:260px;
 
   height:980px;
 
@@ -1201,9 +1201,9 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
 
   color:white;
 
-  font-size:20px;
-
-  font-weight:700;
+font-size:22px;
+  
+font-weight:bold;
 
   display:flex;
 
@@ -1221,9 +1221,9 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
 
   color:white;
 
-  font-size:22px;
-
-  font-weight:700;
+font-size:22px;
+  
+font-weight:bold;
 
   letter-spacing:2px;
 
@@ -1247,9 +1247,9 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
 
   color:white;
 
-  font-size:20px;
+font-size:22px;
 
-  font-weight:700;
+font-weight:bold;
 
   display:flex;
 
