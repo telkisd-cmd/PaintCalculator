@@ -2181,6 +2181,10 @@ async function sharePDPPDF() {
 
   if (!pdfBlob) return;
 
+console.log(pdfBlob);
+console.log(pdfBlob?.type);
+console.log(pdfBlob?.size);
+  
   const file = new File(
     [pdfBlob],
     "PDP_Report.pdf",
