@@ -954,6 +954,13 @@ doc.line(
 
 y += 4;
 
+doc.line(
+  15,
+  y,
+  195,
+  y
+);
+      
       if(y > 270){
 
         doc.addPage();
