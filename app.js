@@ -2176,27 +2176,48 @@ return doc.output("blob");
 
 async function sharePDPPDF() {
 
-  const pdfBlob =
-    await exportPDPPDF();
+  const { jsPDF } = window.jspdf;
 
-alert(
-  "pdfBlob = " +
-  pdfBlob
-);
-  
-  if (!pdfBlob) return;
+  const doc = new jsPDF();
 
-console.log(pdfBlob);
-console.log(pdfBlob?.type);
-console.log(pdfBlob?.size);
-  
-  const file = new File(
-    [pdfBlob],
-    "PDP_Report.pdf",
-    {
-      type: "application/pdf"
-    }
+  let vesselName =
+    document.getElementById("vesselName").value || "-";
+
+  let blueprint =
+    document.getElementById("blueprintAllocation");
+
+  const canvas =
+    await html2canvas(blueprint);
+
+  const blueprintImage =
+    canvas.toDataURL("image/png");
+
+  doc.text(
+    "PAINT DISTRIBUTION PLAN",
+    20,
+    20
   );
+
+  doc.addImage(
+    blueprintImage,
+    "PNG",
+    10,
+    30,
+    190,
+    120
+  );
+
+  const pdfBlob =
+    doc.output("blob");
+
+  const file =
+    new File(
+      [pdfBlob],
+      vesselName + "_PDP.pdf",
+      {
+        type: "application/pdf"
+      }
+    );
 
   try {
 
@@ -2205,7 +2226,8 @@ console.log(pdfBlob?.size);
       files: [file]
     });
 
-  } catch (err) {
+  }
+  catch(err){
 
     console.log(err);
 
