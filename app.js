@@ -2057,7 +2057,9 @@ async function createPDPPDF(){
     180
   );
 
-  y += 130;
+doc.addPage();
+
+y = 20;
 
   doc.setFontSize(14);
 
