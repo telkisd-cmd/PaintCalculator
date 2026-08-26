@@ -2179,6 +2179,11 @@ async function sharePDPPDF() {
   const pdfBlob =
     await exportPDPPDF();
 
+alert(
+  "pdfBlob = " +
+  pdfBlob
+);
+  
   if (!pdfBlob) return;
 
 console.log(pdfBlob);
