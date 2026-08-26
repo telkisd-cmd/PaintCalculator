@@ -2095,8 +2095,6 @@ async function createPDPPDF(){
 
 }
 
-let shareInProgress = false;
-
 async function exportPDPPDF(){
 
   let vesselName =
@@ -2113,6 +2111,8 @@ async function exportPDPPDF(){
   );
 
 }
+
+let shareInProgress = false;
 
 async function sharePDPPDF(){
 
