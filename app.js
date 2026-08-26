@@ -870,20 +870,22 @@ function initializePhotoUpload(){
           vesselPhotoData =
             e.target.result;
 
-let preview =
-  document.getElementById(
-    "photoPreview"
-  );
+          let preview =
+            document.getElementById(
+              "photoPreview"
+            );
 
-if(preview){
+          if(preview){
 
-  preview.src =
-    vesselPhotoData;
+            preview.src =
+              vesselPhotoData;
 
-  preview.style.display =
-    "block";
+            preview.style.display =
+              "block";
 
-}
+          }
+
+        };
 
       reader.readAsDataURL(
         file
