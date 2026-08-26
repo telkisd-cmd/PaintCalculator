@@ -2139,6 +2139,8 @@ async function sharePDPPDF(){
         "vesselName"
       ).value || "Vessel";
 
+document.body.style.cursor = "wait";
+    
     const doc =
       await createPDPPDF();
 
@@ -2187,6 +2189,8 @@ async function sharePDPPDF(){
 }
   finally{
 
+document.body.style.cursor = "default";
+    
     shareInProgress = false;
 
   }
