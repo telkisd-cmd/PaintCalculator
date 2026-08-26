@@ -841,43 +841,6 @@ if(vesselPhotoData){
   );
 
   y += 30;
-
-doc.setDrawColor(0);
-
-doc.rect(20, y, 50, 25);
-doc.rect(80, y, 50, 25);
-doc.rect(140, y, 50, 25);
-
-doc.setFontSize(10);
-
-doc.text("TOTAL AREA", 30, y + 8);
-doc.text(
-  document.getElementById(
-    "totalAreaKPI"
-  ).innerText,
-  35,
-  y + 18
-);
-
-doc.text("TOTAL LITRES", 87, y + 8);
-
-doc.text(
-  document.getElementById(
-    "totalLitresKPI"
-  ).innerText,
-  95,
-  y + 18
-);
-
-doc.text("TOTAL DRUMS", 147, y + 8);
-
-doc.text(
-  Math.ceil(totalDrums).toString(),
-  155,
-  y + 18
-);
-
-y += 40;
   
   let totalLitres = 0;
   let totalDrums = 0;
