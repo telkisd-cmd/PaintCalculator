@@ -1235,6 +1235,12 @@ async function sharePDF(){
       })
     ){
 
+console.log(
+  "PDF Size:",
+  pdfBlob.size
+);
+
+      
       await navigator.share({
 
         title:
