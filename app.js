@@ -1947,68 +1947,37 @@ function getLatestPDPItem(){
 
 }
 
-function exportPDPPDF(){
+async function createPDPPDF(){
 
-  let latest =
-    getLatestPDPItem();
+  const { jsPDF } = window.jspdf;
 
-  if(!latest){
-
-    alert(
-      "Add Paint To PDP First"
-    );
-
-    return;
-
-  }
-
-  const { jsPDF } =
-    window.jspdf;
-
-  const doc =
-    new jsPDF();
+  const doc = new jsPDF();
 
   let y = 20;
 
-let vesselName =
-  document.getElementById(
-    "vesselName"
-  ).value || "-";
+  let vesselName =
+    document.getElementById("vesselName").value || "-";
 
-let imo =
-  document.getElementById(
-    "imo"
-  ).value || "-";
+  let imo =
+    document.getElementById("imo").value || "-";
 
-let location =
-  document.getElementById(
-    "location"
-  ).value || "-";
+  let location =
+    document.getElementById("location").value || "-";
 
-let date =
-  new Date().toLocaleDateString(
-    "en-GB"
-  );
-  
-let paintField =
-  document.getElementById(
-    "paintDescription"
-  );
+  let date =
+    new Date().toLocaleDateString("en-GB");
 
-let paintDescription =
-  paintField ?
-  paintField.value :
-  "-";
+  let paintField =
+    document.getElementById("paintDescription");
+
+  let paintDescription =
+    paintField ? paintField.value : "-";
 
   let commentsField =
-  document.getElementById(
-    "pdpComments"
-  );
+    document.getElementById("pdpComments");
 
-let comments =
-  commentsField ?
-  commentsField.value :
-  "-";
+  let comments =
+    commentsField ? commentsField.value : "-";
 
   doc.setFontSize(18);
 
@@ -2022,66 +1991,30 @@ let comments =
 
   doc.setFontSize(12);
 
-doc.text(
-  "Vessel : " + vesselName,
-  20,
-  y
-);
-
-y += 8;
-
-doc.text(
-  "IMO : " + imo,
-  20,
-  y
-);
-
-y += 8;
-
-doc.text(
-  "Location : " + location,
-  20,
-  y
-);
-
-y += 8;
-
-doc.text(
-  "Date : " + date,
-  20,
-  y
-);
-
-y += 8;
-  
-doc.text(
-  "Paint : " + paintDescription,
-  20,
-  y
-);
-
-y += 8;
-
+  doc.text("Vessel : " + vesselName,20,y);
   y += 8;
 
+  doc.text("IMO : " + imo,20,y);
   y += 8;
+
+  doc.text("Location : " + location,20,y);
+  y += 8;
+
+  doc.text("Date : " + date,20,y);
+  y += 8;
+
+  doc.text("Paint : " + paintDescription,20,y);
+  y += 16;
 
   let commentLines =
     doc.splitTextToSize(
-      "Comments : " +
-      comments,
+      "Comments : " + comments,
       170
     );
 
-  doc.text(
-    commentLines,
-    20,
-    y
-  );
+  doc.text(commentLines,20,y);
 
-  y +=
-    commentLines.length * 6 +
-    10;
+  y += commentLines.length * 6 + 10;
 
   doc.setFontSize(14);
 
@@ -2093,14 +2026,15 @@ y += 8;
 
   y += 10;
 
-let blueprint =
-  document.getElementById(
-    "blueprintAllocation"
-  );
+  let blueprint =
+    document.getElementById(
+      "blueprintAllocation"
+    );
 
-html2canvas(blueprint).then(canvas => {
+  const canvas =
+    await html2canvas(blueprint);
 
-  let blueprintImage =
+  const blueprintImage =
     canvas.toDataURL("image/png");
 
   doc.addImage(
@@ -2157,79 +2091,57 @@ html2canvas(blueprint).then(canvas => {
     y
   );
 
-  let fileName =
-    vesselName.replaceAll(
-      " ",
-      "_"
-    );
-
-  doc.save(
-    fileName +
-    "_PDP.pdf"
-  );
-
-return doc.output("blob");
-  
-});
+  return doc;
 
 }
 
-async function sharePDPPDF() {
+let shareInProgress = false;
 
-  const { jsPDF } = window.jspdf;
+async function sharePDPPDF(){
 
-  const doc = new jsPDF();
+  if (shareInProgress)
+    return;
 
-  let vesselName =
-    document.getElementById("vesselName").value || "-";
-
-  let blueprint =
-    document.getElementById("blueprintAllocation");
-
-  const canvas =
-    await html2canvas(blueprint);
-
-  const blueprintImage =
-    canvas.toDataURL("image/png");
-
-  doc.text(
-    "PAINT DISTRIBUTION PLAN",
-    20,
-    20
-  );
-
-  doc.addImage(
-    blueprintImage,
-    "PNG",
-    10,
-    30,
-    190,
-    120
-  );
-
-  const pdfBlob =
-    doc.output("blob");
-
-  const file =
-    new File(
-      [pdfBlob],
-      vesselName + "_PDP.pdf",
-      {
-        type: "application/pdf"
-      }
-    );
+  shareInProgress = true;
 
   try {
 
+    let vesselName =
+      document.getElementById(
+        "vesselName"
+      ).value || "Vessel";
+
+    const doc =
+      await createPDPPDF();
+
+    const pdfBlob =
+      doc.output("blob");
+
+    const file =
+      new File(
+        [pdfBlob],
+        vesselName.replaceAll(" ","_") +
+        "_PDP.pdf",
+        {
+          type:"application/pdf"
+        }
+      );
+
     await navigator.share({
-      title: "Paint Distribution Plan",
-      files: [file]
+      title:
+        "Paint Distribution Plan",
+      files:[file]
     });
 
   }
-  catch(err){
+  catch(error){
 
-    console.log(err);
+    console.log(error);
+
+  }
+  finally{
+
+    shareInProgress = false;
 
   }
 
