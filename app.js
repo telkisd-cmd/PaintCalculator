@@ -2162,11 +2162,29 @@ async function sharePDPPDF(){
     });
 
   }
-  catch(error){
+ catch(error){
 
-    console.log(error);
+  console.log(error);
 
-  }
+  alert(
+    "PDF sharing is not supported on this browser.\n\n" +
+    "The PDP report will be downloaded instead."
+  );
+
+  let vesselName =
+    document.getElementById(
+      "vesselName"
+    ).value || "Vessel";
+
+  const doc =
+    await createPDPPDF();
+
+  doc.save(
+    vesselName.replaceAll(" ","_") +
+    "_PDP.pdf"
+  );
+
+}
   finally{
 
     shareInProgress = false;
