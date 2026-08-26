@@ -1871,14 +1871,21 @@ async function createSummaryPDF(){
 
   if(vesselPhotoData){
 
-    doc.addImage(
-      vesselPhotoData,
-      "JPEG",
-      130,
-      15,
-      60,
-      45
-    );
+   doc.rect(
+  128,
+  22,
+  64,
+  49
+);
+
+doc.addImage(
+  vesselPhotoData,
+  "JPEG",
+  130,
+  24,
+  60,
+  45
+);
 
   }
 
