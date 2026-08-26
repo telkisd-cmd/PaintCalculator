@@ -1875,7 +1875,7 @@ async function createSummaryPDF(){
 
    doc.rect(
   128,
-  35,
+  45,
   64,
   49
 );
@@ -1884,7 +1884,7 @@ doc.addImage(
   vesselPhotoData,
   "JPEG",
   130,
-  37,
+  47,
   60,
   45
 );
