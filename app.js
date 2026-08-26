@@ -750,275 +750,6 @@ if(vesselPhotoData){
 
 }
 
-function exportPDF(){
-
-  let vesselName =
-    document.getElementById("vesselName").value.trim();
-
-  if(vesselName === ""){
-
-    alert(
-      "Please enter Vessel Name before exporting PDF."
-    );
-
-    return;
-  }
-  
-  const { jsPDF } = window.jspdf;
-
-  const doc = new jsPDF();
-
-  let y = 20;
-
-  doc.setFontSize(18);
-
-doc.setFontSize(22);
-
-doc.text(
-  "COATING ESTIMATION REPORT",
-  20,
-  y
-);
-
-doc.setLineWidth(0.8);
-
-doc.line(
-  20,
-  y + 3,
-  190,
-  y + 3
-);
-
-  y += 15;
-
-  doc.setFontSize(12);
-
-if(vesselPhotoData){
-
-  doc.addImage(
-    vesselPhotoData,
-    "JPEG",
-    130,
-    15,
-    60,
-    45
-  );
-
-}
-  
-  doc.text(
-    "Date: " +
-    document.getElementById("reportDate").value,
-    20,
-    y
-  );
-
-  y += 10;
-
-  doc.text(
-    "Vessel: " +
-    document.getElementById("vesselName").value,
-    20,
-    y
-  );
-
-  y += 10;
-
-  doc.text(
-    "IMO: " +
-    document.getElementById("imo").value,
-    20,
-    y
-  );
-
-  y += 10;
-
-  doc.text(
-    "Location: " +
-    document.getElementById("location").value,
-    20,
-    y
-  );
-
-  y += 30;
-  
-  let totalLitres = 0;
-  let totalDrums = 0;
-
-for(let position in summaryData.positions){
-
-  let item =
-    summaryData.positions[position];
-
-  doc.setLineWidth(1);
-
-  doc.line(
-    15,
-    y,
-    195,
-    y
-  );
-
-  y += 8;
-
-  doc.setFontSize(14);
-
-  doc.text(
-    position,
-    20,
-    y
-  );
-
-    y += 8;
-
-    doc.setFontSize(11);
-
-    doc.text(
-      "Area: " +
-      item.area.toFixed(0) +
-      " m2",
-      20,
-      y
-    );
-
-    y += 8;
-
-    for(let coat in item.coats){
-
-      let coatData =
-        item.coats[coat];
-
-      totalLitres +=
-        coatData.litres;
-
-      totalDrums +=
-        coatData.drums;
-
-     doc.text(
-  coat +
-  " | Litres: " +
-  coatData.litres.toFixed(1) +
-  " | Drums: " +
-  coatData.drums,
-  25,
-  y
-);
-
-y += 4;
-
-doc.setLineWidth(0.2);
-
-doc.line(
-  25,
-  y,
-  185,
-  y
-);
-
-y += 4;
-
-doc.line(
-  15,
-  y,
-  195,
-  y
-);
-      
-      if(y > 270){
-
-        doc.addPage();
-
-        y = 20;
-
-      }
-
-    }
-
-    y += 6;
-
-  }
-
-  doc.setFontSize(16);
-
-  doc.text(
-    "TOTAL PROJECT LITRES",
-    20,
-    y
-  );
-
-  y += 10;
-
-  doc.text(
-    totalLitres.toFixed(1),
-    20,
-    y
-  );
-
-  y += 15;
-
-  doc.text(
-    "TOTAL PROJECT DRUMS",
-    20,
-    y
-  );
-
-  y += 10;
-
-  doc.text(
-    Math.ceil(totalDrums).toString(),
-    20,
-    y
-  );
-
-doc.addPage();
-
-doc.setFontSize(22);
-
-doc.text(
-  "PROJECT SUMMARY",
-  20,
-  30
-);
-
-doc.setFontSize(14);
-
-doc.text(
-  "TOTAL PROJECT LITRES : " +
-  totalLitres.toFixed(1),
-  20,
-  60
-);
-
-doc.text(
-  "TOTAL PROJECT DRUMS : " +
-  Math.ceil(totalDrums),
-  20,
-  80
-);
-
-doc.text(
-  "VESSEL : " + vesselName,
-  20,
-  100
-);
-
-doc.text(
-  "IMO : " +
-  document.getElementById("imo").value,
-  20,
-  120
-);
-  
-  let fileName =
-  vesselName.replaceAll(" ","_");
-
-doc.save(
-  fileName +
-  "_Coating_Estimation_Report.pdf"
-);
-
-}
-
 function clearProject(){
 
   if(!confirm("Clear current project?"))
@@ -1085,319 +816,6 @@ function clearProject(){
   renderSummary();
 
   alert("Project Cleared");
-
-}
-
-async function sharePDF(){
-
-  let vesselName =
-    document.getElementById("vesselName").value.trim();
-
-  if(vesselName === ""){
-
-    alert(
-      "Please enter Vessel Name before sharing PDF."
-    );
-
-    return;
-  }
-
-  try{
-
-    const { jsPDF } = window.jspdf;
-
-    const doc = new jsPDF();
-
-    let y = 20;
-
-    doc.setFontSize(18);
-
-    doc.text(
-      "COATING ESTIMATION REPORT",
-      20,
-      y
-    );
-
-    // INFO AREA
-
-    doc.rect(
-      15,
-      30,
-      95,
-      50
-    );
-
-    doc.rect(
-      110,
-      30,
-      85,
-      50
-    );
-
-    doc.setFontSize(12);
-
-    doc.text(
-      "Vessel : " +
-      document.getElementById("vesselName").value,
-      20,
-      42
-    );
-
-    doc.text(
-      "IMO : " +
-      document.getElementById("imo").value,
-      20,
-      54
-    );
-
-    doc.text(
-      "Port : " +
-      document.getElementById("location").value,
-      20,
-      66
-    );
-
-    doc.text(
-      "Date : " +
-      document.getElementById("reportDate").value,
-      20,
-      78
-    );
-
-    if(vesselPhotoData){
-
-      doc.addImage(
-        vesselPhotoData,
-        "JPEG",
-        113,
-        33,
-        79,
-        44
-      );
-
-    }
-
-    y = 95;
-
-    doc.setFontSize(12);
-
-doc.text(
-  "POSITION",
-  20,
-  y
-);
-
-doc.text(
-  "AREA",
-  80,
-  y
-);
-
-doc.text(
-  "COAT",
-  110,
-  y
-);
-
-doc.text(
-  "LITRES",
-  145,
-  y
-);
-
-doc.text(
-  "DRUMS",
-  175,
-  y
-);
-
-y += 5;
-
-doc.line(
-  15,
-  y,
-  195,
-  y
-);
-
-y += 10;
-    
-    for(let position in summaryData.positions){
-
-      let item =
-        summaryData.positions[position];
-
-      // Thick line between positions
-
-      doc.setLineWidth(0.8);
-
-      doc.line(
-        15,
-        y,
-        195,
-        y
-      );
-
-      y += 8;
-
-      doc.setFontSize(14);
-
-      doc.text(
-        position,
-        20,
-        y
-      );
-
-      y += 8;
-
-      doc.setFontSize(11);
-
-      doc.text(
-        "Area: " +
-        item.area.toFixed(0) +
-        " m2",
-        20,
-        y
-      );
-
-      y += 10;
-
-      for(let coat in item.coats){
-
-        let coatData =
-          item.coats[coat];
-
-       doc.text(
-  position,
-  20,
-  y
-);
-
-doc.text(
-  item.area.toFixed(0),
-  80,
-  y
-);
-
-doc.text(
-  coat,
-  110,
-  y
-);
-
-doc.text(
-  coatData.litres.toFixed(1),
-  145,
-  y
-);
-
-doc.text(
-  Math.ceil(coatData.drums).toString(),
-  175,
-  y
-);
-
-        y += 4;
-
-        doc.setLineWidth(0.2);
-
-        doc.line(
-          25,
-          y,
-          185,
-          y
-        );
-
-        y += 8;
-
-doc.line(
-  15,
-  y,
-  195,
-  y
-);
-        
-        if(y > 270){
-
-          doc.addPage();
-
-          y = 20;
-
-        }
-
-      }
-
-      y += 8;
-
-      if(y > 270){
-
-        doc.addPage();
-
-        y = 20;
-
-      }
-
-    }
-
-    const pdfBlob =
-      doc.output("blob");
-
-    let fileName =
-      vesselName.replaceAll(" ","_");
-
-    const pdfFile =
-      new File(
-        [pdfBlob],
-        fileName +
-        "_Coating_Estimation_Report.pdf",
-        {
-          type:"application/pdf"
-        }
-      );
-
-    if(
-      navigator.canShare &&
-      navigator.canShare({
-        files:[pdfFile]
-      })
-    ){
-
-console.log(
-  "PDF Size:",
-  pdfBlob.size
-);
-
-      
-      await navigator.share({
-
-        title:
-        vesselName +
-        " Coating Estimation Report",
-
-        files:[pdfFile]
-
-      });
-
-    }
-    else{
-
-      alert(
-        "PDF sharing is not supported on this device."
-      );
-
-    }
-
-  }
-catch(error){
-
-  console.log(error);
-
-  alert(
-    error.name + "\n" +
-    error.message
-  );
-
-}
 
 }
 
@@ -2396,3 +1814,398 @@ loadField("drum");
 showTab("mainMenu");
   
 });
+
+async function createSummaryPDF(){
+
+  const { jsPDF } = window.jspdf;
+
+  const doc = new jsPDF();
+
+  let vesselName =
+    document.getElementById("vesselName")?.value || "-";
+
+  let imo =
+    document.getElementById("imo")?.value || "-";
+
+  let location =
+    document.getElementById("location")?.value || "-";
+
+  let reportDate =
+    document.getElementById("reportDate")?.value ||
+    new Date().toLocaleDateString("en-GB");
+
+  let inspector =
+    document.getElementById("inspector")?.value || "-";
+
+  let ownerRep =
+    document.getElementById("ownerRep")?.value || "-";
+
+  let totalDrums =
+    document.getElementById("totalAreaKPI")?.innerText || "0";
+
+  let totalLitres =
+    document.getElementById("totalLitresKPI")?.innerText || "0";
+
+  let y = 20;
+
+  // HEADER
+
+  doc.setFontSize(22);
+
+  doc.text(
+    "COATING ESTIMATION REPORT",
+    20,
+    y
+  );
+
+  doc.line(
+    20,
+    y + 3,
+    190,
+    y + 3
+  );
+
+  y += 15;
+
+  // PHOTO
+
+  if(vesselPhotoData){
+
+    doc.addImage(
+      vesselPhotoData,
+      "JPEG",
+      130,
+      15,
+      60,
+      45
+    );
+
+  }
+
+  // PROJECT INFO
+
+  doc.setFontSize(12);
+
+  doc.text(
+    "Date : " + reportDate,
+    20,
+    y
+  );
+
+  y += 10;
+
+  doc.text(
+    "Vessel : " + vesselName,
+    20,
+    y
+  );
+
+  y += 10;
+
+  doc.text(
+    "IMO : " + imo,
+    20,
+    y
+  );
+
+  y += 10;
+
+  doc.text(
+    "Location : " + location,
+    20,
+    y
+  );
+
+  y += 20;
+
+  // KPI BOXES
+
+  doc.rect(20,y,50,25);
+  doc.rect(80,y,50,25);
+  doc.rect(140,y,50,25);
+
+  doc.setFontSize(10);
+
+  doc.text(
+    "TOTAL DRUMS",
+    27,
+    y + 8
+  );
+
+  doc.text(
+    totalDrums.toString(),
+    40,
+    y + 18
+  );
+
+  doc.text(
+    "TOTAL LITRES",
+    87,
+    y + 8
+  );
+
+  doc.text(
+    totalLitres.toString(),
+    95,
+    y + 18
+  );
+
+  doc.text(
+    "POSITIONS",
+    147,
+    y + 8
+  );
+
+  doc.text(
+    Object.keys(
+      summaryData.positions
+    ).length.toString(),
+    160,
+    y + 18
+  );
+
+  y += 45;
+
+  // TABLE HEADER
+
+  doc.setFontSize(12);
+
+  doc.text("POSITION",20,y);
+  doc.text("AREA",80,y);
+  doc.text("COAT",110,y);
+  doc.text("LITRES",145,y);
+  doc.text("DRUMS",175,y);
+
+  y += 5;
+
+  doc.line(
+    15,
+    y,
+    195,
+    y
+  );
+
+  y += 8;
+
+  // TABLE DATA
+
+  let calcLitres = 0;
+  let calcDrums = 0;
+
+  for(let position in summaryData.positions){
+
+    let item =
+      summaryData.positions[position];
+
+    for(let coat in item.coats){
+
+      let coatData =
+        item.coats[coat];
+
+      calcLitres +=
+        coatData.litres;
+
+      calcDrums +=
+        coatData.drums;
+
+      doc.text(
+        position,
+        20,
+        y
+      );
+
+      doc.text(
+        item.area.toFixed(0),
+        80,
+        y
+      );
+
+      doc.text(
+        coat,
+        110,
+        y
+      );
+
+      doc.text(
+        coatData.litres.toFixed(1),
+        145,
+        y
+      );
+
+      doc.text(
+        Math.ceil(
+          coatData.drums
+        ).toString(),
+        175,
+        y
+      );
+
+      y += 8;
+
+      doc.line(
+        15,
+        y,
+        195,
+        y
+      );
+
+      y += 5;
+
+      if(y > 270){
+
+        doc.addPage();
+
+        y = 20;
+
+      }
+
+    }
+
+  }
+
+  // FINAL SUMMARY PAGE
+
+  doc.addPage();
+
+  doc.setFontSize(22);
+
+  doc.text(
+    "PROJECT SUMMARY",
+    20,
+    30
+  );
+
+  doc.setFontSize(14);
+
+  doc.text(
+    "TOTAL PROJECT LITRES : " +
+    calcLitres.toFixed(1),
+    20,
+    60
+  );
+
+  doc.text(
+    "TOTAL PROJECT DRUMS : " +
+    Math.ceil(calcDrums),
+    20,
+    80
+  );
+
+  doc.text(
+    "VESSEL : " +
+    vesselName,
+    20,
+    100
+  );
+
+  doc.text(
+    "IMO : " +
+    imo,
+    20,
+    120
+  );
+
+  doc.text(
+    "INSPECTING TECHNICIAN : " +
+    inspector,
+    20,
+    140
+  );
+
+  doc.text(
+    "OWNER REPRESENTATIVE : " +
+    ownerRep,
+    20,
+    160
+  );
+
+  return doc;
+
+}
+
+async function exportPDF(){
+
+  const doc =
+    await createSummaryPDF();
+
+  let vesselName =
+    document.getElementById(
+      "vesselName"
+    )?.value || "Vessel";
+
+  doc.save(
+    vesselName.replaceAll(" ","_") +
+    "_Coating_Estimation_Report.pdf"
+  );
+
+}
+
+let summaryShareInProgress = false;
+
+async function sharePDF(){
+
+  if(summaryShareInProgress)
+    return;
+
+  summaryShareInProgress = true;
+
+  try{
+
+    const doc =
+      await createSummaryPDF();
+
+    let vesselName =
+      document.getElementById(
+        "vesselName"
+      )?.value || "Vessel";
+
+    const pdfBlob =
+      doc.output("blob");
+
+    const file =
+      new File(
+        [pdfBlob],
+        vesselName.replaceAll(" ","_") +
+        "_Coating_Estimation_Report.pdf",
+        {
+          type:"application/pdf"
+        }
+      );
+
+    await navigator.share({
+      title:
+        "Coating Estimation Report",
+      files:[file]
+    });
+
+  }
+  catch(error){
+
+    console.log(error);
+
+    alert(
+      "PDF sharing is not supported on this browser.\n\n" +
+      "The report will be downloaded instead."
+    );
+
+    const doc =
+      await createSummaryPDF();
+
+    let vesselName =
+      document.getElementById(
+        "vesselName"
+      )?.value || "Vessel";
+
+    doc.save(
+      vesselName.replaceAll(" ","_") +
+      "_Coating_Estimation_Report.pdf"
+    );
+
+  }
+  finally{
+
+    summaryShareInProgress = false;
+
+  }
+
+}
