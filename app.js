@@ -2053,8 +2053,8 @@ async function createPDPPDF(){
     "PNG",
     10,
     y,
-    190,
-    120
+    200,
+    180
   );
 
   y += 130;
