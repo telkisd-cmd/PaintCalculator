@@ -2097,6 +2097,23 @@ async function createPDPPDF(){
 
 let shareInProgress = false;
 
+async function exportPDPPDF(){
+
+  let vesselName =
+    document.getElementById(
+      "vesselName"
+    ).value || "Vessel";
+
+  const doc =
+    await createPDPPDF();
+
+  doc.save(
+    vesselName.replaceAll(" ","_") +
+    "_PDP.pdf"
+  );
+
+}
+
 async function sharePDPPDF(){
 
   if (shareInProgress)
