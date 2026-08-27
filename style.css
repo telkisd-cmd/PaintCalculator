@@ -1304,16 +1304,22 @@ font-weight:bold;
 
 .paintModernLayout{
 
-  display:flex;
+  display:grid;
+
+  grid-template-columns:
+    minmax(0,1fr)
+    320px;
 
   gap:25px;
 
-  align-items:flex-start;
+  align-items:start;
 
 }
 
 .paintLeftCard{
 
+  width:100%;
+  
   flex:1;
 
   background:#06152b;
@@ -1330,14 +1336,14 @@ font-weight:bold;
 
   width:320px;
 
-  flex-shrink:0;
-
   display:flex;
 
   flex-direction:column;
 
   gap:15px;
 
+  align-self:start;
+  
 }
 
 .metricCard{
