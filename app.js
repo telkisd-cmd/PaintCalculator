@@ -45,10 +45,22 @@ window.onload = function(){
 
   resetStations();
 
-document.getElementById(
-  "mainMenuTab"
-).style.display = "block";
-  
+  document.getElementById(
+    "mainMenuTab"
+  ).style.display = "block";
+
+
+  let autoSave =
+    localStorage.getItem("autoSave");
+
+  if(autoSave === "false"){
+
+    document.getElementById(
+      "autoSaveToggle"
+    ).checked = false;
+
+  }
+
 };
 
 // ------------------------
@@ -2181,5 +2193,19 @@ function updateJTSTotal(){
 
   document.getElementById("jtsTotalArea").innerHTML =
     total.toLocaleString() + " m²";
+
+}
+
+function toggleAutoSave(){
+
+  let state =
+    document.getElementById(
+      "autoSaveToggle"
+    ).checked;
+
+  localStorage.setItem(
+    "autoSave",
+    state
+  );
 
 }
