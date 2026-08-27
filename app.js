@@ -39,7 +39,14 @@ window.onload = function(){
     dateField.value = formattedDate;
   }
 
+let autoSave =
+  localStorage.getItem("autoSave");
+
+if(autoSave !== "false"){
+
   loadSummary();
+
+}
 
   initializePhotoUpload();
 
