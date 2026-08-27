@@ -1794,3 +1794,36 @@ height:fit-content;
   padding:24px;
 
 }
+
+.jtsTotalCard{
+
+  background:#07142b;
+
+  border:1px solid #16304f;
+
+  border-radius:16px;
+
+  padding:20px;
+
+  margin-bottom:20px;
+
+}
+
+.jtsTotalLabel{
+
+  color:#9bb7d0;
+
+  font-size:13px;
+
+}
+
+#jtsTotalArea{
+
+  font-size:42px;
+
+  font-weight:700;
+
+  color:white;
+
+}
+
