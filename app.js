@@ -848,7 +848,13 @@ function clearProject(){
   document.getElementById("boottopHeight").value = "";
   document.getElementById("hullFactor").value = "";
 
-  document.getElementById("hullResults").innerHTML = "";
+  if(document.getElementById("hullResults")){
+
+  document.getElementById(
+    "hullResults"
+  ).innerHTML = "";
+
+}
 
   // JTS
 
