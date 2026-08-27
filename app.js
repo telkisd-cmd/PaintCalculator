@@ -301,6 +301,11 @@ function sendPaintToSummary(){
 // HULL CALCULATOR
 // ------------------------
 
+let flatBottomArea = 0;
+let verticalSidesArea = 0;
+let boottopArea = 0;
+let topsideArea = 0;
+
 function calculateHull(){
 
   let loa =
@@ -395,111 +400,28 @@ function calculateHull(){
     boottop +
     topside;
 
-  let html = `
+flatBottomArea = flatBottom;
 
-<div class="card">
+verticalSidesArea = verticalSides;
 
-<h3>Height Of Topside</h3>
-<div class="result">
-${topsideHeight.toFixed(1)} m
-</div>
+boottopArea = boottop;
 
-</div>
+topsideArea = topside;
+  
+document.getElementById("flatBottomKPI").innerHTML =
+  flatBottom.toFixed(0) + " m²";
 
-<div class="card">
+document.getElementById("verticalSidesKPI").innerHTML =
+  verticalSides.toFixed(0) + " m²";
 
-<h3>Flat Bottom</h3>
+document.getElementById("boottopKPI").innerHTML =
+  boottop.toFixed(0) + " m²";
 
-<div class="result">
-${flatBottom.toFixed(0)} m²
-<div class="actionButtons">
+document.getElementById("topsideKPI").innerHTML =
+  topside.toFixed(0) + " m²";
 
-<button onclick="sendAreaToPaint(${flatBottom})">
-PAINT
-</button>
-
-<button onclick="sendHullToSummary('Flat Bottom',${flatBottom})">
-SUMMARY
-</button>
-
-</div>
-
-<div class="card">
-
-<h3>Vertical Sides</h3>
-
-<div class="result">
-${verticalSides.toFixed(0)} m²
-<div class="actionButtons">
-
-<button onclick="sendAreaToPaint(${verticalSides})">
-PAINT
-</button>
-
-<button onclick="sendHullToSummary('Vertical Sides',${verticalSides})">
-SUMMARY
-</button>
-
-</div>
-
-<div class="card">
-
-<h3>Boottop</h3>
-
-<div class="result">
-${boottop.toFixed(0)} m²
-<div class="actionButtons">
-
-<button onclick="sendAreaToPaint(${boottop})">
-PAINT
-</button>
-
-<button onclick="sendHullToSummary('Boottop',${boottop})">
-SUMMARY
-</button>
-
-</div>
-
-<div class="card">
-
-<h3>Topside</h3>
-
-<div class="result">
-${topside.toFixed(0)} m²
-<div class="actionButtons">
-
-<button onclick="sendAreaToPaint(${topside})">
-PAINT
-</button>
-
-<button onclick="sendHullToSummary('Topside',${topside})">
-SUMMARY
-</button>
-
-</div>
-
-<div class="card">
-
-<h3>Total Area</h3>
-
-<div class="result">
-${totalArea.toFixed(0)} m²
-<div class="actionButtons">
-
-<button onclick="sendAreaToPaint(${totalArea})">
-PAINT
-</button>
-
-<button onclick="sendHullToSummary('Total Area',${totalArea})">
-SUMMARY
-</button>
-
-</div>
-
-`;
-
-  document.getElementById("hullResults").innerHTML =
-    html;
+document.getElementById("totalAreaKPIHull").innerHTML =
+  totalArea.toFixed(0) + " m²";
 
 }
 
@@ -2216,5 +2138,22 @@ async function sharePDF(){
     summaryShareInProgress = false;
 
   }
+
+}
+
+function sendHullAreaToPaint(
+  position,
+  area
+){
+
+  document.getElementById(
+    "paintPosition"
+  ).value = position;
+
+  document.getElementById(
+    "area"
+  ).value = area.toFixed(0);
+
+  showTab("paint");
 
 }
