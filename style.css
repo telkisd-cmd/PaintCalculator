@@ -2008,3 +2008,246 @@ height:fit-content;
   color:#666;
 
 }
+
+/* =======================
+   LIGHT MODE
+======================= */
+
+.lightMode{
+
+  background:#F4F7FB;
+
+  color:#111827;
+
+}
+
+.lightMode .dashboardContent{
+
+  background:#F4F7FB;
+
+}
+
+.lightMode .sidebar{
+
+  background:#FFFFFF;
+
+  border-right:1px solid #DCE5EF;
+
+}
+
+.lightMode .sidebar h2{
+
+  color:#005FA3;
+
+}
+
+.lightMode .sidebar p{
+
+  color:#6B7280;
+
+}
+
+.lightMode .sidebar button{
+
+  background:#FFFFFF;
+
+  color:#334155;
+
+  border:1px solid #DCE5EF;
+
+}
+
+.lightMode .activeNav{
+
+  background:#0094FF !important;
+
+  color:white !important;
+
+}
+
+.lightMode h1{
+
+  color:#0F172A;
+
+}
+
+.lightMode h2{
+
+  color:#0F172A;
+
+}
+
+.lightMode h3{
+
+  color:#0F172A;
+
+}
+
+.lightMode p{
+
+  color:#475569;
+
+}
+
+.lightMode .vesselCard,
+.lightMode .paintLeftCard,
+.lightMode .paintRightCard,
+.lightMode .hullLeftCard,
+.lightMode .hullKPI,
+.lightMode .hullTotalCard,
+.lightMode .jtsCard,
+.lightMode .jtsTotalCard,
+.lightMode .calculatorCard,
+.lightMode .settingsCard,
+.lightMode .pdpCard,
+.lightMode .summaryTableCard,
+.lightMode .summaryVesselCard,
+.lightMode .summaryStat,
+.lightMode .photoUploadCard{
+
+  background:#FFFFFF;
+
+  border:1px solid #DCE5EF;
+
+  box-shadow:
+  0 2px 10px rgba(0,0,0,.05);
+
+}
+
+.lightMode input,
+.lightMode textarea,
+.lightMode select{
+
+  background:#FFFFFF;
+
+  color:#111827;
+
+  border:1px solid #CBD5E1;
+
+}
+
+.lightMode input::placeholder,
+.lightMode textarea::placeholder{
+
+  color:#94A3B8;
+
+}
+
+.lightMode .metricCard{
+
+  background:#FFFFFF;
+
+  border:1px solid #DCE5EF;
+
+}
+
+.lightMode .metricTitle{
+
+  color:#64748B;
+
+}
+
+.lightMode .metricValue{
+
+  color:#0094FF;
+
+}
+
+.lightMode .calculateBtn,
+.lightMode .continueBtn,
+.lightMode .paintActionBtn,
+.lightMode .hullCalculateBtn,
+.lightMode .sendPaintBtn,
+.lightMode .calcActionBtn{
+
+  background:#0094FF;
+
+  color:white;
+
+}
+
+.lightMode .calculateBtn:hover,
+.lightMode .continueBtn:hover,
+.lightMode .paintActionBtn:hover,
+.lightMode .hullCalculateBtn:hover,
+.lightMode .sendPaintBtn:hover,
+.lightMode .calcActionBtn:hover{
+
+  background:#0077CF;
+
+}
+
+.lightMode .jtsLabel{
+
+  color:#0F172A;
+
+}
+
+
+.lightMode .jtsSendBtn{
+
+  background:#F8FAFC;
+
+  color:#0094FF;
+
+  border:1px solid #CBD5E1;
+
+}
+
+.lightMode .jtsSendBtn:hover{
+
+  background:#0094FF;
+
+  color:white;
+
+}
+
+.lightMode .jtsInfoBox{
+
+  background:#F8FAFC;
+
+  border:1px solid #DCE5EF;
+
+  color:#64748B;
+
+}
+
+.lightMode .summaryGridHeader{
+
+  color:#0094FF;
+
+}
+
+.lightMode .summaryGridRow{
+
+  border-bottom:1px solid #E2E8F0;
+
+  color:#334155;
+
+}
+
+.lightMode .uploadBox{
+
+  background:#F8FAFC;
+
+  border:2px dashed #CBD5E1;
+
+}
+
+.lightMode .settingsTitle{
+
+  color:#0F172A;
+
+}
+
+.lightMode .settingsSub{
+
+  color:#64748B;
+
+}
+
+.lightMode .settingsSectionTitle{
+
+  color:#0094FF;
+
+}
