@@ -1302,30 +1302,82 @@ font-weight:bold;
 
 .paintModernLayout{
 
-  display:flex;
+  display:grid;
+
+  grid-template-columns: 2fr 350px;
 
   gap:30px;
-
-  align-items:flex-start;
 
 }
 
 .paintLeftCard{
 
-  flex:2;
+  background:#06152b;
+
+  border:1px solid #123b66;
+
+  border-radius:20px;
+
+  padding:25px;
 
 }
 
 .paintRightCard{
 
-  width:320px;
+  display:flex;
+
+  flex-direction:column;
+
+  gap:20px;
 
 }
 
-.paintModernLayout{
-    border:10px solid red;
+.metricCard{
+
+  background:#06152b;
+
+  border:1px solid #123b66;
+
+  border-radius:20px;
+
+  padding:25px;
+
 }
 
-body{
-    border:20px solid red !important;
+.metricTitle{
+
+  color:#7fb6d9;
+
+  font-size:14px;
+
+}
+
+.metricValue{
+
+  font-size:42px;
+
+  font-weight:bold;
+
+  color:#00c8ff;
+
+  margin-top:10px;
+
+}
+
+.paintActionBtn{
+
+  background:#00c8ff;
+
+  color:#00131f;
+
+  border:none;
+
+  border-radius:15px;
+
+  padding:16px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
 }
