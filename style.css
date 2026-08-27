@@ -1304,35 +1304,17 @@ font-weight:bold;
 
 .paintModernLayout{
 
-  display:grid;
-
-  grid-template-columns:
-    minmax(0,1fr)
-    280px;
+  display:flex;
 
   gap:25px;
 
-  align-items:start;
+  align-items:flex-start;
 
 }
 
 .paintLeftCard{
 
-  height:auto;
-
-  align-self:start;
-
-}
-
-.paintRightCard{
-
-  grid-column:2;
-
-  grid-row:1;
-
-}
-
-.paintLeftCard{
+  flex:1;
 
   background:#06152b;
 
@@ -1346,45 +1328,51 @@ font-weight:bold;
 
 .paintRightCard{
 
+  width:320px;
+
+  flex-shrink:0;
+
   display:flex;
 
   flex-direction:column;
 
-  gap:20px;
+  gap:15px;
 
 }
 
 .metricCard{
 
-  background:#071a36;
+  background:#0a1730;
 
-  border:1px solid #0f4676;
+  border:1px solid #1b3557;
 
-  border-radius:18px;
+  border-radius:16px;
 
-  padding:22px;
-
-  min-height:90px;
+  padding:20px;
 
 }
 
 .metricTitle{
 
-  color:#7fb6d9;
+  color:#00c8ff;
 
-  font-size:14px;
+  font-size:12px;
+
+  text-transform:uppercase;
+
+  font-weight:600;
 
 }
 
 .metricValue{
 
-  font-size:48px;
+  color:white;
 
-  font-weight:bold;
+  font-size:52px;
 
-  color:#00c8ff;
+  font-weight:700;
 
-  margin-top:10px;
+  margin-top:12px;
 
 }
 
@@ -1441,12 +1429,10 @@ font-weight:bold;
   display:grid;
 
   grid-template-columns:
-    repeat(3, 1fr);
+    repeat(3,1fr);
 
-  gap:20px;
+  gap:12px 18px;
 
-align-items:start;
-  
 }
 
 .paintInputGrid p{
