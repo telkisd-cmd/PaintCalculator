@@ -60,6 +60,23 @@ loadSummary();
 
 }
 
+let darkMode =
+  localStorage.getItem(
+    "darkMode"
+  );
+
+if(darkMode === "false"){
+
+  document.getElementById(
+    "darkModeToggle"
+  ).checked = false;
+
+  document.body.classList.add(
+    "lightMode"
+  );
+
+}
+  
 };
 
 // ------------------------
@@ -2358,6 +2375,35 @@ function toggleAutoSave(){
     localStorage.removeItem(
   "paintCalculatorSummary"
 );
+
+  }
+
+}
+
+function toggleDarkMode(){
+
+  let darkMode =
+    document.getElementById(
+      "darkModeToggle"
+    ).checked;
+
+  localStorage.setItem(
+    "darkMode",
+    darkMode
+  );
+
+  if(darkMode){
+
+    document.body.classList.remove(
+      "lightMode"
+    );
+
+  }
+  else{
+
+    document.body.classList.add(
+      "lightMode"
+    );
 
   }
 
