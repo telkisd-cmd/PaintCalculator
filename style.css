@@ -1414,3 +1414,26 @@ font-weight:bold;
 
 }
   
+.paintInputGrid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap:20px;
+
+}
+
+.paintInputGrid p{
+
+  margin-bottom:5px;
+
+}
+
+.paintLeftCard select,
+.paintLeftCard input{
+
+  margin-bottom:0;
+
+}
