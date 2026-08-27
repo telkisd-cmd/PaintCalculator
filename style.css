@@ -157,23 +157,50 @@ color:#cccccc;
 }
 
 .calcGrid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:8px;
-margin-top:15px;
-margin-bottom:15px;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:10px;
+
 }
 
 .calcGrid button{
-height:55px;
-font-size:20px;
+
+  height:56px;
+
+  border-radius:14px;
+
+  background:#12284d;
+
+  border:none;
+
+  color:white;
+
+  font-size:20px;
+
 }
 
 #calcDisplay{
-width:100%;
-font-size:28px;
-text-align:right;
-margin-bottom:10px;
+
+  width:100%;
+
+  background:transparent;
+
+  border:none;
+
+  color:white;
+
+  font-size:52px;
+
+  font-weight:700;
+
+  text-align:right;
+
+  margin:0;
+
 }
 
 .pdpSideTitles{
@@ -1476,5 +1503,63 @@ box-sizing:border-box;
   border-color:#FFCC4D;
 
   color:#FFCC4D;
+
+}
+
+.calculatorCard{
+
+  width:420px;
+
+  margin:40px auto;
+
+  background:#07142b;
+
+  border:1px solid #16304f;
+
+  border-radius:24px;
+
+  padding:16px;
+
+}
+
+.calculatorDisplay{
+
+  background:#06101f;
+
+  border:1px solid #16304f;
+
+  border-radius:18px;
+
+  padding:25px;
+
+  margin-bottom:20px;
+
+}
+
+.equalsBtn{
+
+  background:#12c8ff !important;
+
+  color:#00131f !important;
+
+  font-weight:700;
+
+}
+
+.calcActionBtn{
+
+  margin-top:15px;
+
+  height:52px;
+
+  background:transparent;
+
+  border:1px solid #00c8ff;
+
+  color:#00c8ff;
+
+  border-radius:12px;
+
+  font-weight:700;
 
 }
