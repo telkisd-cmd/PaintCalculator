@@ -1445,6 +1445,8 @@ font-weight:bold;
 
   gap:20px;
 
+align-items:start;
+  
 }
 
 .paintInputGrid p{
@@ -1457,5 +1459,23 @@ font-weight:bold;
 .paintLeftCard input{
 
   margin-bottom:0;
+
+}
+
+.paintField{
+
+  display:flex;
+
+  flex-direction:column;
+
+}
+
+.paintField p{
+
+  margin:0 0 8px 0;
+
+  color:white;
+
+  font-weight:600;
 
 }
