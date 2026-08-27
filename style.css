@@ -1317,10 +1317,6 @@ font-weight:bold;
 
 .paintLeftCard{
 
-  width:100%;
-  
-  flex:1;
-
   background:#06152b;
 
   border:1px solid #123b66;
@@ -1329,7 +1325,7 @@ font-weight:bold;
 
   padding:25px;
 
-  min-height:450px;
+  min-height:520px;
 
 }
 
@@ -1345,6 +1341,10 @@ font-weight:bold;
 
   height:100%;
 
+position:relative;
+
+top:0;
+  
 }
 
 .metricCard{
@@ -1362,6 +1362,8 @@ font-weight:bold;
   width:100%;
 
 box-sizing:border-box;
+
+  min-height:170px;
 
 }
 
@@ -1391,17 +1393,21 @@ box-sizing:border-box;
 
 .paintActionBtn{
 
-  height:52px;
+  height:56px;
 
   background:transparent;
 
-  color:#00C8FF;
-
   border:1px solid #00C8FF;
 
-  border-radius:8px;
+  color:#00C8FF;
+
+  border-radius:10px;
 
   font-weight:700;
+
+  width:100%;
+
+box-sizing:border-box;
 
 }
 
@@ -1495,8 +1501,8 @@ box-sizing:border-box;
 
 .summaryBtn{
 
-  color:#FFC857;
+  border-color:#FFCC4D;
 
-  border-color:#FFC857;
+  color:#FFCC4D;
 
 }
