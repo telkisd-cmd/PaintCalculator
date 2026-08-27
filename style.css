@@ -1354,7 +1354,9 @@ font-weight:bold;
 
   border-radius:16px;
 
-  padding:20px;
+  padding:22px;
+
+  min-height:140px;
 
 }
 
@@ -1374,13 +1376,11 @@ font-weight:bold;
 
   color:white;
 
-  font-size:54px;
+  font-size:64px;
 
-line-height:1;
-  
   font-weight:700;
 
-  margin-top:12px;
+  line-height:1;
 
 }
 
@@ -1422,7 +1422,7 @@ line-height:1;
 
 .paintRightCard{
 
-  width:320px !important;
+  width:360px !important;
 
   display:flex !important;
 
@@ -1477,5 +1477,15 @@ line-height:1;
   text-transform:uppercase;
 
   margin-bottom:6px;
+
+}
+
+.metricInfo{
+
+  color:#6787a8;
+
+  font-size:12px;
+
+  margin-top:10px;
 
 }
