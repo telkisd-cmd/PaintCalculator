@@ -370,7 +370,9 @@ Summary
   <h3>COATING PARAMETERS</h3>
 
    <div class="paintInputGrid">
-   
+
+<div class="paintField">
+     
  <p>Position</p>
 
 <select id="paintPosition">
@@ -387,6 +389,10 @@ Summary
 
 </select>
 
+  </div>
+
+<div class="paintField">
+     
 <p>Coating Mode</p>
 
 <select id="coatMode" onchange="toggleCoatMode()">
@@ -399,6 +405,10 @@ Summary
 
 <div id="coatSelector" style="display:none;">
 
+ </div>
+
+<div class="paintField">
+  
 <p>Coat Number</p>
 
 <select id="coatNumber">
@@ -415,30 +425,50 @@ Summary
   
 </div>
 
+</div>
+
+<div class="paintField">
+     
 <p>Solids (%)</p>
 <input
 id="solids"
 type="number"
 oninput="saveField('solids')">
 
+</div>
+
+     <div class="paintField">
+  
 <p>Loss Factor</p>
 <input
 id="loss"
 type="number"
 oninput="saveField('loss')">
 
+</div>
+
+  <div class="paintField">    
+       
 <p>DFT</p>
 <input
 id="dft"
 type="number"
 oninput="saveField('dft')">
 
+</div>
+
+   <div class="paintField">       
+    
 <p>Area (m²)</p>
 <input
 id="area"
 type="number"
 oninput="saveField('area')">
 
+</div>
+
+   <div class="paintField">          
+     
 <p>Area %</p>
 
 <input
@@ -471,13 +501,19 @@ value="100">
 <option value="100">
 
 </datalist>
+     
+</div>
 
+<div class="paintField">   
+     
 <p>Drum Litres</p>
 <input
 id="drum"
 type="number"
 oninput="saveField('drum')">
 
+</div>
+  
      </div>
      
 <button onclick="calculatePaint()">
