@@ -2157,3 +2157,22 @@ function sendHullAreaToPaint(
   showTab("paint");
 
 }
+
+function updateJTSTotal(){
+
+  let total = 0;
+
+  total += parseFloat(document.getElementById("jtsFlatBottom").value) || 0;
+
+  total += parseFloat(document.getElementById("jtsVerticalSides").value) || 0;
+
+  total += parseFloat(document.getElementById("jtsBoottop").value) || 0;
+
+  total += parseFloat(document.getElementById("jtsTopside").value) || 0;
+
+  total += parseFloat(document.getElementById("jtsOther").value) || 0;
+
+  document.getElementById("jtsTotalArea").innerHTML =
+    total.toLocaleString() + " m²";
+
+}
