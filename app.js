@@ -2331,4 +2331,26 @@ function toggleAutoSave(){
     state
   );
 
+  if(state === false){
+
+    localStorage.removeItem("vesselName");
+    localStorage.removeItem("imo");
+    localStorage.removeItem("location");
+    localStorage.removeItem("inspector");
+    localStorage.removeItem("ownerRep");
+
+    localStorage.removeItem("jtsFlatBottom");
+    localStorage.removeItem("jtsVerticalSides");
+    localStorage.removeItem("jtsBoottop");
+    localStorage.removeItem("jtsTopside");
+    localStorage.removeItem("jtsOther");
+
+    localStorage.removeItem("solids");
+    localStorage.removeItem("loss");
+    localStorage.removeItem("dft");
+    localStorage.removeItem("area");
+    localStorage.removeItem("drum");
+
+  }
+
 }
