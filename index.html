@@ -365,9 +365,11 @@ Summary
 
 <div class="paintModernLayout">
 
-  <div class="paintLeftCard">
+ <div class="paintLeftCard">
 
-<p>Position</p>
+  <h3>COATING PARAMETERS</h3>
+
+ <p>Position</p>
 
 <select id="paintPosition">
 
@@ -478,39 +480,65 @@ oninput="saveField('drum')">
 CALCULATE
 </button>
 
-<button onclick="sendPaintToSummary()">
-SEND TO SUMMARY
-</button>
+</div> <!-- paintLeftCard -->   
+   
+</div>
 
-<button onclick="sendPaintToPDP()">
-SEND TO PDP
-</button>
-  
-<h3>Coverage Factor</h3>
-<div id="r1">0</div>
+<div class="paintRightCard">
 
-<h3>Practical Coverage</h3>
-<div id="r2">0</div>
+  <div class="metricCard">
 
-<h3>Required Litres</h3>
-<div class="big" id="litres">0</div>
+    <div class="metricTitle">
+      TOTAL PAINT
+    </div>
 
-<h3>Required Drums</h3>
-<div class="big" id="drums">0</div>
-    
+    <div class="metricValue" id="litres">
+      0
+    </div>
+
   </div>
 
-  <div class="paintRightCard">
+  <div class="metricCard">
 
-<h3>RESULTS</h3>
+    <div class="metricTitle">
+      REQUIRED DRUMS
+    </div>
 
-<div id="litres">0</div>
+    <div class="metricValue" id="drums">
+      0
+    </div>
 
-<div id="drums">0</div>
-
-<div id="r2">0</div>
-    
   </div>
+
+  <div class="metricCard">
+
+    <div class="metricTitle">
+      COVERAGE
+    </div>
+
+    <div class="metricValue" id="r2">
+      0
+    </div>
+
+  </div>
+
+  <button
+    onclick="sendPaintToPDP()"
+    class="paintActionBtn">
+
+    📦 SEND TO PDP
+
+  </button>
+
+  <button
+    onclick="sendPaintToSummary()"
+    class="paintActionBtn">
+
+    📋 SEND TO SUMMARY
+
+  </button>
+
+</div>
 
 </div>
 
