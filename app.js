@@ -608,6 +608,18 @@ function jtsToSummary(position){
 
 function saveSummary(){
 
+  let autoSave =
+    localStorage.getItem("autoSave");
+
+  if(autoSave !== "false"){
+
+    alert(
+      "Autosave is ON. Manual save is not required."
+    );
+
+    return;
+  }
+
   let projectData = {
 
     vessel:
@@ -619,11 +631,11 @@ function saveSummary(){
     location:
       document.getElementById("location").value,
 
-  summary:
-  summaryData,
+    summary:
+      summaryData,
 
-photo:
-  vesselPhotoData
+    photo:
+      vesselPhotoData
 
   };
 
