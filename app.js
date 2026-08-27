@@ -44,8 +44,6 @@ let autoSave =
 
 loadSummary();
 
-}
-
   initializePhotoUpload();
 
   resetStations();
