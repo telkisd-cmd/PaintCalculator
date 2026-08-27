@@ -1854,3 +1854,45 @@ height:fit-content;
     55px;
 
 }
+
+.settingsRow{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+}
+
+.settingsTitle{
+
+  color:white;
+
+  font-size:18px;
+
+  font-weight:600;
+
+}
+
+.settingsSub{
+
+  color:#8CA4BF;
+
+  font-size:13px;
+
+  margin-top:4px;
+
+}
+
+.settingsSectionTitle{
+
+  color:#00C8FF;
+
+  font-size:14px;
+
+  letter-spacing:1px;
+
+  margin-bottom:12px;
+
+}
