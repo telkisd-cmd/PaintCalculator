@@ -620,24 +620,72 @@ function saveSummary(){
     return;
   }
 
-  let projectData = {
+let projectData = {
 
-    vessel:
-      document.getElementById("vesselName").value,
+  vessel:
+    document.getElementById("vesselName").value,
 
-    imo:
-      document.getElementById("imo").value,
+  imo:
+    document.getElementById("imo").value,
 
-    location:
-      document.getElementById("location").value,
+  location:
+    document.getElementById("location").value,
 
-    summary:
-      summaryData,
+  inspector:
+    document.getElementById("inspector").value,
 
-    photo:
-      vesselPhotoData
+  ownerRep:
+    document.getElementById("ownerRep").value,
 
-  };
+  jtsFlatBottom:
+    document.getElementById("jtsFlatBottom").value,
+
+  jtsVerticalSides:
+    document.getElementById("jtsVerticalSides").value,
+
+  jtsBoottop:
+    document.getElementById("jtsBoottop").value,
+
+  jtsTopside:
+    document.getElementById("jtsTopside").value,
+
+  jtsOther:
+    document.getElementById("jtsOther").value,
+
+  solids:
+    document.getElementById("solids").value,
+
+  loss:
+    document.getElementById("loss").value,
+
+  dft:
+    document.getElementById("dft").value,
+
+  area:
+    document.getElementById("area").value,
+
+  drum:
+    document.getElementById("drum").value,
+
+  totalSprays:
+    document.getElementById("totalSprays")?.value || "",
+
+  spraysPerStation:
+    document.getElementById("spraysPerStation")?.value || "",
+
+  paintDescription:
+    document.getElementById("paintDescription")?.value || "",
+
+  pdpComments:
+    document.getElementById("pdpComments")?.value || "",
+
+  summary:
+    summaryData,
+
+  photo:
+    vesselPhotoData
+
+};
 
   localStorage.setItem(
     "paintCalculatorSummary",
@@ -670,6 +718,62 @@ function loadSummary(){
   document.getElementById("location").value =
     projectData.location || "";
 
+document.getElementById("inspector").value =
+  projectData.inspector || "";
+
+document.getElementById("ownerRep").value =
+  projectData.ownerRep || "";
+
+document.getElementById("jtsFlatBottom").value =
+  projectData.jtsFlatBottom || "";
+
+document.getElementById("jtsVerticalSides").value =
+  projectData.jtsVerticalSides || "";
+
+document.getElementById("jtsBoottop").value =
+  projectData.jtsBoottop || "";
+
+document.getElementById("jtsTopside").value =
+  projectData.jtsTopside || "";
+
+document.getElementById("jtsOther").value =
+  projectData.jtsOther || "";
+
+document.getElementById("solids").value =
+  projectData.solids || "";
+
+document.getElementById("loss").value =
+  projectData.loss || "";
+
+document.getElementById("dft").value =
+  projectData.dft || "";
+
+document.getElementById("area").value =
+  projectData.area || "";
+
+document.getElementById("drum").value =
+  projectData.drum || "";
+
+if(document.getElementById("totalSprays")){
+  document.getElementById("totalSprays").value =
+    projectData.totalSprays || "";
+}
+
+if(document.getElementById("spraysPerStation")){
+  document.getElementById("spraysPerStation").value =
+    projectData.spraysPerStation || "";
+}
+
+if(document.getElementById("paintDescription")){
+  document.getElementById("paintDescription").value =
+    projectData.paintDescription || "";
+}
+
+if(document.getElementById("pdpComments")){
+  document.getElementById("pdpComments").value =
+    projectData.pdpComments || "";
+}
+  
   summaryData =
     projectData.summary || {
       positions:{}
