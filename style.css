@@ -1569,3 +1569,151 @@ box-sizing:border-box;
   margin-top:40px;
 
 }
+
+.hullModernLayout{
+
+  display:grid;
+
+  grid-template-columns:
+    1fr 380px;
+
+  gap:25px;
+
+}
+
+.hullLeftCard{
+
+  background:#06152b;
+
+  border:1px solid #123b66;
+
+  border-radius:20px;
+
+  padding:25px;
+
+}
+
+.hullInputGrid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:18px;
+
+}
+
+.hullField{
+
+  display:flex;
+
+  flex-direction:column;
+
+}
+
+.hullField p{
+
+  margin:0 0 6px 0;
+
+  color:#9EC3E0;
+
+  font-size:11px;
+
+  text-transform:uppercase;
+
+}
+
+.hullCalculateBtn{
+
+  margin-top:30px;
+
+  height:60px;
+
+  border:none;
+
+  border-radius:12px;
+
+  background:#00C8FF;
+
+  color:#00131F;
+
+  font-weight:700;
+
+}
+
+.hullRightCards{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:15px;
+
+}
+
+.hullKPI{
+
+  background:#0b1730;
+
+  border:1px solid #1b3557;
+
+  border-radius:16px;
+
+  padding:20px;
+
+}
+
+.hullKPI h4{
+
+  color:#00C8FF;
+
+  margin-top:0;
+
+}
+
+.hullKPI div{
+
+  font-size:42px;
+
+  font-weight:700;
+
+  color:white;
+
+  margin:15px 0;
+
+}
+
+.sendPaintBtn{
+
+  border:1px solid #00C8FF;
+
+  background:transparent;
+
+  color:#00C8FF;
+
+  border-radius:10px;
+
+}
+
+.hullTotalCard{
+
+  background:#102442;
+
+  border:1px solid #00C8FF;
+
+  border-radius:16px;
+
+  padding:20px;
+
+}
+
+.hullTotalCard div{
+
+  font-size:48px;
+
+  font-weight:700;
+
+  color:white;
+
+}
