@@ -1748,26 +1748,33 @@ function loadField(id){
 
 window.addEventListener("load",()=>{
 
-loadField("vesselName");
-loadField("imo");
-loadField("location");
-loadField("inspector");
-loadField("ownerRep");
+let autoSave =
+  localStorage.getItem("autoSave");
 
-loadField("jtsFlatBottom");
-loadField("jtsVerticalSides");
-loadField("jtsBoottop");
-loadField("jtsTopside");
-loadField("jtsOther");
+if(autoSave !== "false"){
 
-loadField("solids");
-loadField("loss");
-loadField("dft");
-loadField("area");
-loadField("drum");
+  loadField("vesselName");
+  loadField("imo");
+  loadField("location");
+  loadField("inspector");
+  loadField("ownerRep");
+
+  loadField("jtsFlatBottom");
+  loadField("jtsVerticalSides");
+  loadField("jtsBoottop");
+  loadField("jtsTopside");
+  loadField("jtsOther");
+
+  loadField("solids");
+  loadField("loss");
+  loadField("dft");
+  loadField("area");
+  loadField("drum");
+
+}
 
 showTab("mainMenu");
-  
+
 });
 
 async function createSummaryPDF(){
