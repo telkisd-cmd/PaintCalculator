@@ -1003,19 +1003,25 @@ updateJTSTotal();
 </div>
 
 
-<div class="jtsRow">
+<div class="jtsRow otherRow">
 
   <div class="jtsLabel">
     Other
   </div>
 
-<input
-id="jtsOther"
-type="number"
-oninput="
-saveField('jtsOther');
-updateJTSTotal();
-">
+  <input
+  id="jtsOtherDescription"
+  type="text"
+  placeholder="Example: Superstructure AFT">
+
+  <input
+  id="jtsOther"
+  type="number"
+  placeholder="m²"
+  oninput="
+  saveField('jtsOther');
+  updateJTSTotal();
+  ">
 
   <button
   class="jtsSendBtn"
@@ -1025,8 +1031,6 @@ updateJTSTotal();
 
   </button>
 
-  </div>
-  
 </div>
 
 <div class="jtsInfoBox">
@@ -1035,6 +1039,8 @@ updateJTSTotal();
 
 </div>
   
+</div>
+
 </div> <!-- dashboardContent -->
 
 </div> <!-- dashboardLayout -->
