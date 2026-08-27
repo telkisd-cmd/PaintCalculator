@@ -42,9 +42,7 @@ window.onload = function(){
 let autoSave =
   localStorage.getItem("autoSave");
 
-if(autoSave !== "false"){
-
- // loadSummary();
+loadSummary();
 
 }
 
