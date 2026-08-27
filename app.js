@@ -2350,6 +2350,9 @@ function toggleAutoSave(){
     localStorage.removeItem("dft");
     localStorage.removeItem("area");
     localStorage.removeItem("drum");
+    localStorage.removeItem(
+  "paintCalculatorSummary"
+);
 
   }
 
