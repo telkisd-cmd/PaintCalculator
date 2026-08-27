@@ -1974,3 +1974,37 @@ height:fit-content;
   transform:translateX(28px);
 
 }
+
+.lightMode{
+
+  background:#F4F7FB;
+
+  color:#111;
+
+}
+
+.lightMode .dashboardContent{
+
+  background:#F4F7FB;
+
+}
+
+.lightMode .sidebar{
+
+  background:white;
+
+  border-right:1px solid #D9E2EC;
+
+}
+
+.lightMode .sidebar h2{
+
+  color:#0A4D8C;
+
+}
+
+.lightMode .sidebar p{
+
+  color:#666;
+
+}
