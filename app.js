@@ -1018,8 +1018,6 @@ function sendPaintToPDP(){
 
   });
 
-  alert("Added to PDP");
-
 }
 
 function calculateStations(totalSprays){
