@@ -44,7 +44,7 @@ let autoSave =
 
 if(autoSave !== "false"){
 
-  loadSummary();
+ // loadSummary();
 
 }
 
