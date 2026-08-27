@@ -1844,3 +1844,13 @@ height:fit-content;
   font-size:13px;
 
 }
+
+.otherRow{
+
+  grid-template-columns:
+    120px
+    1fr
+    160px
+    55px;
+
+}
