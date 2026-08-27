@@ -2382,6 +2382,8 @@ function toggleAutoSave(){
 
 function toggleDarkMode(){
 
+console.log("Dark mode changed");
+  
   let darkMode =
     document.getElementById(
       "darkModeToggle"
