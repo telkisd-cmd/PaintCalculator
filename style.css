@@ -1307,10 +1307,9 @@ font-weight:bold;
   display:grid;
 
   grid-template-columns:
-    minmax(0,1fr)
-    320px;
+    1fr 320px;
 
-  gap:25px;
+  gap:20px;
 
   align-items:start;
 
@@ -1330,20 +1329,22 @@ font-weight:bold;
 
   padding:25px;
 
+  min-height:450px;
+
 }
 
 .paintRightCard{
-
-  width:320px;
 
   display:flex;
 
   flex-direction:column;
 
-  gap:15px;
+  gap:12px;
 
-  align-self:start;
-  
+  width:320px;
+
+  height:100%;
+
 }
 
 .metricCard{
@@ -1357,6 +1358,10 @@ font-weight:bold;
   padding:22px;
 
   min-height:140px;
+
+  width:100%;
+
+box-sizing:border-box;
 
 }
 
@@ -1386,19 +1391,17 @@ font-weight:bold;
 
 .paintActionBtn{
 
-  background:#00c8ff;
+  height:52px;
 
-  color:#00131f;
+  background:transparent;
 
-  border:none;
+  color:#00C8FF;
 
-  border-radius:15px;
+  border:1px solid #00C8FF;
 
-  padding:16px;
+  border-radius:8px;
 
-  font-weight:bold;
-
-  cursor:pointer;
+  font-weight:700;
 
 }
 
@@ -1487,5 +1490,13 @@ font-weight:bold;
   font-size:12px;
 
   margin-top:10px;
+
+}
+
+.summaryBtn{
+
+  color:#FFC857;
+
+  border-color:#FFC857;
 
 }
