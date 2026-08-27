@@ -680,35 +680,127 @@ Summary
 
 </div>
    
+<div class="hullModernLayout">
+
+<div class="hullLeftCard">
+
+<h3>⚓ HULL DIMENSIONS</h3>
+
+<div class="hullInputGrid">
+
+<div class="hullField">
 <p>LOA</p>
 <input id="loa" type="number">
+</div>
 
+<div class="hullField">
 <p>LBP</p>
 <input id="lbp" type="number">
+</div>
 
+<div class="hullField">
 <p>BREADTH</p>
 <input id="breadth" type="number">
+</div>
 
+<div class="hullField">
 <p>DRAUGHT</p>
 <input id="draught" type="number">
+</div>
 
+<div class="hullField">
 <p>HEIGHT</p>
 <input id="height" type="number">
+</div>
 
+<div class="hullField">
 <p>DWT</p>
 <input id="dwt" type="number">
+</div>
 
+<div class="hullField">
 <p>BOOTTOP HEIGHT</p>
 <input id="boottopHeight" type="number">
+</div>
 
+<div class="hullField">
 <p>HULL FACTOR</p>
 <input id="hullFactor" type="number">
+</div>
 
-<button onclick="calculateHull()">
-CALCULATE HULL
+</div>
+
+<button
+class="hullCalculateBtn"
+onclick="calculateHull()">
+
+CALCULATE COATING SURFACES
+
 </button>
 
-<div id="hullResults"></div>
+</div>
+
+<div class="hullRightCards">
+
+<div class="hullKPI">
+
+<h4>FLAT BOTTOM</h4>
+
+<div id="flatBottomKPI">0</div>
+
+<button class="sendPaintBtn">
+SEND TO PAINT
+</button>
+
+</div>
+
+<div class="hullKPI">
+
+<h4>VERTICAL SIDES</h4>
+
+<div id="verticalSidesKPI">0</div>
+
+<button class="sendPaintBtn">
+SEND TO PAINT
+</button>
+
+</div>
+
+<div class="hullKPI">
+
+<h4>BOOTTOP</h4>
+
+<div id="boottopKPI">0</div>
+
+<button class="sendPaintBtn">
+SEND TO PAINT
+</button>
+
+</div>
+
+<div class="hullKPI">
+
+<h4>TOPSIDE</h4>
+
+<div id="topsideKPI">0</div>
+
+<button class="sendPaintBtn">
+SEND TO PAINT
+</button>
+
+</div>
+
+<div class="hullTotalCard">
+
+<h4>TOTAL WETTED SURFACE AREA</h4>
+
+<div id="totalAreaKPIHull">0</div>
+
+</div>
+
+</div>
+
+</div>
 
 </div> <!-- dashboardContent -->
 
