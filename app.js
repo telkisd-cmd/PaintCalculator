@@ -56,17 +56,13 @@ if(autoSave !== "false"){
     "mainMenuTab"
   ).style.display = "block";
 
-
-  let autoSave =
-    localStorage.getItem("autoSave");
-
   if(autoSave === "false"){
 
-    document.getElementById(
-      "autoSaveToggle"
-    ).checked = false;
+  document.getElementById(
+    "autoSaveToggle"
+  ).checked = false;
 
-  }
+}
 
 };
 
