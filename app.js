@@ -1694,10 +1694,17 @@ function resetStations(){
 
 function saveField(id){
 
-  localStorage.setItem(
-    id,
-    document.getElementById(id).value
-  );
+  let autoSave =
+    localStorage.getItem("autoSave");
+
+  if(autoSave !== "false"){
+
+    localStorage.setItem(
+      id,
+      document.getElementById(id).value
+    );
+
+  }
 
 }
 
