@@ -1299,3 +1299,25 @@ font-weight:bold;
   appearance:textfield;
 
 }
+
+.paintModernLayout{
+
+  display:flex;
+
+  gap:30px;
+
+  align-items:flex-start;
+
+}
+
+.paintLeftCard{
+
+  flex:2;
+
+}
+
+.paintRightCard{
+
+  width:320px;
+
+}
