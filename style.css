@@ -382,6 +382,16 @@ color:#4FC3F7;
 
 }
 
+@media (max-width:768px){
+
+  .quickNavTitle{
+
+    display:none;
+
+  }
+
+}
+
 #mobilePDPLayout{
   display:none;
 }
@@ -2343,5 +2353,19 @@ height:fit-content;
   justify-content:space-between;
 
   align-items:center;
+
+}
+
+.mobileNavigationCard{
+
+  background:#081A3B;
+
+  border:1px solid #163D73;
+
+  border-radius:18px;
+
+  padding:16px;
+
+  margin-bottom:20px;
 
 }
