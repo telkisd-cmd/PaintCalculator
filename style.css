@@ -2595,13 +2595,27 @@ height:fit-content;
 
 @media (max-width:768px){
 
-  .hullModernLayout,{
+  .hullModernLayout{
 
     display:flex !important;
 
     flex-direction:column !important;
 
     gap:20px;
+
+  }
+
+}
+
+@media (max-width:768px){
+
+  .hullInputGrid{
+
+    display:grid !important;
+
+    grid-template-columns:1fr !important;
+
+    gap:15px;
 
   }
 
