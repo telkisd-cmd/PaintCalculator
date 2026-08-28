@@ -3040,3 +3040,15 @@ font-size:11px;
   }
 
 }
+
+.otherRowBottom{
+
+  display:grid;
+
+  grid-template-columns:160px 55px;
+
+  gap:10px;
+
+  align-items:center;
+
+}
