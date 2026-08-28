@@ -2777,3 +2777,100 @@ height:fit-content;
   }
 
 }
+
+@media (max-width:768px){
+
+  .pdpLayout{
+
+    display:flex !important;
+
+    flex-direction:column !important;
+
+    gap:20px;
+
+  }
+
+  .pdpLeft,
+  .pdpRight{
+
+    width:100% !important;
+
+    max-width:100% !important;
+
+  }
+
+}
+
+@media (max-width:768px){
+
+  .pdpCard{
+
+    width:100% !important;
+
+    max-width:100% !important;
+
+    box-sizing:border-box;
+
+  }
+
+}
+
+@media (max-width:768px){
+
+  .pdpSummaryGrid{
+
+    grid-template-columns:1fr 1fr 1fr !important;
+
+  }
+
+}
+
+@media (max-width:768px){
+
+  #blueprintAllocation{
+
+    width:100%;
+
+    overflow-x:auto;
+
+  }
+
+}
+
+@media (max-width:768px){
+
+  .summaryButtons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+  }
+
+  .summaryButtons button{
+
+    width:100%;
+
+  }
+
+}
+
+@media (max-width:768px){
+
+  .calculatorCard{
+
+    width:100% !important;
+
+    max-width:100% !important;
+
+  }
+
+  .calculatorGrid{
+
+    width:100% !important;
+
+  }
+
+}
