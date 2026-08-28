@@ -2928,6 +2928,8 @@ height:fit-content;
   .summaryGridHeader,
   .summaryGridRow{
 
+font-size:11px;
+    
     display:grid;
 
     grid-template-columns:
@@ -3000,6 +3002,40 @@ height:fit-content;
     grid-template-columns:1fr 70px;
 
     gap:10px;
+
+  }
+
+}
+
+@media (max-width:768px){
+
+  .summaryActionBar{
+
+    display:flex !important;
+
+    flex-direction:column !important;
+
+    gap:12px;
+
+  }
+
+  .leftActions,
+  .rightActions{
+
+    display:flex !important;
+
+    flex-direction:column !important;
+
+    gap:12px;
+
+    width:100%;
+
+  }
+
+  .leftActions button,
+  .rightActions button{
+
+    width:100%;
 
   }
 
