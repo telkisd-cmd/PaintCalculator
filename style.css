@@ -2827,11 +2827,15 @@ height:fit-content;
 
 @media (max-width:768px){
 
-  #blueprintAllocation{
-
-    width:100%;
+  .pdpRight{
 
     overflow-x:auto;
+
+  }
+
+  #blueprintAllocation{
+
+    min-width:350px;
 
   }
 
@@ -2874,3 +2878,94 @@ height:fit-content;
   }
 
 }
+
+@media (max-width:768px){
+
+  .jtsRow{
+
+    display:grid;
+
+    grid-template-columns:120px 1fr 70px;
+
+    gap:10px;
+
+    align-items:center;
+
+  }
+
+  .jtsRow input{
+
+    width:100%;
+
+    min-width:0;
+
+  }
+
+}
+
+@media (max-width:768px){
+
+  .summaryStats{
+
+    display:flex !important;
+
+    flex-direction:column !important;
+
+    gap:15px;
+
+  }
+
+}
+
+@media (max-width:768px){
+
+  .summaryGridHeader,
+  .summaryGridRow{
+
+    display:grid;
+
+    grid-template-columns:
+    1.3fr
+    .8fr
+    .8fr
+    .8fr
+    .8fr;
+
+    gap:8px;
+
+    font-size:12px;
+
+  }
+
+}
+
+@media (max-width:768px){
+
+  .summaryButtons{
+
+    display:flex !important;
+
+    flex-direction:column !important;
+
+    gap:12px;
+
+  }
+
+  .summaryButtons button{
+
+    width:100%;
+
+  }
+
+}
+
+@media (max-width:768px){
+
+  .uploadBox{
+
+    min-height:160px;
+
+  }
+
+}
+
