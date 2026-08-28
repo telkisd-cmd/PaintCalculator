@@ -2535,6 +2535,8 @@ function toggleMobileMenu(){
 
 function closeMobileMenu(){
 
+console.log("CLOSE");
+  
   document
     .querySelectorAll(".sidebar")
     .forEach(sidebar => {
