@@ -2833,9 +2833,15 @@ height:fit-content;
 
   }
 
+}
+  
+@media (max-width:768px){
+
   #blueprintAllocation{
 
-    min-width:350px;
+    min-width:auto !important;
+
+    width:100% !important;
 
   }
 
