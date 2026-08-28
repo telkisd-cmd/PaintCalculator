@@ -2975,3 +2975,32 @@ height:fit-content;
 
 }
 
+@media (max-width:768px){
+
+  .otherRow{
+
+    display:grid !important;
+
+    grid-template-columns:1fr !important;
+
+    gap:10px;
+
+  }
+
+  #jtsOtherDescription{
+
+    width:100%;
+
+  }
+
+  .otherRowBottom{
+
+    display:grid;
+
+    grid-template-columns:1fr 70px;
+
+    gap:10px;
+
+  }
+
+}
