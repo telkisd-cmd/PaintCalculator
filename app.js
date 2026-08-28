@@ -1756,25 +1756,39 @@ async function createPDPPDF(){
 
   y += 10;
 
-  let blueprint =
-    document.getElementById(
-      "blueprintAllocation"
-    );
-
-  const canvas =
-    await html2canvas(blueprint);
-
-  const blueprintImage =
-    canvas.toDataURL("image/png");
-
-  doc.addImage(
-    blueprintImage,
-    "PNG",
-    10,
-    y,
-    200,
-    180
+let blueprint =
+  document.getElementById(
+    "blueprintAllocation"
   );
+
+let oldWidth =
+  blueprint.style.width;
+
+blueprint.style.width =
+  "700px";
+
+const canvas =
+  await html2canvas(
+    blueprint,
+    {
+      scale:2
+    }
+  );
+
+blueprint.style.width =
+  oldWidth;
+
+const blueprintImage =
+  canvas.toDataURL("image/png");
+
+doc.addImage(
+  blueprintImage,
+  "PNG",
+  10,
+  y,
+  190,
+  120
+);
 
 doc.addPage();
 
