@@ -3060,9 +3060,9 @@ font-size:11px;
     display:grid !important;
 
     grid-template-columns:
-      65px
-      180px
-      65px !important;
+      70px
+      150px
+      70px !important;
 
     gap:8px !important;
 
@@ -3074,15 +3074,27 @@ font-size:11px;
 
   .figmaShip{
 
-    width:180px !important;
+    width:150px !important;
 
-    height:520px !important;
+    height:420px !important;
 
   }
 
   .blueprintColumn{
 
     gap:4px;
+
+  }
+
+}
+
+@media (max-width:768px){
+
+  .blueprintSpray{
+
+    transform:scale(.85);
+
+    transform-origin:center;
 
   }
 
