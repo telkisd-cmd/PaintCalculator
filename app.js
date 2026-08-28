@@ -2510,3 +2510,17 @@ console.log("Dark mode changed");
   }
 
 }
+
+function toggleMobileMenu(){
+
+  document
+    .querySelectorAll(".sidebar")
+    .forEach(sidebar => {
+
+      sidebar.classList.toggle(
+        "mobileOpen"
+      );
+
+    });
+
+}
