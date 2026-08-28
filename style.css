@@ -2566,3 +2566,17 @@ height:fit-content;
   }
 
 }
+
+@media (max-width:768px){
+
+  .vesselGrid{
+
+    display:grid;
+
+    grid-template-columns:1fr !important;
+
+    gap:15px;
+
+  }
+
+}
