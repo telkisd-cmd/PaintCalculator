@@ -2467,3 +2467,102 @@ height:fit-content;
   }
 
 }
+
+@media (max-width:768px){
+
+  .mobileNavigationCard{
+
+    width:100%;
+
+    max-width:100%;
+
+    box-sizing:border-box;
+
+    overflow:hidden;
+
+  }
+
+}
+
+@media (max-width:768px){
+
+  .dashboardContent{
+
+    overflow-x:hidden;
+
+  }
+
+}
+
+@media (max-width:768px){
+
+  body{
+
+    overflow-x:hidden;
+
+  }
+
+}
+
+@media (max-width:768px){
+
+  .quickCards{
+
+    grid-template-columns:1fr 1fr;
+
+    width:100%;
+
+  }
+
+  .quickCard{
+
+    width:auto;
+
+    min-width:0;
+
+  }
+
+}
+
+@media (max-width:768px){
+
+  .paintRightCard{
+
+    width:100%;
+
+    max-width:100%;
+
+    box-sizing:border-box;
+
+  }
+
+}
+
+@media (max-width:768px){
+
+  .metricCard{
+
+    width:100%;
+
+    max-width:100%;
+
+    box-sizing:border-box;
+
+  }
+
+}
+
+@media (max-width:768px){
+
+  .sendPaintBtn,
+  .paintActionBtn{
+
+    width:100%;
+
+    max-width:100%;
+
+    box-sizing:border-box;
+
+  }
+
+}
