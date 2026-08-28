@@ -2311,8 +2311,6 @@ height:fit-content;
 
 .mobileOverlay{
 
-  display:block;
-
   position:fixed;
 
   inset:0;
@@ -2323,17 +2321,16 @@ height:fit-content;
 
   opacity:0;
 
-  pointer-events:none;
+  visibility:hidden;
 
   transition:.3s;
 
 }
-
 .mobileOverlay.show{
 
   opacity:1;
 
-  pointer-events:auto;
+  visibility:visible;
 
 }
   
@@ -2346,11 +2343,5 @@ height:fit-content;
   justify-content:space-between;
 
   align-items:center;
-
-}
-
-.mobileOverlay{
-
-  display:none;
 
 }
