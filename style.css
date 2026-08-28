@@ -2571,11 +2571,23 @@ height:fit-content;
 
   .vesselGrid{
 
-    display:grid;
+    display:grid !important;
 
     grid-template-columns:1fr !important;
 
-    gap:15px;
+    width:100% !important;
+
+  }
+
+  .vesselGrid > div{
+
+    width:100% !important;
+
+  }
+
+  .vesselGrid input{
+
+    width:100% !important;
 
   }
 
