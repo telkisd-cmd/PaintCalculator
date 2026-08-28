@@ -2405,3 +2405,65 @@ height:fit-content;
   }
 
 }
+
+@media (max-width:768px){
+
+  .paintModernLayout{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+  }
+
+}
+
+@media (max-width:768px){
+
+  .paintInputGrid{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:12px;
+
+  }
+
+}
+
+@media (max-width:768px){
+
+  .paintRightCard{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+  }
+
+}
+
+@media (max-width:768px){
+
+  .metricCard{
+
+    width:100%;
+
+  }
+
+}
+
+@media (max-width:768px){
+
+  .paintRightCard button{
+
+    width:100%;
+
+  }
+
+}
