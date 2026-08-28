@@ -1077,25 +1077,23 @@ updateJTSTotal();
 
   <input
   id="jtsOtherDescription"
-  type="text"
-  placeholder="Example: Superstructure AFT">
+  type="text">
 
-  <input
-  id="jtsOther"
-  type="number"
-  placeholder="m²"
-  oninput="
-  saveField('jtsOther');
-  updateJTSTotal();
-  ">
+  <div class="otherRowBottom">
 
-  <button
-  class="jtsSendBtn"
-  onclick="jtsToPaint('Other')">
+    <input
+    id="jtsOther"
+    type="number">
 
-  🎨
+    <button
+    class="jtsSendBtn"
+    onclick="jtsToPaint('Other')">
 
-  </button>
+    🎨
+
+    </button>
+
+  </div>
 
 </div>
 
