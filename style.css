@@ -3052,3 +3052,38 @@ font-size:11px;
   align-items:center;
 
 }
+
+@media (max-width:768px){
+
+  #blueprintAllocation{
+
+    display:grid !important;
+
+    grid-template-columns:
+      65px
+      180px
+      65px !important;
+
+    gap:8px !important;
+
+    justify-content:center;
+
+    align-items:start;
+
+  }
+
+  .figmaShip{
+
+    width:180px !important;
+
+    height:520px !important;
+
+  }
+
+  .blueprintColumn{
+
+    gap:4px;
+
+  }
+
+}
