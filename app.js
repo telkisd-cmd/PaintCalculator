@@ -668,6 +668,39 @@ let projectData = {
   jtsOther:
     document.getElementById("jtsOther").value,
 
+  jtsOtherDescription:
+  document.getElementById(
+    "jtsOtherDescription"
+  )?.value || "",
+
+  loa:
+  document.getElementById("loa")?.value || "",
+
+lbp:
+  document.getElementById("lbp")?.value || "",
+
+breadth:
+  document.getElementById("breadth")?.value || "",
+
+draught:
+  document.getElementById("draught")?.value || "",
+
+height:
+  document.getElementById("height")?.value || "",
+
+dwt:
+  document.getElementById("dwt")?.value || "",
+
+boottopHeight:
+  document.getElementById(
+    "boottopHeight"
+  )?.value || "",
+
+hullFactor:
+  document.getElementById(
+    "hullFactor"
+  )?.value || "",
+
   solids:
     document.getElementById("solids").value,
 
@@ -680,6 +713,11 @@ let projectData = {
   area:
     document.getElementById("area").value,
 
+areaPercent:
+  document.getElementById(
+    "areaPercent"
+  )?.value || "",
+  
   drum:
     document.getElementById("drum").value,
 
@@ -754,6 +792,68 @@ document.getElementById("jtsTopside").value =
 
 document.getElementById("jtsOther").value =
   projectData.jtsOther || "";
+
+  if(document.getElementById(
+  "jtsOtherDescription"
+)){
+  document.getElementById(
+    "jtsOtherDescription"
+  ).value =
+    projectData.jtsOtherDescription || "";
+}
+
+  if(document.getElementById("loa")){
+  document.getElementById("loa").value =
+    projectData.loa || "";
+}
+
+if(document.getElementById("lbp")){
+  document.getElementById("lbp").value =
+    projectData.lbp || "";
+}
+
+if(document.getElementById("breadth")){
+  document.getElementById("breadth").value =
+    projectData.breadth || "";
+}
+
+if(document.getElementById("draught")){
+  document.getElementById("draught").value =
+    projectData.draught || "";
+}
+
+if(document.getElementById("height")){
+  document.getElementById("height").value =
+    projectData.height || "";
+}
+
+if(document.getElementById("dwt")){
+  document.getElementById("dwt").value =
+    projectData.dwt || "";
+}
+
+if(document.getElementById("boottopHeight")){
+  document.getElementById(
+    "boottopHeight"
+  ).value =
+    projectData.boottopHeight || "";
+}
+
+if(document.getElementById("hullFactor")){
+  document.getElementById(
+    "hullFactor"
+  ).value =
+    projectData.hullFactor || "";
+}
+
+  if(document.getElementById(
+  "areaPercent"
+)){
+  document.getElementById(
+    "areaPercent"
+  ).value =
+    projectData.areaPercent || "";
+}
 
 document.getElementById("solids").value =
   projectData.solids || "";
