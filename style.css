@@ -2592,3 +2592,58 @@ height:fit-content;
   }
 
 }
+
+@media (max-width:768px){
+
+  .hullModernLayout,{
+
+    display:flex !important;
+
+    flex-direction:column !important;
+
+    gap:20px;
+
+  }
+
+}
+
+@media (max-width:768px){
+
+  .hullKPI{
+
+    width:100% !important;
+
+    max-width:100%;
+
+  }
+
+}
+
+@media (max-width:768px){
+
+  .hullCalculateBtn,
+  .sendPaintBtn{
+
+    width:100% !important;
+
+  }
+
+}
+
+@media (max-width:768px){
+
+  .hullCard,
+  .hullLeftCard,
+  .hullRightCard,
+  .hullTotalCard{
+
+    width:100% !important;
+
+    max-width:100% !important;
+
+    box-sizing:border-box;
+
+  }
+
+}
+
