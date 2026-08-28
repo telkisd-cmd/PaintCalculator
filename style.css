@@ -2760,3 +2760,20 @@ height:fit-content;
 
 }
 
+@media (max-width:768px){
+
+  .calculatorCard{
+
+    width:100% !important;
+
+    max-width:100% !important;
+
+  }
+
+  .calculatorGrid{
+
+    width:100%;
+
+  }
+
+}
