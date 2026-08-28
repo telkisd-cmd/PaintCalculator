@@ -2309,6 +2309,34 @@ height:fit-content;
 
   }
 
+.mobileOverlay{
+
+  display:block;
+
+  position:fixed;
+
+  inset:0;
+
+  background:rgba(0,0,0,.55);
+
+  z-index:9998;
+
+  opacity:0;
+
+  pointer-events:none;
+
+  transition:.3s;
+
+}
+
+.mobileOverlay.show{
+
+  opacity:1;
+
+  pointer-events:auto;
+
+}
+  
 }
 
 .mobileHeaderRow{
@@ -2318,5 +2346,11 @@ height:fit-content;
   justify-content:space-between;
 
   align-items:center;
+
+}
+
+.mobileOverlay{
+
+  display:none;
 
 }
