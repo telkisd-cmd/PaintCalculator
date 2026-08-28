@@ -2523,4 +2523,35 @@ function toggleMobileMenu(){
 
     });
 
+  document
+    .getElementById(
+      "mobileOverlay"
+    )
+    .classList.toggle(
+      "show"
+    );
+
 }
+
+function closeMobileMenu(){
+
+  document
+    .querySelectorAll(".sidebar")
+    .forEach(sidebar => {
+
+      sidebar.classList.remove(
+        "mobileOpen"
+      );
+
+    });
+
+  document
+    .getElementById(
+      "mobileOverlay"
+    )
+    .classList.remove(
+      "show"
+    );
+
+}
+
