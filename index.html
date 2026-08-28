@@ -17,6 +17,12 @@
 
 <body>
 
+<div
+  id="mobileOverlay"
+  class="mobileOverlay"
+  onclick="closeMobileMenu()">
+</div>
+  
 <div id="mainMenuTab">
 
 <div class="dashboardLayout">
@@ -74,18 +80,20 @@ Summary
 
   <div>
 
-    <h1>MAIN DASHBOARD
-      
-      <button
-class="mobileMenuBtn"
-onclick="toggleMobileMenu()">
+    <div class="mobileHeaderRow">
 
-☰
+  <h1>MAIN DASHBOARD</h1>
 
-</button>
+  <button
+    class="mobileMenuBtn"
+    onclick="toggleMobileMenu()">
 
-      </h1> 
-    
+    ☰
+
+  </button>
+
+</div>
+
     <p>
       Marine Coating Control Terminal
     </p>
