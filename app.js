@@ -1781,13 +1781,21 @@ blueprint.style.width =
 const blueprintImage =
   canvas.toDataURL("image/png");
 
+const pdfWidth = 170;
+
+const ratio =
+  canvas.height / canvas.width;
+
+const pdfHeight =
+  pdfWidth * ratio;
+
 doc.addImage(
   blueprintImage,
   "PNG",
-  10,
+  20,
   y,
-  190,
-  120
+  pdfWidth,
+  pdfHeight
 );
 
 doc.addPage();
