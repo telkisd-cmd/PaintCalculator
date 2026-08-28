@@ -2647,3 +2647,80 @@ height:fit-content;
 
 }
 
+@media (max-width:768px){
+
+  .hullModernLayout{
+
+    display:flex !important;
+
+    flex-direction:column !important;
+
+    gap:20px;
+
+  }
+
+  .hullInputGrid{
+
+    display:grid !important;
+
+    grid-template-columns:1fr !important;
+
+    gap:15px;
+
+  }
+
+  .hullLeftCard{
+
+    width:100% !important;
+
+    max-width:100% !important;
+
+    box-sizing:border-box;
+
+  }
+
+  .hullRightCards{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    width:100%;
+
+  }
+
+  .hullKPI{
+
+    width:100% !important;
+
+    max-width:100% !important;
+
+    box-sizing:border-box;
+
+  }
+
+  .hullTotalCard{
+
+    width:100% !important;
+
+    max-width:100% !important;
+
+    box-sizing:border-box;
+
+  }
+
+  .sendPaintBtn{
+
+    width:100%;
+
+  }
+
+  .hullCalculateBtn{
+
+    width:100%;
+
+  }
+
+}
