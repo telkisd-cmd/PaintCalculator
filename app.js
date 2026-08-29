@@ -1761,6 +1761,12 @@ let blueprint =
     "blueprintAllocation"
   );
 
+blueprint.style.gridTemplateColumns =
+  "150px 300px 150px";
+
+blueprint.style.gap =
+  "40px";
+  
 let oldWidth =
   blueprint.style.width;
 
@@ -1771,10 +1777,15 @@ const canvas =
   await html2canvas(
     blueprint,
     {
-      scale:2
+      scale:3,
+      scrollX:0,
+      scrollY:0
     }
   );
 
+blueprint.style.gridTemplateColumns = "";
+blueprint.style.gap = "";
+  
 blueprint.style.width =
   oldWidth;
 
