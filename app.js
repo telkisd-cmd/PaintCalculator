@@ -1766,8 +1766,17 @@ async function createPDPPDF(){
 
 let blueprint =
   document.getElementById(
-    "blueprintAllocation"
+    "pdfBlueprint"
   );
+
+  blueprint.style.display =
+  "grid";
+
+blueprint.style.gridTemplateColumns =
+  "150px 300px 150px";
+
+blueprint.style.gap =
+  "40px";
   
 let oldWidth =
   blueprint.style.width;
@@ -1779,10 +1788,10 @@ const canvas =
   await html2canvas(
     blueprint,
     {
-      scale:2
+      scale:3
     }
   );
-
+  
 console.log(
   canvas.width,
   canvas.height
