@@ -1540,6 +1540,10 @@ let blueprint =
     "pdfBlueprint"
   );
 
+document.getElementById(
+"blueprintAllocation"
+).innerHTML =
+  
 <div class="blueprintColumn">
 
 ${portHtml}
