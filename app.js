@@ -1771,11 +1771,14 @@ const canvas =
   await html2canvas(
     blueprint,
     {
-      scale:3,
-      scrollX:0,
-      scrollY:0
+      scale:2
     }
   );
+
+console.log(
+  canvas.width,
+  canvas.height
+);
   
 blueprint.style.width =
   oldWidth;
