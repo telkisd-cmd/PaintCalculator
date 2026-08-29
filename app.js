@@ -1534,16 +1534,11 @@ console.log(stbdList);
 
 console.log("PORT HTML:", portHtml);
 console.log("STBD HTML:", stbdHtml);
-  
-let blueprint =
-  document.getElementById(
-    "pdfBlueprint"
-  );
 
 document.getElementById(
-"blueprintAllocation"
-).innerHTML =
-  
+  "blueprintAllocation"
+).innerHTML = `
+
 <div class="blueprintColumn">
 
 ${portHtml}
