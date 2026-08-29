@@ -3112,3 +3112,16 @@ font-size:11px;
   }
 
 }
+
+#pdfBlueprint{
+
+  display:grid;
+
+  grid-template-columns:
+    150px
+    300px
+    150px;
+
+  gap:40px;
+
+}
