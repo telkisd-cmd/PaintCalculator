@@ -1760,12 +1760,6 @@ let blueprint =
   document.getElementById(
     "blueprintAllocation"
   );
-
-blueprint.style.gridTemplateColumns =
-  "150px 300px 150px";
-
-blueprint.style.gap =
-  "40px";
   
 let oldWidth =
   blueprint.style.width;
@@ -1782,9 +1776,6 @@ const canvas =
       scrollY:0
     }
   );
-
-blueprint.style.gridTemplateColumns = "";
-blueprint.style.gap = "";
   
 blueprint.style.width =
   oldWidth;
@@ -1792,23 +1783,22 @@ blueprint.style.width =
 const blueprintImage =
   canvas.toDataURL("image/png");
 
-const pdfWidth = 170;
-
-const ratio =
-  canvas.height / canvas.width;
+const pdfWidth = 120;
 
 const pdfHeight =
-  pdfWidth * ratio;
+  canvas.height *
+  pdfWidth /
+  canvas.width;
 
 doc.addImage(
   blueprintImage,
   "PNG",
-  20,
+  45,
   y,
   pdfWidth,
   pdfHeight
 );
-
+  
 doc.addPage();
 
 y = 20;
