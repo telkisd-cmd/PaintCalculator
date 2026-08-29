@@ -1535,9 +1535,10 @@ console.log(stbdList);
 console.log("PORT HTML:", portHtml);
 console.log("STBD HTML:", stbdHtml);
   
-document.getElementById(
-  "blueprintAllocation"
-).innerHTML = `
+let blueprint =
+  document.getElementById(
+    "pdfBlueprint"
+  );
 
 <div class="blueprintColumn">
 
@@ -1572,6 +1573,13 @@ ${stbdHtml}
 </div>
 
 `;
+
+document.getElementById(
+  "pdfBlueprint"
+).innerHTML =
+document.getElementById(
+  "blueprintAllocation"
+).innerHTML;
 
   let stationData = {};
 
