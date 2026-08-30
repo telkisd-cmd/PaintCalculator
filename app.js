@@ -1692,6 +1692,49 @@ async function createPDPPDF(){
 
   let y = 20;
 
+let logo =
+  document.getElementById(
+    "pdfLogo"
+  );
+
+if(logo){
+
+  const canvas =
+    document.createElement(
+      "canvas"
+    );
+
+  canvas.width =
+    logo.naturalWidth;
+
+  canvas.height =
+    logo.naturalHeight;
+
+  const ctx =
+    canvas.getContext("2d");
+
+  ctx.drawImage(
+    logo,
+    0,
+    0
+  );
+
+  const logoData =
+    canvas.toDataURL(
+      "image/png"
+    );
+
+  doc.addImage(
+    logoData,
+    "PNG",
+    15,
+    10,
+    20,
+    20
+  );
+
+}
+  
   let vesselName =
     document.getElementById("vesselName").value || "-";
 
@@ -1720,7 +1763,7 @@ async function createPDPPDF(){
 
   doc.text(
     "PAINT DISTRIBUTION PLAN",
-    20,
+    45,
     y
   );
 
@@ -2106,13 +2149,56 @@ async function createSummaryPDF(){
 
   let y = 20;
 
+let logo =
+  document.getElementById(
+    "pdfLogo"
+  );
+
+if(logo){
+
+  const canvas =
+    document.createElement(
+      "canvas"
+    );
+
+  canvas.width =
+    logo.naturalWidth;
+
+  canvas.height =
+    logo.naturalHeight;
+
+  const ctx =
+    canvas.getContext("2d");
+
+  ctx.drawImage(
+    logo,
+    0,
+    0
+  );
+
+  const logoData =
+    canvas.toDataURL(
+      "image/png"
+    );
+
+  doc.addImage(
+    logoData,
+    "PNG",
+    15,
+    10,
+    20,
+    20
+  );
+
+}
+  
   // HEADER
 
   doc.setFontSize(22);
 
   doc.text(
     "COATING ESTIMATION REPORT",
-    20,
+    45,
     y
   );
 
