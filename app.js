@@ -2656,3 +2656,77 @@ function exportProject(){
   URL.revokeObjectURL(url);
 
 }
+
+function importProject(){
+
+  document
+    .getElementById(
+      "importProjectFile"
+    )
+    .click();
+
+}
+
+document
+.getElementById(
+  "importProjectFile"
+)
+.addEventListener(
+"change",
+
+function(event){
+
+const file =
+  event.target.files[0];
+
+if(!file)
+  return;
+
+const reader =
+  new FileReader();
+
+reader.onload =
+function(e){
+
+const data =
+  JSON.parse(
+    e.target.result
+  );
+
+document.getElementById(
+  "vesselName"
+).value =
+  data.vessel || "";
+
+document.getElementById(
+  "imo"
+).value =
+  data.imo || "";
+
+document.getElementById(
+  "location"
+).value =
+  data.location || "";
+
+summaryData =
+  data.summaryData || {
+    positions:{}
+  };
+
+pdpData =
+  data.pdpData || [];
+
+vesselPhotoData =
+  data.vesselPhotoData || "";
+
+renderSummary();
+
+alert(
+  "Project Imported"
+);
+
+};
+
+reader.readAsText(file);
+
+});
