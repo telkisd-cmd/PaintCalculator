@@ -1826,6 +1826,26 @@ let oldWidth =
 blueprint.style.width =
   "700px";
 
+document
+.querySelectorAll(
+".sprayInput"
+)
+.forEach(input => {
+
+  input.setAttribute(
+    "value",
+    input.value
+  );
+
+});
+
+document.getElementById(
+  "pdfBlueprint"
+).innerHTML =
+document.getElementById(
+  "blueprintAllocation"
+).innerHTML;
+  
 const canvas =
   await html2canvas(
     blueprint,
