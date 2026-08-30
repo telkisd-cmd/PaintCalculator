@@ -3125,3 +3125,66 @@ font-size:11px;
   gap:40px;
 
 }
+
+#splashScreen{
+
+  position:fixed;
+  inset:0;
+
+  background:#061a44;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  z-index:99999;
+
+  transition:opacity .6s ease;
+
+}
+
+.splashContent{
+
+  text-align:center;
+
+}
+
+.splashLogo{
+
+  width:140px;
+  height:140px;
+
+  margin-bottom:25px;
+
+}
+
+.splashContent h1{
+
+  color:white;
+
+  font-size:28px;
+
+  margin:0;
+
+}
+
+.splashContent p{
+
+  color:#d7e4ff;
+
+  margin-top:12px;
+
+}
+
+.splashContent small{
+
+  color:#8fb5ff;
+
+}
+
+.splashHide{
+
+  opacity:0;
+  pointer-events:none;
+
+}
