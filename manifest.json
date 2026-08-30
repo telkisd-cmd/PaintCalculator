@@ -1,8 +1,8 @@
 {
   "id": "com.paintcalculator.app",
-  "name": "Paint Calculator",
-  "short_name": "PaintCalc",
-  "description": "Professional Coating Tool",
+  "name": "Paint Calculator Pro",
+  "short_name": "PCP",
+  "description": "Professional Marine Coating Planning Tool",
   "start_url": "/PaintCalculator/",
   "scope": "/PaintCalculator/",
   "display": "standalone",
@@ -10,6 +10,11 @@
   "background_color": "#121212",
   "theme_color": "#121212",
   "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
     {
       "src": "icon-512.png",
       "sizes": "512x512",
