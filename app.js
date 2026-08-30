@@ -1908,7 +1908,8 @@ y = 20;
     y
   );
 
-const totalPages = doc.getNumberOfPages();
+const totalPages =
+  doc.getNumberOfPages();
 
 for(let i=1;i<=totalPages;i++){
 
@@ -1935,7 +1936,7 @@ for(let i=1;i<=totalPages;i++){
   );
 
 }
-  
+
   return doc;
 
 }
