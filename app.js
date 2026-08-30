@@ -2749,3 +2749,20 @@ window.addEventListener(
 
   }
 );
+
+document.addEventListener(
+  "input",
+  function(event){
+
+    if(
+      event.target.classList.contains(
+        "sprayInput"
+      )
+    ){
+
+      recalculateSprays();
+
+    }
+
+  }
+);
