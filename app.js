@@ -2730,3 +2730,22 @@ alert(
 reader.readAsText(file);
 
 });
+
+window.addEventListener(
+  "load",
+  () => {
+
+    setTimeout(() => {
+
+      document
+        .getElementById(
+          "splashScreen"
+        )
+        .classList.add(
+          "splashHide"
+        );
+
+    },1500);
+
+  }
+);
