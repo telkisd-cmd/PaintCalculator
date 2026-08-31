@@ -1210,6 +1210,8 @@ function sendToArea(){
 
 function sendPaintToPDP(){
 
+pdpData = [];
+  
   if(!currentPaintResult.position){
 
     alert("Calculate first");
