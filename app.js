@@ -26,6 +26,8 @@ let vesselPhotoData = "";
 // ------------------------
 
 window.onload = function(){
+
+alert("WINDOW ONLOAD TEST");
   
   let today = new Date();
 
