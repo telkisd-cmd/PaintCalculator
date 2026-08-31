@@ -552,14 +552,14 @@ console.log(
 );
 
 console.log(
-  document.getElementById(
-    "totalDrumsKPI"
-  )
+document.getElementById(
+  "summaryDrumsKPI"
+)
 );
   
 let drumsElement =
   document.getElementById(
-    "totalDrumsKPI"
+  "summaryDrumsKPI"
   );
 
 console.log(
