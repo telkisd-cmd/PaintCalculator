@@ -1,7 +1,26 @@
+:root{
+
+--bg:#080d1a;
+--sidebar:#0b1220;
+
+--card:#111b30;
+--input:#090f1a;
+
+--border:#1c2b47;
+--border-alt:#22395c;
+
+--accent:#00b4d8;
+
+--text:#ffffff;
+--text-secondary:#90a4ae;
+--text-muted:#64748b;
+
+}
+
 body{
 background:#121212;
 color:white;
-font-family:Arial,sans-serif;
+font-family:'Manrope',sans-serif;
 padding:20px;
 margin:0;
 }
@@ -43,11 +62,12 @@ select{
 width:100%;
 padding:12px;
 margin-bottom:15px;
-background:#2a2a2a;
+background:#090f1a;
 color:white;
-border:none;
+border:1px solid #1c2b47;
 border-radius:8px;
 box-sizing:border-box;
+height:44px;
 }
 
 button{
@@ -468,7 +488,7 @@ color:#4FC3F7;
 
   min-height:100vh;
 
-  background:#03122D;
+  background:#0b1220;
 
   border-right:1px solid #16304f;
 
@@ -535,11 +555,12 @@ color:#4FC3F7;
 
 .quickCard{
 
-  background:#071a36;
+  background:background:
+rgba(17,27,48,.8);
 
-  border:1px solid #16304f;
+  border:1px solid #1c2b47;
 
-  border-radius:16px;
+  border-radius:12px;
 
   padding:15px 20px;
 
@@ -668,7 +689,7 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
 
   width:100%;
 
-  background:#00C8FF;
+  background:#00b4d8
 
   color:#001225;
 
