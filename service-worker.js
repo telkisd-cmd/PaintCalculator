@@ -1,5 +1,5 @@
 const CACHE_NAME =
-"paintcalc-v999";
+"paintcalc-v1000";
 
 const urlsToCache = [
   "/PaintCalculator/",
