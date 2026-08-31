@@ -192,8 +192,7 @@ if(tab==="summary")
       Number(document.getElementById("jtsTopside").value || 0) +
       Number(document.getElementById("jtsOther").value || 0);
 
-    document.getElementById("totalJTSKPI").innerText =
-      totalJTS.toLocaleString();
+   
   }
 
 }
@@ -546,6 +545,11 @@ document.getElementById(
   "totalAreaKPI"
 ).innerText =
   Math.round(totalArea);
+
+  document.getElementById(
+  "totalDrumsKPI"
+).innerText =
+  Math.ceil(totalDrums);
   
   document.getElementById(
     "summaryContent"
