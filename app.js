@@ -1210,38 +1210,35 @@ function sendToArea(){
 
 function sendPaintToPDP(){
 
-pdpData = [];
-  
   if(!currentPaintResult.position){
-
     alert("Calculate first");
     return;
-
   }
 
-  console.log(
-    "ADDING PDP ITEM"
-  );
+  let existing =
+    pdpData.findIndex(item =>
+      item.position === currentPaintResult.position &&
+      item.coat === currentPaintResult.coat
+    );
 
-  console.log(
-    currentPaintResult
-  );
+  let newItem = {
 
-  pdpData.push({
+    position: currentPaintResult.position,
+    coat: currentPaintResult.coat,
+    litres: currentPaintResult.litres,
+    drums: Math.ceil(currentPaintResult.drums)
 
-    position:
-      currentPaintResult.position,
+  };
 
-    coat:
-      currentPaintResult.coat,
+  if(existing !== -1){
 
-    litres:
-      currentPaintResult.litres,
+    pdpData[existing] = newItem;
 
-    drums:
-      Math.ceil(currentPaintResult.drums)
+  }else{
 
-  });
+    pdpData.push(newItem);
+
+  }
 
 }
 
