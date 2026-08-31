@@ -1640,8 +1640,7 @@ function recalculateSprays(){
     )
     .forEach(el => {
 
-      port +=
-        Number(el.value || 0);
+      port += Number(el.value || 0);
 
     });
 
@@ -1651,25 +1650,21 @@ function recalculateSprays(){
     )
     .forEach(el => {
 
-      stbd +=
-        Number(el.value || 0);
+      stbd += Number(el.value || 0);
 
     });
 
   document.getElementById(
     "portDrumsKPI"
-  ).innerText =
-    port;
+  ).innerText = port;
 
   document.getElementById(
     "stbdDrumsKPI"
-  ).innerText =
-    stbd;
+  ).innerText = stbd;
 
   document.getElementById(
     "totalDrumsKPI"
-  ).innerText =
-    port + stbd;
+  ).innerText = port + stbd;
 
 }
 
