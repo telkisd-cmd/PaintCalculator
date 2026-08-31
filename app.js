@@ -45,6 +45,8 @@ let autoSave =
 
 loadSummary();
 
+toggleCoatMode();
+  
   initializePhotoUpload();
 
   resetStations();
@@ -1029,22 +1031,28 @@ function clearProject(){
 function toggleCoatMode(){
 
   let mode =
-    document.getElementById("coatMode").value;
+    document.getElementById(
+      "coatMode"
+    ).value;
 
-  let selector =
-    document.getElementById("coatSelector");
+  let coatNumber =
+    document.getElementById(
+      "coatNumber"
+    );
 
-  if(mode === "Multi Coat"){
+  if(mode === "1 Coat"){
 
-    selector.style.display = "block";
+    coatNumber.value =
+      "1st Coat";
+
+    coatNumber.disabled =
+      true;
 
   }
   else{
 
-    selector.style.display = "none";
-
-    document.getElementById("coatNumber").value =
-      "1st Coat";
+    coatNumber.disabled =
+      false;
 
   }
 
