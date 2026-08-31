@@ -550,11 +550,29 @@ console.log(
   "TOTAL DRUMS SUMMARY =",
   totalDrums
 );
-  
+
+console.log(
   document.getElementById(
-  "totalDrumsKPI"
-).innerText =
-  Math.ceil(totalDrums);
+    "totalDrumsKPI"
+  )
+);
+  
+let drumsElement =
+  document.getElementById(
+    "totalDrumsKPI"
+  );
+
+console.log(
+  "ELEMENT =",
+  drumsElement
+);
+
+if(drumsElement){
+
+  drumsElement.innerText =
+    Math.ceil(totalDrums);
+
+}
   
   document.getElementById(
     "summaryContent"
