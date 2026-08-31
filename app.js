@@ -309,17 +309,20 @@ function sendPaintToSummary(){
   summaryData.positions[position].area =
     currentPaintResult.area;
 
-  summaryData.positions[position].coats[coat] = {
+summaryData.positions[position].coats[coat] = {
 
-    litres:
-      currentPaintResult.litres,
+  area:
+    currentPaintResult.area,
 
-    drums:
-      Math.ceil(
-        currentPaintResult.drums
-      )
+  litres:
+    currentPaintResult.litres,
 
-  };
+  drums:
+    Math.ceil(
+      currentPaintResult.drums
+    )
+
+};
 
   renderSummary();
 
@@ -517,7 +520,7 @@ function renderSummary(){
 
         <div>${coat}</div>
 
-        <div>${item.area.toFixed(0)}</div>
+        <div>${coatData.area.toFixed(0)}</div>
 
         <div>${coatData.litres.toFixed(1)}</div>
 
