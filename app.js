@@ -1178,6 +1178,14 @@ function sendPaintToPDP(){
 
   }
 
+  console.log(
+    "ADDING PDP ITEM"
+  );
+
+  console.log(
+    currentPaintResult
+  );
+
   pdpData.push({
 
     position:
@@ -1221,6 +1229,16 @@ pdpData.forEach(item => {
 
 });
 
+console.log(
+  "PDP ITEMS:",
+  pdpData.length
+);
+
+console.log(
+  "TOTAL DRUMS:",
+  totalDrums
+);
+  
 let drumsPerSpray =
   totalDrums / totalSprays;  
   
