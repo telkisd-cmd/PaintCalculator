@@ -2303,7 +2303,7 @@ async function createSummaryPDF(){
     document.getElementById("ownerRep")?.value || "-";
 
   let totalDrums =
-    document.getElementById("totalAreaKPI")?.innerText || "0";
+    document.getElementById("summaryDrumsKPI")?.innerText || "0";
 
   let totalLitres =
     document.getElementById("totalLitresKPI")?.innerText || "0";
