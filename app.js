@@ -271,7 +271,7 @@ function calculatePaint(){
 
     drums: drums,
 
-    area: area
+    area: effectiveArea
   };
 
 }
