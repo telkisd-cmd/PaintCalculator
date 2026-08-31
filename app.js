@@ -546,6 +546,11 @@ document.getElementById(
 ).innerText =
   Math.round(totalArea);
 
+console.log(
+  "TOTAL DRUMS SUMMARY =",
+  totalDrums
+);
+  
   document.getElementById(
   "totalDrumsKPI"
 ).innerText =
