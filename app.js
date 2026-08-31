@@ -1686,6 +1686,8 @@ function getLatestPDPItem(){
 
 async function createPDPPDF(){
 
+  alert("CREATE PDP PDF V2");
+
   const { jsPDF } = window.jspdf;
 
   const doc = new jsPDF();
