@@ -26,8 +26,6 @@ let vesselPhotoData = "";
 // ------------------------
 
 window.onload = function(){
-
-alert("WINDOW ONLOAD TEST");
   
   let today = new Date();
 
@@ -1688,8 +1686,6 @@ function getLatestPDPItem(){
 
 async function createPDPPDF(){
 
-  alert("CREATE PDP PDF V2");
-
   const { jsPDF } = window.jspdf;
 
   const doc = new jsPDF();
@@ -2033,8 +2029,6 @@ async function createPDPPDF(){
 
 }
 async function exportPDPPDF(){
-
-  alert("EXPORT PDP PDF");
 
   let vesselName =
     document.getElementById(
