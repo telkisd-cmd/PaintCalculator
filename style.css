@@ -504,6 +504,10 @@ color:#4FC3F7;
 
 }
 
+.dashboardLayout{
+  display:flex !important;
+}
+
 .dashboardContent{
 
   flex:1;
