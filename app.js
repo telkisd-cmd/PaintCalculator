@@ -1692,54 +1692,55 @@ async function createPDPPDF(){
 
   let y = 20;
 
-let logo =
-  document.getElementById(
-    "pdfLogo"
-  );
-
-if(logo){
-
-  const canvas =
-    document.createElement(
-      "canvas"
+  let logo =
+    document.getElementById(
+      "pdfLogo"
     );
 
-console.log(
-  logo.naturalWidth,
-  logo.naturalHeight
-);
-  
-  canvas.width =
-    logo.naturalWidth;
+  if(logo){
 
-  canvas.height =
-    logo.naturalHeight;
-
-  const ctx =
-    canvas.getContext("2d");
-
-  ctx.drawImage(
-    logo,
-    0,
-    0
-  );
-
-  const logoData =
-    canvas.toDataURL(
-      "image/png"
+    console.log(
+      "LOGO SIZE:",
+      logo.naturalWidth,
+      logo.naturalHeight
     );
 
-  doc.addImage(
-    logoData,
-    "PNG",
-    15,
-    10,
-    20,
-    20
-  );
+    const canvas =
+      document.createElement(
+        "canvas"
+      );
 
-}
-  
+    canvas.width =
+      logo.naturalWidth;
+
+    canvas.height =
+      logo.naturalHeight;
+
+    const ctx =
+      canvas.getContext("2d");
+
+    ctx.drawImage(
+      logo,
+      0,
+      0
+    );
+
+    const logoData =
+      canvas.toDataURL(
+        "image/png"
+      );
+
+    doc.addImage(
+      logoData,
+      "PNG",
+      15,
+      10,
+      20,
+      20
+    );
+
+  }
+
   let vesselName =
     document.getElementById("vesselName").value || "-";
 
@@ -1776,19 +1777,44 @@ console.log(
 
   doc.setFontSize(12);
 
-  doc.text("Vessel : " + vesselName,20,y);
+  doc.text(
+    "Vessel : " + vesselName,
+    20,
+    y
+  );
+
   y += 8;
 
-  doc.text("IMO : " + imo,20,y);
+  doc.text(
+    "IMO : " + imo,
+    20,
+    y
+  );
+
   y += 8;
 
-  doc.text("Location : " + location,20,y);
+  doc.text(
+    "Location : " + location,
+    20,
+    y
+  );
+
   y += 8;
 
-  doc.text("Date : " + date,20,y);
+  doc.text(
+    "Date : " + date,
+    20,
+    y
+  );
+
   y += 8;
 
-  doc.text("Paint : " + paintDescription,20,y);
+  doc.text(
+    "Paint : " + paintDescription,
+    20,
+    y
+  );
+
   y += 16;
 
   let commentLines =
@@ -1797,9 +1823,14 @@ console.log(
       170
     );
 
-  doc.text(commentLines,20,y);
+  doc.text(
+    commentLines,
+    20,
+    y
+  );
 
-  y += commentLines.length * 6 + 10;
+  y +=
+    commentLines.length * 6 + 10;
 
   doc.setFontSize(14);
 
@@ -1811,84 +1842,109 @@ console.log(
 
   y += 10;
 
-let blueprint =
-  document.getElementById(
-    "pdfBlueprint"
-  );
+  let blueprint =
+    document.getElementById(
+      "pdfBlueprint"
+    );
 
   blueprint.style.display =
-  "grid";
+    "grid";
 
-blueprint.style.gridTemplateColumns =
-  "150px 300px 150px";
+  blueprint.style.gridTemplateColumns =
+    "150px 300px 150px";
 
-blueprint.style.gap =
-  "40px";
-  
-let oldWidth =
-  blueprint.style.width;
+  blueprint.style.gap =
+    "40px";
 
-blueprint.style.width =
-  "700px";
+  let oldWidth =
+    blueprint.style.width;
 
-document.getElementById(
-  "pdfBlueprint"
-).innerHTML =
-document.getElementById(
-  "blueprintAllocation"
-).innerHTML;
+  blueprint.style.width =
+    "700px";
 
-document
-.querySelectorAll(
-  "#pdfBlueprint .sprayInput"
-)
-.forEach(input => {
+  // IMPORTANT:
+  // Πρώτα αντιγράφουμε το live PDP
 
-  input.setAttribute(
-    "value",
-    input.value
-  );
+  blueprint.innerHTML =
+    document.getElementById(
+      "blueprintAllocation"
+    ).innerHTML;
 
-});
-  
-const canvas =
-  await html2canvas(
-    blueprint,
-    {
-      scale:3
+  // IMPORTANT:
+  // Μεταφέρουμε τις πραγματικές τιμές
+  // από το live PDP στο PDF blueprint
+
+  const liveInputs =
+    document.querySelectorAll(
+      "#blueprintAllocation .sprayInput"
+    );
+
+  const pdfInputs =
+    blueprint.querySelectorAll(
+      ".sprayInput"
+    );
+
+  liveInputs.forEach(
+    (input,index) => {
+
+      if(pdfInputs[index]){
+
+        pdfInputs[index].value =
+          input.value;
+
+        pdfInputs[index].setAttribute(
+          "value",
+          input.value
+        );
+
+      }
+
     }
   );
-  
-console.log(
-  canvas.width,
-  canvas.height
-);
-  
-blueprint.style.width =
-  oldWidth;
 
-const blueprintImage =
-  canvas.toDataURL("image/png");
+  console.log(
+    "PDF FIRST SPRAY:",
+    pdfInputs[0]?.value
+  );
 
-const pdfWidth = 120;
+  const canvas =
+    await html2canvas(
+      blueprint,
+      {
+        scale:3
+      }
+    );
 
-const pdfHeight =
-  canvas.height *
-  pdfWidth /
-  canvas.width;
+  console.log(
+    canvas.width,
+    canvas.height
+  );
 
-doc.addImage(
-  blueprintImage,
-  "PNG",
-  45,
-  y,
-  pdfWidth,
-  pdfHeight
-);
-  
-doc.addPage();
+  blueprint.style.width =
+    oldWidth;
 
-y = 20;
+  const blueprintImage =
+    canvas.toDataURL("image/png");
+
+  const pdfWidth = 120;
+
+  const pdfHeight =
+    canvas.height *
+    pdfWidth /
+    canvas.width;
+
+  doc.addImage(
+    blueprintImage,
+    "PNG",
+    45,
+    y,
+    pdfWidth,
+    pdfHeight
+  );
+
+  doc.addPage();
+
+  y = 20;
 
   doc.setFontSize(14);
 
@@ -1933,39 +1989,45 @@ y = 20;
     y
   );
 
-const totalPages =
-  doc.getNumberOfPages();
+  const totalPages =
+    doc.getNumberOfPages();
 
-for(let i=1;i<=totalPages;i++){
+  for(
+    let i = 1;
+    i <= totalPages;
+    i++
+  ){
 
-  doc.setPage(i);
+    doc.setPage(i);
 
-  doc.setFontSize(8);
+    doc.setFontSize(8);
 
-  doc.text(
-    "Paint Calculator Pro v1.0.0",
-    20,
-    280
-  );
+    doc.text(
+      "Paint Calculator Pro v1.0.0",
+      20,
+      280
+    );
 
-  doc.text(
-    "Generated by Dimitris Telkiridis",
-    80,
-    280
-  );
+    doc.text(
+      "Generated by Dimitris Telkiridis",
+      80,
+      280
+    );
 
-  doc.text(
-    "Page " + i + " / " + totalPages,
-    170,
-    280
-  );
+    doc.text(
+      "Page " +
+      i +
+      " / " +
+      totalPages,
+      170,
+      280
+    );
 
-}
+  }
 
   return doc;
 
 }
-
 async function exportPDPPDF(){
 
   let vesselName =
