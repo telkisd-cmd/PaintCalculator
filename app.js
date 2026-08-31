@@ -2821,6 +2821,11 @@ function toggleAutoSave(){
     localStorage.removeItem("jtsTopside");
     localStorage.removeItem("jtsOther");
 
+    localStorage.removeItem("totalSprays");
+    localStorage.removeItem("spraysPerStation");
+    localStorage.removeItem("paintDescription");
+    localStorage.removeItem("pdpComments");
+    
     localStorage.removeItem("solids");
     localStorage.removeItem("loss");
     localStorage.removeItem("dft");
