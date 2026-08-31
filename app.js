@@ -2032,6 +2032,8 @@ async function createPDPPDF(){
 }
 async function exportPDPPDF(){
 
+  alert("EXPORT PDP PDF");
+
   let vesselName =
     document.getElementById(
       "vesselName"
