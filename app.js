@@ -494,8 +494,9 @@ function renderSummary(){
 
   `;
 
-  let totalLitres = 0;
-  let totalDrums = 0;
+let totalArea = 0;
+let totalLitres = 0;
+let totalDrums = 0;
 
   for(let position in summaryData.positions){
 
@@ -507,6 +508,9 @@ function renderSummary(){
       let coatData =
         item.coats[coat];
 
+      totalArea +=
+        coatData.area;
+      
       totalLitres +=
         coatData.litres;
 
@@ -541,7 +545,7 @@ document.getElementById(
 document.getElementById(
   "totalAreaKPI"
 ).innerText =
-  Math.ceil(totalDrums);
+  Math.round(totalArea);
   
   document.getElementById(
     "summaryContent"
