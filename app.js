@@ -548,27 +548,6 @@ document.getElementById(
 ).innerText =
   Math.round(totalArea);
 
-console.log(
-  "TOTAL DRUMS SUMMARY =",
-  totalDrums
-);
-
-console.log(
-document.getElementById(
-  "summaryDrumsKPI"
-)
-);
-  
-let drumsElement =
-  document.getElementById(
-  "summaryDrumsKPI"
-  );
-
-console.log(
-  "ELEMENT =",
-  drumsElement
-);
-
 if(drumsElement){
 
   drumsElement.innerText =
@@ -1266,16 +1245,6 @@ pdpData.forEach(item => {
   totalDrums += item.drums;
 
 });
-
-console.log(
-  "PDP ITEMS:",
-  pdpData.length
-);
-
-console.log(
-  "TOTAL DRUMS:",
-  totalDrums
-);
   
 let drumsPerSpray =
   totalDrums / totalSprays;  
@@ -1589,12 +1558,6 @@ stbdList.forEach(s => {
 
 });
 
-console.log(portList);
-console.log(stbdList);
-
-console.log("PORT HTML:", portHtml);
-console.log("STBD HTML:", stbdHtml);
-
 document.getElementById(
   "blueprintAllocation"
 ).innerHTML = `
@@ -1690,10 +1653,6 @@ document.getElementById(
 }
 
 function recalculateSprays(){
-
-console.log(
-"RECALCULATE START"
-);
   
   let port = 0;
   let stbd = 0;
@@ -1729,27 +1688,6 @@ document
   document.getElementById(
     "totalDrumsKPI"
   ).innerText = port + stbd;
-
-console.log(
-  "PORT:", port,
-  "STBD:", stbd,
-  "TOTAL:", port + stbd
-);
-
-console.log(
-  "PORT =",
-  port
-);
-
-console.log(
-  "STBD =",
-  stbd
-);
-
-console.log(
-  "TOTAL =",
-  port + stbd
-);
   
 }
 
@@ -1778,12 +1716,6 @@ async function createPDPPDF(){
     );
 
   if(logo){
-
-    console.log(
-      "LOGO SIZE:",
-      logo.naturalWidth,
-      logo.naturalHeight
-    );
 
     const canvas =
       document.createElement(
@@ -1986,11 +1918,6 @@ y = 20;
     }
   );
 
-  console.log(
-    "PDF FIRST SPRAY:",
-    pdfInputs[0]?.value
-  );
-
   const canvas =
     await html2canvas(
       blueprint,
@@ -1998,11 +1925,6 @@ y = 20;
         scale:3
       }
     );
-
-  console.log(
-    canvas.width,
-    canvas.height
-  );
 
   blueprint.style.width =
     oldWidth;
@@ -2843,8 +2765,6 @@ function toggleAutoSave(){
 }
 
 function toggleDarkMode(){
-
-console.log("Dark mode changed");
   
   let darkMode =
     document.getElementById(
@@ -2896,8 +2816,6 @@ function toggleMobileMenu(){
 }
 
 function closeMobileMenu(){
-
-console.log("CLOSE");
   
   document
     .querySelectorAll(".sidebar")
@@ -3079,11 +2997,6 @@ document.addEventListener(
         "sprayInput"
       )
     ){
-
-      console.log(
-        "SPRAY CHANGED:",
-        event.target.value
-      );
 
       recalculateSprays();
 
