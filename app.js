@@ -1660,20 +1660,20 @@ console.log(
   let port = 0;
   let stbd = 0;
 
-  document
-    .querySelectorAll(
-      '.sprayInput[data-side="port"]'
-    )
+document
+  .querySelectorAll(
+    '#blueprintAllocation .sprayInput[data-side="port"]'
+  )
     .forEach(el => {
 
       port += Number(el.value || 0);
 
     });
 
-  document
-    .querySelectorAll(
-      '.sprayInput[data-side="stbd"]'
-    )
+ document
+  .querySelectorAll(
+    '#blueprintAllocation .sprayInput[data-side="stbd"]'
+  )
     .forEach(el => {
 
       stbd += Number(el.value || 0);
