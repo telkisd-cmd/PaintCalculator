@@ -1912,6 +1912,10 @@ async function createPDPPDF(){
   y +=
     commentLines.length * 6 + 10;
 
+doc.addPage();
+
+y = 20;
+  
   doc.setFontSize(14);
 
   doc.text(
