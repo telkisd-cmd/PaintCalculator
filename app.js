@@ -8,6 +8,7 @@ let summaryData = {
   totalDrums: 0
 };
 
+
 let currentPaintResult = {
 
   position: "",
@@ -1634,6 +1635,8 @@ document.getElementById(
 
 function recalculateSprays(){
 
+console.log("RECALCULATE RUNNING");
+  
   let port = 0;
   let stbd = 0;
 
@@ -1669,6 +1672,12 @@ function recalculateSprays(){
     "totalDrumsKPI"
   ).innerText = port + stbd;
 
+console.log(
+  "PORT:", port,
+  "STBD:", stbd,
+  "TOTAL:", port + stbd
+);
+  
 }
 
 function getLatestPDPItem(){
