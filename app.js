@@ -1635,7 +1635,9 @@ document.getElementById(
 
 function recalculateSprays(){
 
-console.log("RECALCULATE RUNNING");
+console.log(
+"RECALCULATE START"
+);
   
   let port = 0;
   let stbd = 0;
@@ -1676,6 +1678,21 @@ console.log(
   "PORT:", port,
   "STBD:", stbd,
   "TOTAL:", port + stbd
+);
+
+console.log(
+  "PORT =",
+  port
+);
+
+console.log(
+  "STBD =",
+  stbd
+);
+
+console.log(
+  "TOTAL =",
+  port + stbd
 );
   
 }
@@ -2997,6 +3014,11 @@ document.addEventListener(
         "sprayInput"
       )
     ){
+
+      console.log(
+        "SPRAY CHANGED:",
+        event.target.value
+      );
 
       recalculateSprays();
 
