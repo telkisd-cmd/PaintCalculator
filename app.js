@@ -2496,7 +2496,7 @@ doc.addImage(
       );
 
       doc.text(
-        item.area.toFixed(0),
+        coatData.area.toFixed(0),
         80,
         y
       );
