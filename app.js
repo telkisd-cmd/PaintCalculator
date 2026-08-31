@@ -1,4 +1,3 @@
-console.log("VERSION TEST 777");
 // ------------------------
 // GLOBAL DATA
 // ------------------------
@@ -1705,6 +1704,11 @@ if(logo){
       "canvas"
     );
 
+console.log(
+  logo.naturalWidth,
+  logo.naturalHeight
+);
+  
   canvas.width =
     logo.naturalWidth;
 
@@ -1827,9 +1831,16 @@ let oldWidth =
 blueprint.style.width =
   "700px";
 
+document.getElementById(
+  "pdfBlueprint"
+).innerHTML =
+document.getElementById(
+  "blueprintAllocation"
+).innerHTML;
+
 document
 .querySelectorAll(
-".sprayInput"
+  "#pdfBlueprint .sprayInput"
 )
 .forEach(input => {
 
@@ -1839,13 +1850,6 @@ document
   );
 
 });
-
-document.getElementById(
-  "pdfBlueprint"
-).innerHTML =
-document.getElementById(
-  "blueprintAllocation"
-).innerHTML;
   
 const canvas =
   await html2canvas(
