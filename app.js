@@ -1219,6 +1219,11 @@ function sendPaintToPDP(){
 
   }
 
+document.getElementById(
+  "pdpTotalDrums"
+).value =
+Math.ceil(currentPaintResult.drums);
+  
 }
 
 function calculateStations(totalSprays){
@@ -1231,20 +1236,29 @@ function calculateStations(totalSprays){
 
 function generatePDP(){
 
- let totalSprays =
+let totalSprays =
   parseInt(
     document.getElementById(
       "totalSprays"
     ).value
   );
 
-let totalDrums = 0;
+let totalDrums =
+  parseInt(
+    document.getElementById(
+      "pdpTotalDrums"
+    ).value
+  ) || 0;
 
-pdpData.forEach(item => {
+if(totalDrums <= 0){
 
-  totalDrums += item.drums;
+  alert(
+    "Enter Total Drums first"
+  );
 
-});
+  return;
+
+}
   
 let drumsPerSpray =
   totalDrums / totalSprays;  
