@@ -3328,3 +3328,37 @@ font-size:11px;
   }
 
 }
+
+.pdpCard .paintField p{
+
+  margin:0 0 8px 0;
+
+  color:#90a4ae;
+
+  font-size:11px;
+
+  font-weight:600;
+
+  letter-spacing:.5px;
+
+  text-transform:uppercase;
+
+}
+
+textarea{
+
+  width:100%;
+
+  padding:12px;
+
+  background:#090f1a;
+
+  color:white;
+
+  border:1px solid #1c2b47;
+
+  border-radius:8px;
+
+  box-sizing:border-box;
+
+}
