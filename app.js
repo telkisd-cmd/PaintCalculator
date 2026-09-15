@@ -476,28 +476,6 @@ function sendAreaToPaint(area){
 // ------------------------
 
 function renderSummary(){
-
-console.log(
-  summaryData
-);
-
-  console.log(
-  summaryData.positions
-);
-
-  for(let position in summaryData.positions){
-
-  console.log(
-    "POSITION:",
-    position
-  );
-
-  let item =
-    summaryData.positions[position];
-
-  console.log(item);
-
-}
   
   let html = `
 
