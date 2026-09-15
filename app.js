@@ -497,7 +497,6 @@ console.log(
 
   console.log(item);
 
-  ...
 }
   
   let html = `
