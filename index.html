@@ -1838,7 +1838,111 @@ id="wftResult">
 
 <div class="settingsCard">
 
-<h3>AMBIENT CONDITIONS</h3>
+<h3 onclick="toggleToolsSection('ambientSection')">
+
+▼ AMBIENT CONDITIONS
+
+</h3>
+
+<div
+id="ambientSection"
+style="display:none;">
+
+<p>Dry Bulb (°C)</p>
+
+<input
+id="dryBulb"
+type="number"
+step="0.1">
+
+<p>Wet Bulb (°C)</p>
+
+<input
+id="wetBulb"
+type="number"
+step="0.1">
+
+<br><br>
+
+<button
+class="calculateBtn"
+onclick="calculateAmbient()">
+
+CALCULATE
+
+</button>
+
+<br><br>
+
+<div class="metricCard">
+
+<div class="metricTitle">
+
+RELATIVE HUMIDITY
+
+</div>
+
+<div
+class="metricValue"
+id="rhResult">
+
+0%
+
+</div>
+
+</div>
+
+<br>
+
+<div class="metricCard">
+
+<div class="metricTitle">
+
+DEW POINT
+
+</div>
+
+<div
+class="metricValue"
+id="dewPointResult">
+
+0°C
+
+</div>
+
+</div>
+
+<br>
+
+<p>Surface Temperature (°C)</p>
+
+<input
+id="surfaceTemp"
+type="number"
+step="0.1"
+oninput="calculateDeltaT()">
+
+<br><br>
+
+<div class="metricCard">
+
+<div class="metricTitle">
+
+TΔ
+
+</div>
+
+<div
+class="metricValue"
+id="deltaTResult">
+
+0°C
+
+</div>
+
+</div>
+
+</div>
 
 </div>
 
