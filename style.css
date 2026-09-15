@@ -3362,3 +3362,29 @@ textarea{
   box-sizing:border-box;
 
 }
+
+.mixRatioRow{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+}
+
+.mixRatioRow input{
+
+  flex:1;
+
+}
+
+.mixRatioRow span{
+
+  font-size:22px;
+
+  font-weight:700;
+
+  color:#00C8FF;
+
+}
