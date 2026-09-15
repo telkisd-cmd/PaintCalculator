@@ -3180,3 +3180,133 @@ function calculateDeltaT(){
     deltaT.toFixed(1) + "°C";
 
 }
+
+function toggleMixComponents(){
+
+  let count =
+    document.getElementById(
+      "componentCount"
+    ).value;
+
+  let show =
+    count === "3";
+
+  document.getElementById(
+    "ratioC"
+  ).style.display =
+    show ? "block" : "none";
+
+  document.getElementById(
+    "ratioCColon"
+  ).style.display =
+    show ? "inline" : "none";
+
+  document.getElementById(
+    "componentCCard"
+  ).style.display =
+    show ? "block" : "none";
+
+}
+
+function calculateMixRatio(){
+
+  let ratioA =
+    parseFloat(
+      document.getElementById(
+        "ratioA"
+      ).value
+    ) || 0;
+
+  let ratioB =
+    parseFloat(
+      document.getElementById(
+        "ratioB"
+      ).value
+    ) || 0;
+
+  let ratioC =
+    parseFloat(
+      document.getElementById(
+        "ratioC"
+      ).value
+    ) || 0;
+
+  let quantity =
+    parseFloat(
+      document.getElementById(
+        "mixQuantity"
+      ).value
+    ) || 0;
+
+  let components =
+    document.getElementById(
+      "componentCount"
+    ).value;
+
+  if(components === "2"){
+
+    let totalParts =
+      ratioA + ratioB;
+
+    let compA =
+      quantity *
+      ratioA /
+      totalParts;
+
+    let compB =
+      quantity *
+      ratioB /
+      totalParts;
+
+    document.getElementById(
+      "mixResultA"
+    ).innerText =
+      compA.toFixed(2) + " L";
+
+    document.getElementById(
+      "mixResultB"
+    ).innerText =
+      compB.toFixed(2) + " L";
+
+  }
+
+  else{
+
+    let totalParts =
+      ratioA +
+      ratioB +
+      ratioC;
+
+    let compA =
+      quantity *
+      ratioA /
+      totalParts;
+
+    let compB =
+      quantity *
+      ratioB /
+      totalParts;
+
+    let compC =
+      quantity *
+      ratioC /
+      totalParts;
+
+    document.getElementById(
+      "mixResultA"
+    ).innerText =
+      compA.toFixed(2) + " L";
+
+    document.getElementById(
+      "mixResultB"
+    ).innerText =
+      compB.toFixed(2) + " L";
+
+    document.getElementById(
+      "mixResultC"
+    ).innerText =
+      compC.toFixed(2) + " L";
+
+  }
+
+}
