@@ -3109,3 +3109,74 @@ function calculateWFT(){
     wft.toFixed(1);
 
 }
+
+function calculateAmbient(){
+
+  let dry =
+    parseFloat(
+      document.getElementById(
+        "dryBulb"
+      ).value
+    ) || 0;
+
+  let wet =
+    parseFloat(
+      document.getElementById(
+        "wetBulb"
+      ).value
+    ) || 0;
+
+  let dewPoint =
+    wet -
+    ((dry - wet) * 0.4);
+
+  let rh =
+    100 -
+    (5 * (dry - wet));
+
+  if(rh < 0)
+    rh = 0;
+
+  if(rh > 100)
+    rh = 100;
+
+  document.getElementById(
+    "rhResult"
+  ).innerText =
+    rh.toFixed(0) + "%";
+
+  document.getElementById(
+    "dewPointResult"
+  ).innerText =
+    dewPoint.toFixed(1) + "°C";
+
+  calculateDeltaT();
+
+}
+
+function calculateDeltaT(){
+
+  let surface =
+    parseFloat(
+      document.getElementById(
+        "surfaceTemp"
+      ).value
+    ) || 0;
+
+  let dewPoint =
+    parseFloat(
+      document.getElementById(
+        "dewPointResult"
+      ).innerText
+    ) || 0;
+
+  let deltaT =
+    surface -
+    dewPoint;
+
+  document.getElementById(
+    "deltaTResult"
+  ).innerText =
+    deltaT.toFixed(1) + "°C";
+
+}
