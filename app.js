@@ -96,6 +96,7 @@ function showTab(tab){
   document.getElementById("settingsTab").style.display = "none";
   document.getElementById("pdpTab").style.display = "none";
   document.getElementById("calculatorTab").style.display = "none";
+  document.getElementById("toolsTab").style.display = "none";
 
   document
   .querySelectorAll(".activeNav")
@@ -152,6 +153,13 @@ if(tab==="summary")
       el.classList.add("activeNav")
     );
 
+if(tab==="tools")
+  document
+    .querySelectorAll(".navTools")
+    .forEach(el =>
+      el.classList.add("activeNav")
+    );
+  
   if(tab==="mainMenu")
     document.getElementById("mainMenuTab").style.display = "block";
 
@@ -172,6 +180,9 @@ if(tab==="summary")
 
   if(tab==="settings")
     document.getElementById("settingsTab").style.display = "block";
+
+  if(tab==="tools")
+  document.getElementById("toolsTab").style.display = "block";
 
   if(tab==="summary"){
 
