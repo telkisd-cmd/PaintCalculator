@@ -3087,8 +3087,21 @@ function calculateWFT(){
       ).value
     ) || 0;
 
+  let thinning =
+    parseFloat(
+      document.getElementById(
+        "thinningPercent"
+      ).value
+    ) || 0;
+
+  let effectiveVS =
+    vs *
+    (100 - thinning)
+    / 100;
+
   let wft =
-    dft * 100 / vs;
+    dft * 100 /
+    effectiveVS;
 
   document.getElementById(
     "wftResult"
