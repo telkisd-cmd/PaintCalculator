@@ -3027,3 +3027,72 @@ document.addEventListener(
 
   }
 );
+
+function toggleToolsSection(id){
+
+  let box =
+    document.getElementById(id);
+
+  if(box.style.display === "none"){
+
+    box.style.display = "block";
+
+  }else{
+
+    box.style.display = "none";
+
+  }
+
+}
+
+function calculateDFT(){
+
+  let vs =
+    parseFloat(
+      document.getElementById(
+        "vsPercent"
+      ).value
+    ) || 0;
+
+  let wft =
+    parseFloat(
+      document.getElementById(
+        "wftValue"
+      ).value
+    ) || 0;
+
+  let dft =
+    wft * vs / 100;
+
+  document.getElementById(
+    "dftResult"
+  ).innerText =
+    dft.toFixed(1);
+
+}
+
+function calculateWFT(){
+
+  let vs =
+    parseFloat(
+      document.getElementById(
+        "vsPercent"
+      ).value
+    ) || 0;
+
+  let dft =
+    parseFloat(
+      document.getElementById(
+        "dftValue"
+      ).value
+    ) || 0;
+
+  let wft =
+    dft * 100 / vs;
+
+  document.getElementById(
+    "wftResult"
+  ).innerText =
+    wft.toFixed(1);
+
+}
