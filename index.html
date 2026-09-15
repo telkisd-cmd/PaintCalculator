@@ -1735,7 +1735,95 @@ onclick="showTab('settings')">
 
 <div class="settingsCard">
 
-<h3>WFT ↔ DFT CONVERTER</h3>
+<h3 onclick="toggleToolsSection('wftSection')">
+
+▼ WFT ↔ DFT CONVERTER
+
+</h3>
+
+<div id="wftSection">
+
+<p>Volume Solids (%)</p>
+
+<input
+id="vsPercent"
+type="number">
+
+<p>WFT (μm)</p>
+
+<input
+id="wftValue"
+type="number">
+
+<br><br>
+
+<button
+class="calculateBtn"
+onclick="calculateDFT()">
+
+CALCULATE DFT
+
+</button>
+
+<br><br>
+
+<div class="metricCard">
+
+<div class="metricTitle">
+
+DFT RESULT
+
+</div>
+
+<div
+class="metricValue"
+id="dftResult">
+
+0
+
+</div>
+
+</div>
+
+<hr>
+
+<p>DFT (μm)</p>
+
+<input
+id="dftValue"
+type="number">
+
+<br><br>
+
+<button
+class="calculateBtn"
+onclick="calculateWFT()">
+
+CALCULATE WFT
+
+</button>
+
+<br><br>
+
+<div class="metricCard">
+
+<div class="metricTitle">
+
+WFT RESULT
+
+</div>
+
+<div
+class="metricValue"
+id="wftResult">
+
+0
+
+</div>
+
+</div>
+
+</div>
 
 </div>
 
