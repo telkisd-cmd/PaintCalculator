@@ -477,6 +477,29 @@ function sendAreaToPaint(area){
 
 function renderSummary(){
 
+console.log(
+  summaryData
+);
+
+  console.log(
+  summaryData.positions
+);
+
+  for(let position in summaryData.positions){
+
+  console.log(
+    "POSITION:",
+    position
+  );
+
+  let item =
+    summaryData.positions[position];
+
+  console.log(item);
+
+  ...
+}
+  
   let html = `
 
   <div class="summaryGridHeader">
@@ -548,12 +571,10 @@ document.getElementById(
 ).innerText =
   Math.round(totalArea);
 
-if(drumsElement){
-
-  drumsElement.innerText =
-    Math.ceil(totalDrums);
-
-}
+document.getElementById(
+  "summaryDrumsKPI"
+).innerText =
+  Math.ceil(totalDrums);
   
   document.getElementById(
     "summaryContent"
