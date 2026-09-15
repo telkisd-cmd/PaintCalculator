@@ -1950,7 +1950,150 @@ id="deltaTResult">
 
 <div class="settingsCard">
 
-<h3>MIXING RATIO CALCULATOR</h3>
+<h3 onclick="toggleToolsSection('mixSection')">
+
+▼ MIXING RATIO CALCULATOR
+
+</h3>
+
+<div
+id="mixSection"
+style="display:none;">
+
+<p>Number of Components</p>
+
+<select
+id="componentCount"
+onchange="toggleMixComponents()">
+
+<option value="2">
+2 Components
+</option>
+
+<option value="3">
+3 Components
+</option>
+
+</select>
+
+<br><br>
+
+<p>Mix Ratio</p>
+
+<div class="mixRatioRow">
+
+<input
+id="ratioA"
+type="number"
+value="1">
+
+<span>:</span>
+
+<input
+id="ratioB"
+type="number"
+value="4">
+
+<span
+id="ratioCColon"
+style="display:none;">
+:
+</span>
+
+<input
+id="ratioC"
+type="number"
+value="1"
+style="display:none;">
+
+</div>
+
+<br>
+
+<p>Total Mixed Quantity (L)</p>
+
+<input
+id="mixQuantity"
+type="number"
+step="0.1">
+
+<br><br>
+
+<button
+class="calculateBtn"
+onclick="calculateMixRatio()">
+
+CALCULATE MIX
+
+</button>
+
+<br><br>
+
+<div class="metricCard">
+
+<div class="metricTitle">
+
+COMPONENT A
+
+</div>
+
+<div
+class="metricValue"
+id="mixResultA">
+
+0 L
+
+</div>
+
+</div>
+
+<br>
+
+<div class="metricCard">
+
+<div class="metricTitle">
+
+COMPONENT B
+
+</div>
+
+<div
+class="metricValue"
+id="mixResultB">
+
+0 L
+
+</div>
+
+</div>
+
+<br>
+
+<div
+id="componentCCard"
+style="display:none;">
+
+<div class="metricCard">
+
+<div class="metricTitle">
+
+COMPONENT C
+
+</div>
+
+<div
+class="metricValue"
+id="mixResultC">
+
+0 L
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </div>
 
