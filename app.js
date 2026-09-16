@@ -40,8 +40,6 @@ window.onload = function(){
     dateField.value = formattedDate;
     
   }
-
-  loadUnits();
   
 let autoSave =
   localStorage.getItem("autoSave");
@@ -3539,14 +3537,6 @@ refreshUnitLabels();
   
 }
 
-function getThicknessUnit(){
-
-  return localStorage.getItem(
-    "thicknessUnit"
-  ) || "microns";
-
-}
-
 function toMicrons(value){
 
   if(
@@ -3692,22 +3682,6 @@ if(surfaceTempLabel){
   
 }
 
-function getAreaUnit(){
-
-  return localStorage.getItem(
-    "areaUnit"
-  ) || "m2";
-
-}
-
-function getAreaLabel(){
-
-  return getAreaUnit() === "ft2"
-    ? "ft²"
-    : "m²";
-
-}
-
 function toSquareMetres(value){
 
   if(
@@ -3736,14 +3710,6 @@ function fromSquareMetres(value){
 
 }
 
-function getTemperatureUnit(){
-
-  return localStorage.getItem(
-    "temperatureUnit"
-  ) || "c";
-
-}
-
 function toCelsius(value){
 
   if(
@@ -3769,22 +3735,6 @@ function fromCelsius(value){
   }
 
   return value;
-
-}
-
-function getVolumeUnit(){
-
-  return localStorage.getItem(
-    "volumeUnit"
-  ) || "litres";
-
-}
-
-function getVolumeLabel(){
-
-  return getVolumeUnit() === "gallons"
-    ? "US Gallons"
-    : "Litres";
 
 }
 
