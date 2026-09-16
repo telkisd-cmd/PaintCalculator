@@ -229,10 +229,14 @@ function calculatePaint(){
       document.getElementById("loss").value
     ) || 0;
 
-  let dft =
+let dft =
+  toMicrons(
     parseFloat(
-      document.getElementById("dft").value
-    ) || 1;
+      document.getElementById(
+        "dft"
+      ).value
+    ) || 1
+  );
 
   let area =
     parseFloat(
@@ -3471,5 +3475,41 @@ function loadUnits(){
     );
 
   }
+
+}
+
+function getThicknessUnit(){
+
+  return localStorage.getItem(
+    "thicknessUnit"
+  ) || "microns";
+
+}
+
+function toMicrons(value){
+
+  if(
+    getThicknessUnit() === "mils"
+  ){
+
+    return value * 25.4;
+
+  }
+
+  return value;
+
+}
+
+function fromMicrons(value){
+
+  if(
+    getThicknessUnit() === "mils"
+  ){
+
+    return value / 25.4;
+
+  }
+
+  return value;
 
 }
