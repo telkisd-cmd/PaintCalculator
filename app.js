@@ -3524,6 +3524,16 @@ function fromMicrons(value){
 
 function refreshUnitLabels(){
 
+let areaLabel =
+  getAreaUnit() === "ft2"
+  ? "ft²"
+  : "m²";
+
+  let areaLabel =
+  getAreaUnit() === "ft2"
+  ? "ft²"
+  : "m²";
+  
   let thicknessLabel =
     getThicknessUnit() === "mils"
     ? "mils"
@@ -3571,17 +3581,20 @@ function refreshUnitLabels(){
 
   }
 
-let areaLabel =
-  getAreaUnit() === "ft2"
-  ? "ft²"
-  : "m²";
+  let paintArea =
+  document.getElementById(
+    "paintAreaLabel"
+  );
 
-  let areaLabel =
-  getAreaUnit() === "ft2"
-  ? "ft²"
-  : "m²";
+if(paintArea){
 
-  
+  paintArea.innerText =
+    "Area (" +
+    areaLabel +
+    ")";
+
+}
+
   
 }
 
