@@ -3571,6 +3571,18 @@ function refreshUnitLabels(){
 
   }
 
+let areaLabel =
+  getAreaUnit() === "ft2"
+  ? "ft²"
+  : "m²";
+
+  let areaLabel =
+  getAreaUnit() === "ft2"
+  ? "ft²"
+  : "m²";
+
+  
+  
 }
 
 function getAreaUnit(){
