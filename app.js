@@ -3166,19 +3166,23 @@ function calculateWFT(){
 
 function calculateAmbient(){
 
-  let dry =
+let dry =
+  toCelsius(
     parseFloat(
       document.getElementById(
         "dryBulb"
       ).value
-    ) || 0;
+    ) || 0
+  );
 
-  let wet =
+let wet =
+  toCelsius(
     parseFloat(
       document.getElementById(
         "wetBulb"
       ).value
-    ) || 0;
+    ) || 0
+  );
 
   let dewPoint =
     wet -
@@ -3202,7 +3206,10 @@ function calculateAmbient(){
   document.getElementById(
     "dewPointResult"
   ).innerText =
-    dewPoint.toFixed(1) + "°C";
+    fromCelsius(dewPoint).toFixed(1)
++ (getTemperatureUnit() === "f"
+? "°F"
+: "°C");
 
   calculateDeltaT();
 
@@ -3571,6 +3578,11 @@ function refreshUnitLabels(){
   getAreaUnit() === "ft2"
   ? "ft²"
   : "m²";
+
+let temperatureLabel =
+  getTemperatureUnit() === "f"
+  ? "°F"
+  : "°C";
   
   let thicknessLabel =
     getThicknessUnit() === "mils"
@@ -3633,6 +3645,47 @@ if(paintArea){
 
 }
 
+let dryBulbLabel =
+  document.getElementById(
+    "dryBulbLabel"
+  );
+
+if(dryBulbLabel){
+
+  dryBulbLabel.innerText =
+    "Dry Bulb (" +
+    temperatureLabel +
+    ")";
+
+}
+
+  let wetBulbLabel =
+  document.getElementById(
+    "wetBulbLabel"
+  );
+
+if(wetBulbLabel){
+
+  wetBulbLabel.innerText =
+    "Wet Bulb (" +
+    temperatureLabel +
+    ")";
+
+}
+
+  let surfaceTempLabel =
+  document.getElementById(
+    "surfaceTempLabel"
+  );
+
+if(surfaceTempLabel){
+
+  surfaceTempLabel.innerText =
+    "Surface Temperature (" +
+    temperatureLabel +
+    ")";
+
+}
   
 }
 
@@ -3665,6 +3718,42 @@ function fromSquareMetres(value){
   ){
 
     return value * 10.7639;
+
+  }
+
+  return value;
+
+}
+
+function getTemperatureUnit(){
+
+  return localStorage.getItem(
+    "temperatureUnit"
+  ) || "c";
+
+}
+
+function toCelsius(value){
+
+  if(
+    getTemperatureUnit() === "f"
+  ){
+
+    return (value - 32) * 5 / 9;
+
+  }
+
+  return value;
+
+}
+
+function fromCelsius(value){
+
+  if(
+    getTemperatureUnit() === "f"
+  ){
+
+    return (value * 9 / 5) + 32;
 
   }
 
