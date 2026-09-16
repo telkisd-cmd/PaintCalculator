@@ -38,8 +38,11 @@ window.onload = function(){
 
   if(dateField){
     dateField.value = formattedDate;
+    
   }
 
+  loadUnits();
+  
 let autoSave =
   localStorage.getItem("autoSave");
 
@@ -3388,5 +3391,85 @@ function convertTemperature(){
   ).innerText =
     result.toFixed(1) +
     " °F";
+
+}
+
+function saveUnits(){
+
+  localStorage.setItem(
+    "areaUnit",
+    document.getElementById(
+      "areaUnit"
+    ).value
+  );
+
+  localStorage.setItem(
+    "thicknessUnit",
+    document.getElementById(
+      "thicknessUnit"
+    ).value
+  );
+
+  localStorage.setItem(
+    "temperatureUnit",
+    document.getElementById(
+      "temperatureUnit"
+    ).value
+  );
+
+  localStorage.setItem(
+    "volumeUnit",
+    document.getElementById(
+      "volumeUnit"
+    ).value
+  );
+
+}
+
+function loadUnits(){
+
+  if(localStorage.getItem("areaUnit")){
+
+    document.getElementById(
+      "areaUnit"
+    ).value =
+    localStorage.getItem(
+      "areaUnit"
+    );
+
+  }
+
+  if(localStorage.getItem("thicknessUnit")){
+
+    document.getElementById(
+      "thicknessUnit"
+    ).value =
+    localStorage.getItem(
+      "thicknessUnit"
+    );
+
+  }
+
+  if(localStorage.getItem("temperatureUnit")){
+
+    document.getElementById(
+      "temperatureUnit"
+    ).value =
+    localStorage.getItem(
+      "temperatureUnit"
+    );
+
+  }
+
+  if(localStorage.getItem("volumeUnit")){
+
+    document.getElementById(
+      "volumeUnit"
+    ).value =
+    localStorage.getItem(
+      "volumeUnit"
+    );
+
+  }
 
 }
