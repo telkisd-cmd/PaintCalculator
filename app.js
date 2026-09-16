@@ -3428,6 +3428,8 @@ function saveUnits(){
     ).value
   );
 
+refreshUnitLabels();
+  
 }
 
 function loadUnits(){
@@ -3476,6 +3478,8 @@ function loadUnits(){
 
   }
 
+refreshUnitLabels();
+  
 }
 
 function getThicknessUnit(){
@@ -3511,5 +3515,56 @@ function fromMicrons(value){
   }
 
   return value;
+
+}
+
+function refreshUnitLabels(){
+
+  let thicknessLabel =
+    getThicknessUnit() === "mils"
+    ? "mils"
+    : "μm";
+
+  let paintDft =
+    document.getElementById(
+      "paintDftLabel"
+    );
+
+  if(paintDft){
+
+    paintDft.innerText =
+      "DFT (" +
+      thicknessLabel +
+      ")";
+
+  }
+
+  let wft =
+    document.getElementById(
+      "wftLabel"
+    );
+
+  if(wft){
+
+    wft.innerText =
+      "WFT (" +
+      thicknessLabel +
+      ")";
+
+  }
+
+  let dft =
+    document.getElementById(
+      "dftLabel"
+    );
+
+  if(dft){
+
+    dft.innerText =
+      "DFT (" +
+      thicknessLabel +
+      ")";
+
+  }
 
 }
