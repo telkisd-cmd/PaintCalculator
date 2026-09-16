@@ -252,10 +252,14 @@ let area =
       document.getElementById("areaPercent").value
     ) || 100;
 
-  let drum =
+let drum =
+  toLitres(
     parseFloat(
-      document.getElementById("drum").value
-    ) || 1;
+      document.getElementById(
+        "drum"
+      ).value
+    ) || 1
+  );
 
   let effectiveArea =
     area * areaPercent / 100;
@@ -279,7 +283,7 @@ let area =
     result2.toFixed(1);
 
   document.getElementById("litres").innerHTML =
-    litres.toFixed(1);
+    fromLitres(litres).toFixed(1);
 
   document.getElementById("drums").innerHTML =
     drums.toFixed(1);
@@ -570,7 +574,7 @@ let totalDrums = 0;
 
         <div>${coatData.area.toFixed(0)}</div>
 
-        <div>${coatData.litres.toFixed(1)}</div>
+        <div>${coatData.fromLitres(litres).toFixed(1)}</div>
 
         <div>${Math.ceil(coatData.drums)}</div>
 
@@ -583,7 +587,9 @@ let totalDrums = 0;
 document.getElementById(
   "totalLitresKPI"
 ).innerText =
-  totalLitres.toFixed(1);
+  fromLitres(
+    totalLitres
+  ).toFixed(1);
 
 document.getElementById(
   "totalAreaKPI"
@@ -2533,7 +2539,7 @@ doc.addImage(
       );
 
       doc.text(
-        coatData.litres.toFixed(1),
+        coatData.fromLitres(litres).toFixed(1),
         145,
         y
       );
@@ -2583,12 +2589,17 @@ doc.addImage(
 
   doc.setFontSize(14);
 
-  doc.text(
-    "TOTAL PROJECT LITRES : " +
-    calcLitres.toFixed(1),
-    20,
-    60
-  );
+doc.text(
+  "TOTAL PROJECT " +
+getVolumeLabel()
+  + " : "
+  +
+  fromLitres(
+    calcLitres
+  ).toFixed(1),
+  20,
+  60
+);
 
   doc.text(
     "TOTAL PROJECT DRUMS : " +
@@ -3754,6 +3765,50 @@ function fromCelsius(value){
   ){
 
     return (value * 9 / 5) + 32;
+
+  }
+
+  return value;
+
+}
+
+function getVolumeUnit(){
+
+  return localStorage.getItem(
+    "volumeUnit"
+  ) || "litres";
+
+}
+
+function getVolumeLabel(){
+
+  return getVolumeUnit() === "gallons"
+    ? "US Gallons"
+    : "Litres";
+
+}
+
+function toLitres(value){
+
+  if(
+    getVolumeUnit() === "gallons"
+  ){
+
+    return value * 3.78541;
+
+  }
+
+  return value;
+
+}
+
+function fromLitres(value){
+
+  if(
+    getVolumeUnit() === "gallons"
+  ){
+
+    return value / 3.78541;
 
   }
 
