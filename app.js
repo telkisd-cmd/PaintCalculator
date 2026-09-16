@@ -464,19 +464,39 @@ boottopArea = boottop;
 topsideArea = topside;
   
 document.getElementById("flatBottomKPI").innerHTML =
-  flatBottom.toFixed(0) + " m²";
+  fromSquareMetres(flatBottom).toFixed(0)
+  + " "
+  + (getAreaUnit() === "ft2"
+  ? "ft²"
+  : "m²");
 
 document.getElementById("verticalSidesKPI").innerHTML =
-  verticalSides.toFixed(0) + " m²";
+  fromSquareMetres(verticalSides).toFixed(0)
+  + " "
+  + (getAreaUnit() === "ft2"
+  ? "ft²"
+  : "m²");
 
 document.getElementById("boottopKPI").innerHTML =
-  boottop.toFixed(0) + " m²";
+  fromSquareMetres(boottop).toFixed(0)
+  + " "
+  + (getAreaUnit() === "ft2"
+  ? "ft²"
+  : "m²");
 
 document.getElementById("topsideKPI").innerHTML =
-  topside.toFixed(0) + " m²";
+  fromSquareMetres(topside).toFixed(0)
+  + " "
+  + (getAreaUnit() === "ft2"
+  ? "ft²"
+  : "m²");
 
 document.getElementById("totalAreaKPIHull").innerHTML =
-  totalArea.toFixed(0) + " m²";
+  fromSquareMetres(totalArea).toFixed(0)
+  + " "
+  + (getAreaUnit() === "ft2"
+  ? "ft²"
+  : "m²");
 
 }
 
