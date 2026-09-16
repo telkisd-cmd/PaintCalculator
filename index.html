@@ -2323,6 +2323,122 @@ APPLICATION
 </p>
 
 </div>
+
+<h3 class="settingsSectionTitle">
+
+UNIT CONVERTER
+
+</h3>
+
+<div class="settingsCard">
+
+<h3 onclick="toggleToolsSection('unitConverterSection')">
+
+▼ UNIT CONVERTER
+
+</h3>
+
+<div
+id="unitConverterSection"
+style="display:none;">
+
+<p>Area (m²)</p>
+
+<input
+id="sqmInput"
+type="number">
+
+<button
+class="calculateBtn"
+onclick="convertArea()">
+
+CONVERT TO ft²
+
+</button>
+
+<div
+class="metricValue"
+id="areaResult">
+
+0
+
+</div>
+
+<hr>
+
+<p>Thickness (μm)</p>
+
+<input
+id="micronInput"
+type="number">
+
+<button
+class="calculateBtn"
+onclick="convertMicrons()">
+
+CONVERT TO mils
+
+</button>
+
+<div
+class="metricValue"
+id="micronResult">
+
+0
+
+</div>
+
+<hr>
+
+<p>Volume (Litres)</p>
+
+<input
+id="litresInput"
+type="number">
+
+<button
+class="calculateBtn"
+onclick="convertLitres()">
+
+CONVERT TO US gal
+
+</button>
+
+<div
+class="metricValue"
+id="litresResult">
+
+0
+
+</div>
+
+<hr>
+
+<p>Temperature (°C)</p>
+
+<input
+id="celsiusInput"
+type="number">
+
+<button
+class="calculateBtn"
+onclick="convertTemperature()">
+
+CONVERT TO °F
+
+</button>
+
+<div
+class="metricValue"
+id="temperatureResult">
+
+0
+
+</div>
+
+</div>
+
+</div>
   
 </div> <!-- dashboardContent -->
 
