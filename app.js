@@ -238,10 +238,14 @@ let dft =
     ) || 1
   );
 
-  let area =
+let area =
+  toSquareMetres(
     parseFloat(
-      document.getElementById("area").value
-    ) || 0;
+      document.getElementById(
+        "area"
+      ).value
+    ) || 0
+  );
 
   let areaPercent =
     parseFloat(
@@ -3566,5 +3570,41 @@ function refreshUnitLabels(){
       ")";
 
   }
+
+}
+
+function getAreaUnit(){
+
+  return localStorage.getItem(
+    "areaUnit"
+  ) || "m2";
+
+}
+
+function toSquareMetres(value){
+
+  if(
+    getAreaUnit() === "ft2"
+  ){
+
+    return value / 10.7639;
+
+  }
+
+  return value;
+
+}
+
+function fromSquareMetres(value){
+
+  if(
+    getAreaUnit() === "ft2"
+  ){
+
+    return value * 10.7639;
+
+  }
+
+  return value;
 
 }
