@@ -588,7 +588,14 @@ document.getElementById(
 document.getElementById(
   "totalAreaKPI"
 ).innerText =
-  Math.round(totalArea);
+
+  Math.round(
+
+    fromSquareMetres(
+      totalArea
+    )
+
+  );
 
 document.getElementById(
   "summaryDrumsKPI"
@@ -2769,8 +2776,24 @@ function updateJTSTotal(){
 
   total += parseFloat(document.getElementById("jtsOther").value) || 0;
 
-  document.getElementById("jtsTotalArea").innerHTML =
-    total.toLocaleString() + " m²";
+document.getElementById(
+  "jtsTotalArea"
+).innerHTML =
+
+  fromSquareMetres(total)
+  .toLocaleString()
+
+  + " "
+
+  + (
+
+    getAreaUnit() === "ft2"
+
+    ? "ft²"
+
+    : "m²"
+
+  );
 
 }
 
