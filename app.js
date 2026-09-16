@@ -3310,3 +3310,83 @@ function calculateMixRatio(){
   }
 
 }
+
+function convertArea(){
+
+  let value =
+    parseFloat(
+      document.getElementById(
+        "sqmInput"
+      ).value
+    ) || 0;
+
+  let result =
+    value * 10.7639;
+
+  document.getElementById(
+    "areaResult"
+  ).innerText =
+    result.toFixed(2) +
+    " ft²";
+
+}
+
+function convertMicrons(){
+
+  let value =
+    parseFloat(
+      document.getElementById(
+        "micronInput"
+      ).value
+    ) || 0;
+
+  let result =
+    value / 25.4;
+
+  document.getElementById(
+    "micronResult"
+  ).innerText =
+    result.toFixed(2) +
+    " mils";
+
+}
+
+function convertLitres(){
+
+  let value =
+    parseFloat(
+      document.getElementById(
+        "litresInput"
+      ).value
+    ) || 0;
+
+  let result =
+    value * 0.264172;
+
+  document.getElementById(
+    "litresResult"
+  ).innerText =
+    result.toFixed(2) +
+    " US gal";
+
+}
+
+function convertTemperature(){
+
+  let value =
+    parseFloat(
+      document.getElementById(
+        "celsiusInput"
+      ).value
+    ) || 0;
+
+  let result =
+    (value * 9 / 5) + 32;
+
+  document.getElementById(
+    "temperatureResult"
+  ).innerText =
+    result.toFixed(1) +
+    " °F";
+
+}
