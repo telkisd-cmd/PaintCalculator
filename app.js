@@ -3765,3 +3765,67 @@ function fromLitres(value){
   return value;
 
 }
+
+function getThicknessUnit(){
+  return "microns";
+}
+
+function getAreaUnit(){
+  return "m2";
+}
+
+function getTemperatureUnit(){
+  return "c";
+}
+
+function getVolumeUnit(){
+  return "litres";
+}
+
+function getThicknessLabel(){
+  return "μm";
+}
+
+function getAreaLabel(){
+  return "m²";
+}
+
+function getTemperatureLabel(){
+  return "°C";
+}
+
+function getVolumeLabel(){
+  return "Litres";
+}
+
+function toMicrons(value){
+  return value;
+}
+
+function fromMicrons(value){
+  return value;
+}
+
+function toSquareMetres(value){
+  return value;
+}
+
+function fromSquareMetres(value){
+  return value;
+}
+
+function toCelsius(value){
+  return value;
+}
+
+function fromCelsius(value){
+  return value;
+}
+
+function toLitres(value){
+  return value;
+}
+
+function fromLitres(value){
+  return value;
+}
