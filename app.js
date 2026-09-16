@@ -470,37 +470,27 @@ topsideArea = topside;
 document.getElementById("flatBottomKPI").innerHTML =
   fromSquareMetres(flatBottom).toFixed(0)
   + " "
-  + (getAreaUnit() === "ft2"
-  ? "ft²"
-  : "m²");
+  + getAreaLabel();
 
 document.getElementById("verticalSidesKPI").innerHTML =
   fromSquareMetres(verticalSides).toFixed(0)
   + " "
-  + (getAreaUnit() === "ft2"
-  ? "ft²"
-  : "m²");
+ + getAreaLabel();
 
 document.getElementById("boottopKPI").innerHTML =
   fromSquareMetres(boottop).toFixed(0)
   + " "
-  + (getAreaUnit() === "ft2"
-  ? "ft²"
-  : "m²");
+ + getAreaLabel();
 
 document.getElementById("topsideKPI").innerHTML =
   fromSquareMetres(topside).toFixed(0)
   + " "
-  + (getAreaUnit() === "ft2"
-  ? "ft²"
-  : "m²");
+  + getAreaLabel();
 
 document.getElementById("totalAreaKPIHull").innerHTML =
   fromSquareMetres(totalArea).toFixed(0)
   + " "
-  + (getAreaUnit() === "ft2"
-  ? "ft²"
-  : "m²");
+  + getAreaLabel();
 
 }
 
@@ -574,7 +564,7 @@ let totalDrums = 0;
 
         <div>${coatData.area.toFixed(0)}</div>
 
-        <div>${coatData.fromLitres(litres).toFixed(1)}</div>
+       <div>${fromLitres(coatData.litres).toFixed(1)}</div>
 
         <div>${Math.ceil(coatData.drums)}</div>
 
@@ -2539,7 +2529,9 @@ doc.addImage(
       );
 
       doc.text(
-        coatData.fromLitres(litres).toFixed(1),
+        fromLitres(
+  coatData.litres
+).toFixed(1),
         145,
         y
       );
@@ -3705,6 +3697,14 @@ function getAreaUnit(){
   return localStorage.getItem(
     "areaUnit"
   ) || "m2";
+
+}
+
+function getAreaLabel(){
+
+  return getAreaUnit() === "ft2"
+    ? "ft²"
+    : "m²";
 
 }
 
