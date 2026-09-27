@@ -1575,6 +1575,13 @@ let portCount =
 
 let stbdCount =
   stbdList.length;
+
+let loa =
+  parseFloat(
+    document.getElementById(
+      "pdpLoa"
+    )?.value
+  ) || 0;
   
 let portHtml = "";
 
@@ -1587,6 +1594,24 @@ portList.forEach((s,index) => {
       / portCount
     ) * 100;
 
+let distance = "";
+
+if(loa > 0){
+
+  distance = Math.round(
+
+    loa *
+
+    (
+      (index + 1)
+      /
+      (portCount + 1)
+    )
+
+  ) + "m";
+
+}
+  
   portHtml += `
 
   <div
