@@ -1588,30 +1588,28 @@ let portHtml = "";
 portList.forEach((s,index) => {
 
   let position =
-
-    (
-      (index + 0.5)
-      / portCount
-    ) * 100;
-
-let distance = "";
-
-if(loa > 0){
-
-  distance = Math.round(
-
-    loa *
-
     (
       (index + 1)
       /
       (portCount + 1)
-    )
+    ) * 100;
 
-  ) + "m";
+  let distance = "";
 
-}
-  
+  if(loa > 0){
+
+    distance =
+      Math.round(
+        loa *
+        (
+          (index + 1)
+          /
+          (portCount + 1)
+        )
+      ) + "m";
+
+  }
+
   portHtml += `
 
   <div
@@ -1619,12 +1617,18 @@ if(loa > 0){
     style="
       position:absolute;
       top:${position}%;
-      left:10px;
+      left:0;
       transform:translateY(-50%);
     "
   >
 
     <span>${s.id}</span>
+
+    ${
+      distance
+      ? `<div class="sprayDistance">${distance}</div>`
+      : ""
+    }
 
     <input
       type="number"
@@ -1643,30 +1647,28 @@ let stbdHtml = "";
   
 stbdList.forEach((s,index) => {
 
-let distance = "";
-
-if(loa > 0){
-
-  distance = Math.round(
-
-    loa *
-
+  let position =
     (
       (index + 1)
       /
       (stbdCount + 1)
-    )
-
-  ) + "m";
-
-}
-  
-  let position =
-
-    (
-      (index + 0.5)
-      / stbdCount
     ) * 100;
+
+  let distance = "";
+
+  if(loa > 0){
+
+    distance =
+      Math.round(
+        loa *
+        (
+          (index + 1)
+          /
+          (stbdCount + 1)
+        )
+      ) + "m";
+
+  }
 
   stbdHtml += `
 
@@ -1675,12 +1677,18 @@ if(loa > 0){
     style="
       position:absolute;
       top:${position}%;
-      right:10px;
+      right:0;
       transform:translateY(-50%);
     "
   >
 
     <span>${s.id}</span>
+
+    ${
+      distance
+      ? `<div class="sprayDistance">${distance}</div>`
+      : ""
+    }
 
     <input
       type="number"
