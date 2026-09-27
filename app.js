@@ -1658,7 +1658,11 @@ document.getElementById(
 
 <div class="blueprintColumn">
 
-${portHtml}
+  <div class="sprayLane">
+
+    ${portHtml}
+
+  </div>
 
 </div>
 
@@ -1684,7 +1688,11 @@ ${portHtml}
 
 <div class="blueprintColumn">
 
-${stbdHtml}
+  <div class="sprayLane">
+
+    ${stbdHtml}
+
+  </div>
 
 </div>
 
