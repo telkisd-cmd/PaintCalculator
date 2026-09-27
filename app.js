@@ -1643,6 +1643,24 @@ let stbdHtml = "";
   
 stbdList.forEach((s,index) => {
 
+let distance = "";
+
+if(loa > 0){
+
+  distance = Math.round(
+
+    loa *
+
+    (
+      (index + 1)
+      /
+      (stbdCount + 1)
+    )
+
+  ) + "m";
+
+}
+  
   let position =
 
     (
