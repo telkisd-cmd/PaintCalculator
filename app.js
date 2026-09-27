@@ -1570,13 +1570,34 @@ document.getElementById(
   "pdpDetails"
 ).innerHTML = "";
 
+let portCount =
+  portList.length;
+
+let stbdCount =
+  stbdList.length;
+  
 let portHtml = "";
 
-portList.forEach(s => {
+portList.forEach((s,index) => {
+
+  let position =
+
+    (
+      (index + 0.5)
+      / portCount
+    ) * 100;
 
   portHtml += `
 
-  <div class="blueprintSpray">
+  <div
+    class="blueprintSpray"
+    style="
+      position:absolute;
+      top:${position}%;
+      left:10px;
+      transform:translateY(-50%);
+    "
+  >
 
     <span>${s.id}</span>
 
@@ -1595,11 +1616,26 @@ portList.forEach(s => {
 
 let stbdHtml = "";
   
-stbdList.forEach(s => {
+stbdList.forEach((s,index) => {
+
+  let position =
+
+    (
+      (index + 0.5)
+      / stbdCount
+    ) * 100;
 
   stbdHtml += `
 
-  <div class="blueprintSpray">
+  <div
+    class="blueprintSpray"
+    style="
+      position:absolute;
+      top:${position}%;
+      right:10px;
+      transform:translateY(-50%);
+    "
+  >
 
     <span>${s.id}</span>
 
@@ -1615,7 +1651,7 @@ stbdList.forEach(s => {
   `;
 
 });
-
+  
 document.getElementById(
   "blueprintAllocation"
 ).innerHTML = `
