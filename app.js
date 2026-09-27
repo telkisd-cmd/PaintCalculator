@@ -1291,6 +1291,9 @@ let totalDrums =
     ).value
   ) || 0;
 
+window.expectedDrums =
+  totalDrums;
+  
 if(totalDrums <= 0){
 
   alert(
@@ -1740,9 +1743,34 @@ document
     "stbdDrumsKPI"
   ).innerText = stbd;
 
+let actualTotal =
+  port + stbd;
+
+let totalKPI =
   document.getElementById(
     "totalDrumsKPI"
-  ).innerText = port + stbd;
+  );
+
+totalKPI.innerText =
+  actualTotal +
+  " / " +
+  window.expectedDrums;
+
+  if(
+  actualTotal ===
+  window.expectedDrums
+){
+
+  totalKPI.style.background =
+    "#00a651";
+
+}
+else{
+
+  totalKPI.style.background =
+    "#d62828";
+
+}
   
 }
 
