@@ -1170,14 +1170,12 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
 
 .blueprintColumn{
 
-  display:flex;
+  position:relative;
 
-  flex-direction:column;
+  min-height:600px;
 
-  gap:5px;
-
-  justify-content:flex-start;
-
+  width:150px;
+  
 }
 
 .blueprintSpray{
@@ -1199,6 +1197,8 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
   font-weight:bold;
 
   font-size:22px;
+
+  position:absolute;
 
 }
 
@@ -3048,7 +3048,7 @@ font-size:11px;
 
   .blueprintColumn{
 
-    gap:4px;
+    min-height:500px;
 
   }
 
@@ -3096,8 +3096,6 @@ font-size:11px;
     font-size:14px !important;
 
     padding:6px !important;
-
-    transform:none !important;
 
   }
 
