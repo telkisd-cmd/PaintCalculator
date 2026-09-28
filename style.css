@@ -2503,7 +2503,7 @@ height:fit-content;
 
   .dashboardContent{
 
-    overflow-x:hidden;
+    overflow-x:auto;
 
   }
 
@@ -2513,7 +2513,7 @@ height:fit-content;
 
   body{
 
-    overflow-x:hidden;
+    overflow-x:auto;
 
   }
 
@@ -3052,7 +3052,7 @@ font-size:11px;
 
     min-height:1000px;
 
-    width:70px;
+    width:110px;
     
   }
 
@@ -3071,15 +3071,15 @@ font-size:11px;
     display:grid !important;
 
     grid-template-columns:
-      70px
-      160px
-      70px !important;
+      110px
+      140px
+      110px !important;
 
+    min-width:360px !important;
+    
     gap:2px !important;
 
     width:100% !important;
-
-    min-width:0 !important;
 
     justify-content:center !important;
 
@@ -3089,7 +3089,7 @@ font-size:11px;
 
   .figmaShip{
 
-    width:140px !important;
+    width:180px !important;
 
     height:420px !important;
 
@@ -3097,7 +3097,7 @@ font-size:11px;
 
   .blueprintSpray{
 
-    width:60px !important;
+    width:100px !important;
 
     font-size:11px !important;
 
