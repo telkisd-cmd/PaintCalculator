@@ -2071,7 +2071,7 @@ y = 20;
     blueprint.style.width;
 
   blueprint.style.width =
-    "700px";
+    "1400px";
 
   // IMPORTANT:
   // Πρώτα αντιγράφουμε το live PDP
@@ -2127,7 +2127,7 @@ y = 20;
   const blueprintImage =
     canvas.toDataURL("image/png");
 
-  const pdfWidth = 120;
+  const pdfWidth = 180;
 
   const pdfHeight =
     canvas.height *
@@ -2137,9 +2137,9 @@ y = 20;
   doc.addImage(
     blueprintImage,
     "PNG",
-    45,
-    y,
-    pdfWidth,
+    10,
+    20,
+    190,
     pdfHeight
   );
 
