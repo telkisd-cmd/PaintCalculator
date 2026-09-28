@@ -1041,12 +1041,10 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
   display:grid;
 
   grid-template-columns:
-    320px
-    1fr;
+    280px
+    minmax(900px,1fr);
 
   gap:24px;
-
-  align-items:start;
 
 }
 
@@ -1057,6 +1055,8 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
   flex-direction:column;
 
   gap:20px;
+
+  width:100%;
 
 }
 
@@ -1162,13 +1162,13 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
   display:grid;
 
   grid-template-columns:
-    150px
-    300px
-    150px;
+    170px
+    420px
+    170px;
 
   justify-content:center;
 
-  gap:40px;
+  gap:30px;
 
 }
 
