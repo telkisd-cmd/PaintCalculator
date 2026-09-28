@@ -532,8 +532,12 @@ color:#4FC3F7;
 
   flex:1;
 
-  padding:40px;
+  padding:12px !important;
 
+  width:100% !important;
+
+  max-width:100% !important;
+  
   box-sizing:border-box;
   
 }
@@ -2822,7 +2826,11 @@ height:fit-content;
 
     width:100% !important;
 
-    max-width:100% !important;
+    max-width:none !important;
+
+    margin:0 !important;
+
+    border-radius:14px;
 
     box-sizing:border-box;
 
@@ -3052,7 +3060,7 @@ font-size:11px;
 
     min-height:1000px;
 
-    width:110px;
+    width:auto;
     
   }
 
@@ -3071,15 +3079,19 @@ font-size:11px;
     display:grid !important;
 
     grid-template-columns:
-      110px
-      140px
-      110px !important;
+      80px
+      1fr
+      80px !important;
 
     min-width:360px !important;
     
-    gap:2px !important;
+    gap:8px !important;
 
     width:100% !important;
+
+    max-width:100% !important;
+
+    min-width:0 !important;
 
     justify-content:center !important;
 
@@ -3089,7 +3101,9 @@ font-size:11px;
 
   .figmaShip{
 
-    width:180px !important;
+    width:100% !important;
+
+    max-width:220px !important;
 
     height:420px !important;
 
