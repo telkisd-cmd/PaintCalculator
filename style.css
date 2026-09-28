@@ -3050,7 +3050,7 @@ font-size:11px;
 
   .blueprintColumn{
 
-    min-height:500px;
+    min-height:1000px;
 
     width:70px;
     
@@ -3082,6 +3082,8 @@ font-size:11px;
     min-width:0 !important;
 
     justify-content:center !important;
+
+    overflow-x:auto !important;
 
   }
 
@@ -3421,7 +3423,7 @@ textarea{
 
   .sprayLane{
 
-    min-height:500px;
+    min-height:1000px;
 
   }
 
