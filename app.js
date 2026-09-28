@@ -1610,7 +1610,7 @@ portList.forEach((s,index) => {
 
   }
 
-  portHtml += `
+portHtml += `
 
   <div
     class="blueprintSpray"
@@ -1622,13 +1622,21 @@ portList.forEach((s,index) => {
     "
   >
 
-    <span>${s.id}</span>
+    <div class="sprayHeader">
 
-    ${
-      distance
-      ? `<div class="sprayDistance">${distance}</div>`
-      : ""
-    }
+      <span class="sprayId">
+
+        ${s.id}
+
+      </span>
+
+      ${
+        distance
+        ? `<span class="sprayDistance">${distance}</span>`
+        : ""
+      }
+
+    </div>
 
     <input
       type="number"
@@ -1639,7 +1647,7 @@ portList.forEach((s,index) => {
 
   </div>
 
-  `;
+`;
 
 });
 
@@ -1682,13 +1690,22 @@ stbdList.forEach((s,index) => {
     "
   >
 
-    <span>${s.id}</span>
+<div class="sprayHeader">
 
-    ${
-      distance
-      ? `<div class="sprayDistance">${distance}</div>`
-      : ""
-    }
+  <span class="sprayId">
+
+    ${s.id}
+
+  </span>
+
+  ${
+    distance
+    ? `<span class="sprayDistance">${distance}</span>`
+    : ""
+  }
+
+</div>
+
 
     <input
       type="number"
