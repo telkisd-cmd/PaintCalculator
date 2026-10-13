@@ -8,7 +8,6 @@ let summaryData = {
   totalDrums: 0
 };
 
-
 let currentPaintResult = {
 
   position: "",
