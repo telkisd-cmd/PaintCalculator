@@ -2062,7 +2062,7 @@ y = 20;
     "grid";
 
   blueprint.style.gridTemplateColumns =
-    "150px 300px 150px";
+    "250px 600px 250px";
 
   blueprint.style.gap =
     "40px";
@@ -2070,8 +2070,33 @@ y = 20;
   let oldWidth =
     blueprint.style.width;
 
+let sprayCount =
+  Math.max(
+    portList.length,
+    stbdList.length
+  );
+
+  if(sprayCount <= 8){
+
   blueprint.style.width =
-    "1400px";
+    "1200px";
+
+}
+else if(sprayCount <= 16){
+
+  blueprint.style.width =
+    "1600px";
+
+}
+else{
+
+  blueprint.style.width =
+    "2000px";
+
+}
+  
+  blueprint.style.width =
+    "1600px";
 
   // IMPORTANT:
   // Πρώτα αντιγράφουμε το live PDP
@@ -2117,7 +2142,7 @@ y = 20;
     await html2canvas(
       blueprint,
       {
-        scale:3
+        scale:5
       }
     );
 
@@ -2138,7 +2163,7 @@ y = 20;
     blueprintImage,
     "PNG",
     10,
-    20,
+    25,
     190,
     pdfHeight
   );
