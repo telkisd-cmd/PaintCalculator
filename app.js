@@ -2135,8 +2135,8 @@ y = 20;
 doc.addImage(
   blueprintImage,
   "PNG",
-  30,
-  55,
+  40,
+  45,
   190,
   finalHeight
 );
