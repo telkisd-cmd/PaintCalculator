@@ -2129,15 +2129,17 @@ y = 20;
     canvas.height *
     pdfWidth /
     canvas.width;
+  const finalHeight =
+  220;
 
-  doc.addImage(
-    blueprintImage,
-    "PNG",
-    10,
-    20,
-    190,
-    pdfHeight
-  );
+doc.addImage(
+  blueprintImage,
+  "PNG",
+  10,
+  20,
+  190,
+  finalHeight
+);
 
   doc.addPage();
 
