@@ -3305,50 +3305,68 @@ function calculateWFT(){
 
 function calculateAmbient(){
 
-let dry =
-  toCelsius(
+  let dry =
     parseFloat(
       document.getElementById(
         "dryBulb"
       ).value
-    ) || 0
-  );
+    ) || 0;
 
-let wet =
-  toCelsius(
+  let wet =
     parseFloat(
       document.getElementById(
         "wetBulb"
       ).value
-    ) || 0
-  );
+    ) || 0;
 
-  let dewPoint =
-    wet -
-    ((dry - wet) * 0.4);
+  let Es =
+    6.112 *
+    Math.exp(
+      (17.67 * dry) /
+      (dry + 243.5)
+    );
+
+  let Ew =
+    6.112 *
+    Math.exp(
+      (17.67 * wet) /
+      (wet + 243.5)
+    );
+
+  let pressure = 1013.25;
+
+  let E =
+    Ew -
+    (
+      0.00066 *
+      (1 + 0.00115 * wet) *
+      pressure *
+      (dry - wet)
+    );
 
   let rh =
-    100 -
-    (5 * (dry - wet));
+    (E / Es) * 100;
 
-  if(rh < 0)
-    rh = 0;
+  let ln =
+    Math.log(E / 6.112);
 
-  if(rh > 100)
-    rh = 100;
+  let dewPoint =
+    (
+      243.5 * ln
+    ) /
+    (
+      17.67 - ln
+    );
 
   document.getElementById(
     "rhResult"
   ).innerText =
-    rh.toFixed(0) + "%";
+    rh.toFixed(2) + "%";
 
   document.getElementById(
     "dewPointResult"
   ).innerText =
-    fromCelsius(dewPoint).toFixed(1)
-+ (getTemperatureUnit() === "f"
-? "°F"
-: "°C");
+    dewPoint.toFixed(2) + "°C";
 
   calculateDeltaT();
 
@@ -3363,12 +3381,12 @@ function calculateDeltaT(){
       ).value
     ) || 0;
 
-  let dewPoint =
-    parseFloat(
-      document.getElementById(
-        "dewPointResult"
-      ).innerText
-    ) || 0;
+let dewPoint =
+  Number(
+    document.getElementById(
+      "dewPointResult"
+    ).innerText.replace("°C","")
+  );
 
   let deltaT =
     surface -
