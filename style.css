@@ -1176,7 +1176,7 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
 
   position:relative;
 
-  min-height:600px;
+  min-height:700px;
 
   width:150px;
   
@@ -1241,7 +1241,7 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
 
   width:330px;
 
-  height:980px;
+  height:700px;
 
   overflow:hidden;
 
@@ -3159,9 +3159,9 @@ font-size:11px;
   display:grid;
 
   grid-template-columns:
-    220px
-    450px
-    220px;
+    180px
+    600px
+    180px;
 
   gap:20px;
 
@@ -3169,9 +3169,9 @@ font-size:11px;
 
 #pdfBlueprint .figmaShip{
 
-  width:450px;
+  width:600px;
 
-  height:980px;
+  height:700px;
 
 }
 
@@ -3447,9 +3447,9 @@ textarea{
 
   position:relative;
 
-  height:100%;
+  height:700px;
 
-  min-height:600px;
+  min-height:700px;
 
 }
 
