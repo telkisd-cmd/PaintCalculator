@@ -547,7 +547,9 @@ color:#4FC3F7;
   display:grid;
 
   grid-template-columns:
-    repeat(6, 180px);
+    repeat(auto-fit,minmax(180px,1fr));
+
+  width:100%;
 
   gap:20px;
 
@@ -759,7 +761,9 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
 
   margin-bottom:24px;
 
-  max-width:700px;
+  width:100%;
+
+  max-width:none;
 
 }
 
@@ -853,7 +857,8 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
 
   display:grid;
 
-  grid-template-columns:repeat(3,1fr);
+   grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
 
   gap:20px;
 
@@ -1419,7 +1424,9 @@ font-weight:bold;
 
 .paintRightCard{
 
-  width:360px;
+  width:100%;
+  
+  min-width:0;
 
   display:flex;
 
@@ -1569,7 +1576,7 @@ box-sizing:border-box;
 
   width:100%;
 
-  max-width:900px;
+  max-width:none;
 
   margin:40px 0;
 
@@ -3585,4 +3592,12 @@ textarea{
 
   min-width:0;
 
+}
+
+.dashboardContent{
+  border:3px solid red !important;
+}
+
+*{
+  outline:1px solid transparent;
 }
