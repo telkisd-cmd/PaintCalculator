@@ -759,7 +759,9 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
 
   width:100%;
 
-  max-width:none;
+  max-width:1200px;
+
+  margin:0 auto 24px auto;
 
 }
 
@@ -1062,7 +1064,7 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
   display:grid;
 
   grid-template-columns:
-    320px
+    400px
     1fr;
 
   gap:24px;
@@ -1570,11 +1572,9 @@ box-sizing:border-box;
 
 .calculatorCard{
 
-  width:100%;
+  width:min(1100px,100%);
 
-  max-width:none;
-
-  margin:40px 0;
+  margin:40px auto;
 
   background:#07142b;
 
