@@ -21,7 +21,7 @@ body{
 background:#121212;
 color:white;
 font-family:'Manrope',sans-serif;
-padding:20px;
+padding:0px;
 margin:0;
 }
 
@@ -642,12 +642,8 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
 
   align-items:center;
 
-  padding-bottom:20px;
-
-  border-bottom:1px solid #22395C;
-
-  margin-bottom:40px;
-
+  width:100%;
+  
 }
 
 .dashboardHeader h1{
@@ -1424,7 +1420,7 @@ font-weight:bold;
 
 .paintRightCard{
 
-  width:100%;
+  width:auto;
   
   min-width:0;
 
@@ -1722,6 +1718,8 @@ height:fit-content;
 
   gap:15px;
 
+  width:100%;
+
 }
 
 .hullKPI{
@@ -1734,6 +1732,9 @@ height:fit-content;
 
   padding:20px;
 
+  width:100%;
+
+  box-sizing:border-box;
 }
 
 .hullKPI h4{
@@ -3594,10 +3595,32 @@ textarea{
 
 }
 
-.dashboardContent{
-  border:3px solid red !important;
+.dashboardLayout{
+
+  display:flex;
+
+  width:100%;
+
+  min-width:100%;
+
 }
 
-*{
-  outline:1px solid transparent;
+.dashboardContent{
+
+  flex:1;
+
+  width:auto;
+
+  min-width:0;
+
+}
+
+.paintModernLayout,
+.hullModernLayout,
+.pdpLayout{
+
+  width:100%;
+
+  max-width:none;
+
 }
