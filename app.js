@@ -2061,10 +2061,10 @@ y = 20;
     "grid";
 
   blueprint.style.gridTemplateColumns =
-    "250px 600px 250px";
+    "220px 450px 220px";
 
   blueprint.style.gap =
-    "40px";
+    "20px";
 
   let oldWidth =
     blueprint.style.width;
@@ -2093,9 +2093,6 @@ else{
     "2000px";
 
 }
-  
-  blueprint.style.width =
-    "1600px";
 
   // IMPORTANT:
   // Πρώτα αντιγράφουμε το live PDP
@@ -2151,7 +2148,7 @@ else{
   const blueprintImage =
     canvas.toDataURL("image/png");
 
-  const pdfWidth = 180;
+  const pdfWidth = 190;
 
   const pdfHeight =
     canvas.height *
@@ -2162,7 +2159,7 @@ else{
     blueprintImage,
     "PNG",
     10,
-    25,
+    20,
     190,
     pdfHeight
   );
