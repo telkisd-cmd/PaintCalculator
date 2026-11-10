@@ -3159,17 +3159,17 @@ font-size:11px;
   display:grid;
 
   grid-template-columns:
-    180px
-    600px
-    180px;
+    220px
+    700px
+    220px;
 
-  gap:20px;
+  gap:40px;
 
 }
 
 #pdfBlueprint .figmaShip{
 
-  width:600px;
+  width:700px;
 
   height:700px;
 
@@ -3183,13 +3183,31 @@ font-size:11px;
 
 #pdfBlueprint .blueprintSpray{
 
-  width:140px;
+  width:180px;
+
+  padding:10px;
+
+}
+
+#pdfBlueprint .sprayId{
+
+  font-size:20px;
+
+}
+
+#pdfBlueprint .sprayDistance{
+
+  font-size:14px;
 
 }
 
 #pdfBlueprint .sprayInput{
 
-  width:60px;
+  width:90px;
+
+  height:42px;
+
+  font-size:20px;
 
 }
 
@@ -3495,3 +3513,10 @@ textarea{
 
 }
 
+#pdfBlueprint .figmaFwd,
+#pdfBlueprint .figmaMid,
+#pdfBlueprint .figmaAft{
+
+  font-size:30px;
+
+}
