@@ -2069,31 +2069,6 @@ y = 20;
   let oldWidth =
     blueprint.style.width;
 
-let sprayCount =
-  Math.max(
-    portList.length,
-    stbdList.length
-  );
-
-  if(sprayCount <= 8){
-
-  blueprint.style.width =
-    "1200px";
-
-}
-else if(sprayCount <= 16){
-
-  blueprint.style.width =
-    "1600px";
-
-}
-else{
-
-  blueprint.style.width =
-    "2000px";
-
-}
-
   // IMPORTANT:
   // Πρώτα αντιγράφουμε το live PDP
 
