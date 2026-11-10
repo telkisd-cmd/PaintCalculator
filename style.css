@@ -3159,11 +3159,11 @@ font-size:11px;
   display:grid;
 
   grid-template-columns:
-    220px
-    700px
-    220px;
+    300px
+    900px
+    300px;
 
-  gap:40px;
+  gap:100px;
 
 }
 
