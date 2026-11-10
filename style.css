@@ -833,6 +833,10 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
 
 .summaryVesselCard{
 
+  width:100%;
+
+  box-sizing:border-box;
+  
   background:#111B30;
 
   border:1px solid #22395C;
@@ -895,6 +899,10 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
 
 .summaryTableCard{
 
+  width:100%;
+
+  box-sizing:border-box;
+  
   background:#111B30;
 
   border:1px solid #22395C;
@@ -1053,10 +1061,12 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
   display:grid;
 
   grid-template-columns:
-    280px
-    minmax(900px,1fr);
+    320px
+    1fr;
 
   gap:24px;
+
+  width:100%;
 
 }
 
@@ -1383,11 +1393,11 @@ font-weight:bold;
   display:grid;
 
   grid-template-columns:
-    1fr 360px;
+    1.5fr 1fr;
 
   gap:25px;
 
-  align-items:start;
+  width:100%;
 
 }
 
@@ -1557,9 +1567,11 @@ box-sizing:border-box;
 
 .calculatorCard{
 
-  width:420px;
+  width:100%;
 
-  margin:40px auto;
+  max-width:900px;
+
+  margin:40px 0;
 
   background:#07142b;
 
@@ -1624,9 +1636,11 @@ box-sizing:border-box;
   display:grid;
 
   grid-template-columns:
-    1fr 380px;
+    1.5fr 1fr;
 
   gap:25px;
+
+  width:100%;
 
 }
 
@@ -3544,5 +3558,31 @@ textarea{
 #pdfBlueprint .figmaAft{
 
   font-size:30px;
+
+}
+
+.dashboardContent{
+
+  flex:1;
+
+  width:100%;
+
+  padding:20px;
+
+  box-sizing:border-box;
+
+}
+
+.dashboardLayout{
+
+  width:100%;
+
+}
+
+.dashboardContent{
+
+  flex:1;
+
+  min-width:0;
 
 }
