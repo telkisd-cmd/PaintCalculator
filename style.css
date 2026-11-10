@@ -3159,11 +3159,37 @@ font-size:11px;
   display:grid;
 
   grid-template-columns:
-    150px
-    300px
-    150px;
+    220px
+    450px
+    220px;
 
-  gap:40px;
+  gap:20px;
+
+}
+
+#pdfBlueprint .figmaShip{
+
+  width:450px;
+
+  height:980px;
+
+}
+
+#pdfBlueprint .blueprintColumn{
+
+  width:220px;
+
+}
+
+#pdfBlueprint .blueprintSpray{
+
+  width:140px;
+
+}
+
+#pdfBlueprint .sprayInput{
+
+  width:60px;
 
 }
 
