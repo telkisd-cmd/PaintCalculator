@@ -810,10 +810,22 @@ box-shadow:0 0 20px rgba(0,200,255,0.25);
 }
 
 .summaryHeader p{
-
+  
   color:#00C8FF;
 
   font-size:12px;
+
+  text-transform:uppercase;
+
+}
+
+.summarySubtitle{
+
+  color:#00C8FF;
+
+  font-size:14px;
+
+  margin-top:8px;
 
   text-transform:uppercase;
 
