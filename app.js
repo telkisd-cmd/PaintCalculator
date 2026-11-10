@@ -2136,7 +2136,7 @@ doc.addImage(
   blueprintImage,
   "PNG",
   10,
-  20,
+  40,
   190,
   finalHeight
 );
