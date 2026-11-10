@@ -3191,23 +3191,29 @@ font-size:11px;
 
 #pdfBlueprint .sprayId{
 
-  font-size:20px;
+  font-size:24px;
+
+  font-weight:700;
 
 }
 
 #pdfBlueprint .sprayDistance{
 
-  font-size:14px;
+  font-size:20px;
+
+  font-weight:bold;
 
 }
 
 #pdfBlueprint .sprayInput{
 
-  width:90px;
+  width:110px;
 
-  height:42px;
+  height:55px;
 
-  font-size:20px;
+  font-size:24px;
+
+  font-weight:700;
 
 }
 
