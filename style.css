@@ -3159,11 +3159,11 @@ font-size:11px;
   display:grid;
 
   grid-template-columns:
-    300px
-    900px
-    300px;
+    260px
+    700px
+    260px;
 
-  gap:100px;
+  gap:70px;
 
 }
 
@@ -3183,9 +3183,9 @@ font-size:11px;
 
 #pdfBlueprint .blueprintSpray{
 
-  width:300px;
+  width:230px;
 
-  padding:25px;
+  padding:12px;
 
 }
 
