@@ -3179,19 +3179,27 @@ font-size:11px;
 
   width:220px;
 
+  min-height:900px;
+
+}
+
+#pdfBlueprint .sprayLane{
+
+  min-height:900px;
+
 }
 
 #pdfBlueprint .blueprintSpray{
 
-  width:230px;
+  width:180px;
 
-  padding:12px;
+  padding:10px;
 
 }
 
 #pdfBlueprint .sprayId{
 
-  font-size:24px;
+  font-size:18px;
 
   font-weight:700;
 
@@ -3199,7 +3207,7 @@ font-size:11px;
 
 #pdfBlueprint .sprayDistance{
 
-  font-size:18px;
+  font-size:14px;
 
   font-weight:bold;
 
@@ -3207,11 +3215,11 @@ font-size:11px;
 
 #pdfBlueprint .sprayInput{
 
-  width:110px;
+  width:80px;
 
-  height:55px;
+  height:42px;
 
-  font-size:24px;
+  font-size:18px;
 
   font-weight:700;
 
