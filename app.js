@@ -2117,7 +2117,7 @@ blueprint.classList.add(
     await html2canvas(
       blueprint,
       {
-        scale:5
+        scale:2
       }
     );
 
@@ -2128,8 +2128,11 @@ blueprint.classList.remove(
   blueprint.style.width =
     oldWidth;
 
-  const blueprintImage =
-    canvas.toDataURL("image/png");
+const blueprintImage =
+  canvas.toDataURL(
+    "image/jpeg",
+    0.85
+  );
 
   const pdfWidth = 190;
 
@@ -2142,7 +2145,7 @@ blueprint.classList.remove(
 
 doc.addImage(
   blueprintImage,
-  "PNG",
+  "JPEG",
   40,
   45,
   190,
