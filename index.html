@@ -1287,10 +1287,18 @@ Summary
 
     <button onclick="clearCalc()">C</button>
 
+    <button onclick="calcPress('Math.sqrt(')">
+    √
+    </button>
+
     <button onclick="deleteLast()">⌫</button>
 
     <button onclick="calcPress('%')">%</button>
 
+    <button onclick="calcPress('(')">(</button>
+
+    <button onclick="calcPress(')')">)</button>
+    
     <button onclick="calcPress('/')">÷</button>
 
     <button onclick="calcPress('7')">7</button>
@@ -1308,8 +1316,13 @@ Summary
     <button onclick="calcPress('3')">3</button>
     <button onclick="calcPress('+')">+</button>
 
-    <button onclick="calcPress('-')">+/-</button>
+    <button onclick="toggleSign()">
+    +/-
+    </button>
     <button onclick="calcPress('0')">0</button>
+    <button onclick="calcPress('3.141592653589793')">
+    π
+    </button>
     <button onclick="calcPress('.')">.</button>
     <button class="equalsBtn"
     onclick="calculateResult()">=</button>
