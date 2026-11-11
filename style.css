@@ -3624,3 +3624,67 @@ textarea{
   max-width:none;
 
 }
+
+.pdfExportMode{
+
+  width:1400px !important;
+
+  min-width:1400px !important;
+
+  max-width:1400px !important;
+
+}
+
+.pdfExportMode .figmaShip{
+
+  width:700px !important;
+
+  height:700px !important;
+
+}
+
+.pdfExportMode .blueprintSpray{
+
+  width:180px !important;
+
+  padding:10px !important;
+
+  font-size:18px !important;
+
+}
+
+.pdfExportMode .sprayInput{
+
+  width:80px !important;
+
+  height:42px !important;
+
+  font-size:18px !important;
+
+  font-weight:700 !important;
+
+}
+
+.pdfExportMode .sprayId{
+
+  font-size:18px !important;
+
+}
+
+.pdfExportMode .sprayDistance{
+
+  font-size:14px !important;
+
+}
+
+.pdfExportMode .blueprintColumn{
+
+  min-height:900px !important;
+
+}
+
+.pdfExportMode .sprayLane{
+
+  min-height:900px !important;
+
+}
