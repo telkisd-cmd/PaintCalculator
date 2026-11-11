@@ -57,8 +57,26 @@ self.addEventListener("fetch", event => {
 
   event.respondWith(
 
-    fetch(event.request)
-      .catch(() => caches.match(event.request))
+    Promise.race([
+
+      fetch(event.request),
+
+      new Promise((_, reject) =>
+
+        setTimeout(
+          () => reject(),
+          5000
+        )
+
+      )
+
+    ])
+
+    .catch(() =>
+
+      caches.match(event.request)
+
+    )
 
   );
 
