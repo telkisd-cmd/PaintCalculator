@@ -1132,6 +1132,8 @@ function initializePhotoUpload(){
 
 let calcValue = "";
 
+let calcHistory = [];
+
 function calcPress(value){
 
   if(
@@ -1152,8 +1154,32 @@ function calculateResult(){
 
   try{
 
-    calcValue =
-      eval(calcValue).toString();
+let result =
+  eval(calcValue);
+
+    calcHistory.unshift(
+
+  calcValue +
+  " = " +
+  result
+
+);
+
+if(
+  calcHistory.length > 20
+){
+
+  calcHistory.pop();
+
+}
+
+result =
+  Number(
+    result.toFixed(10)
+  );
+
+calcValue =
+  result.toString();
 
     document.getElementById("calcDisplay").value =
       calcValue;
@@ -3995,4 +4021,29 @@ function toLitres(value){
 
 function fromLitres(value){
   return value;
+}
+
+function toggleSign(){
+
+  try{
+
+    let display =
+      document.getElementById(
+        "calcDisplay"
+      );
+
+    let value =
+      Number(display.value);
+
+    value = value * -1;
+
+    display.value = value;
+
+    calcValue =
+      value.toString();
+
+  }
+
+  catch{}
+
 }
