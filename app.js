@@ -2057,6 +2057,10 @@ y = 20;
       "pdfBlueprint"
     );
 
+blueprint.classList.add(
+  "pdfExportMode"
+);
+  
   blueprint.style.display =
     "grid";
 
@@ -2117,6 +2121,10 @@ y = 20;
       }
     );
 
+blueprint.classList.remove(
+  "pdfExportMode"
+);
+  
   blueprint.style.width =
     oldWidth;
 
